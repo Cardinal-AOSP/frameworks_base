@@ -70,4 +70,9 @@
         <item>100</item>
         <item>50</item>
     </integer-array>
+
+    <!-- ButtonsBrightness -->
+    <integer name="config_buttonBrightnessSettingDefault">255</integer>
+    <bool name="config_deviceHasVariableButtonBrightness">false</bool>
+
 </resources>
