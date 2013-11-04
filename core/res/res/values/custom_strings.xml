@@ -16,7 +16,6 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <!-- Assist manager -->
     <string name="no_assist_found">No assist manager found</string>
 
@@ -27,4 +26,12 @@
 
     <!-- Notify user that they are in Lock-to-app -->
     <string name="lock_to_app_toast_back">To unpin this screen, touch &amp; hold Back button</string>
+
+    <!-- ADB over network notification -->
+    <string name="adb_net_active_notification_title">ADB over network enabled</string>
+    <!-- ADB over USB and network notification -->
+    <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+    <!-- ADB notification message-->
+    <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+
 </resources>
