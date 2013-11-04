@@ -3892,7 +3892,7 @@ public final class Settings {
          */
 
         /**
-         * Cardinal-AOSP System modification starts
+         * Cardinal-AOSP System settings modification starts
          */
         
         /**
@@ -6971,6 +6971,16 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_BADGING = "notification_badging";
+
+        /**
+         * Cardinal-AOSP Secure settings modification starts
+         */
+
+        /**
+         * The TCP/IP port to run ADB on, or -1 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = "adb_port";
 
         /**
          * This are the settings to be backed up.
