@@ -3722,6 +3722,9 @@ public final class Settings {
         public static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
 
         /* Network speed indicator
+         * 0 = disabled
+	 * 1 = show bits per second
+	 * 2 = show Bytes per second
          * @hide
          */
         public static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
