@@ -38,6 +38,13 @@ static const bool kIsDebug = false;
 // Number of threads to use for preprocessing images.
 static const size_t MAX_THREADS = 4;
 
+#ifdef SHOW_EXTENDED_WARNINGS
+#define SHOW_MANIFEST_WARNING
+#define SHOW_UNCOMMENTED_SYMBOL_WARNING
+#define SHOW_LOCALIZATION_WARNINGS
+#define SHOW_DEFAULT_TRANSLATION_WARNINGS
+#endif
+
 // ==========================================================================
 // ==========================================================================
 // ==========================================================================
@@ -662,7 +669,7 @@ static bool applyFileOverlay(Bundle *bundle,
                             baseGroup->removeFile(baseFileIndex);
                         } else {
                             // didn't find a match fall through and add it..
-                            if (true || bundle->getVerbose()) {
+                            if (bundle->getVerbose()) {
                                 printf("nothing matches overlay file %s, for flavor %s\n",
                                         overlayGroup->getLeaf().string(),
                                         overlayFiles.keyAt(overlayGroupIndex).toString().string());
@@ -2524,9 +2531,11 @@ static status_t writeSymbolClass(
                     "%s/** %s\n",
                     getIndentSpace(indent), cmt.string());
         } else if (sym.isPublic && !includePrivate) {
+#ifdef SHOW_UNCOMMENTED_SYMBOL_WARNING
             sym.sourcePos.warning("No comment for public symbol %s:%s/%s",
                 assets->getPackage().string(), className.string(),
                 String8(sym.name).string());
+#endif
         }
         String16 typeComment(sym.typeComment);
         if (typeComment.size() > 0) {
@@ -2570,9 +2579,11 @@ static status_t writeSymbolClass(
                     getIndentSpace(indent), cmt.string(),
                     getIndentSpace(indent));
         } else if (sym.isPublic && !includePrivate) {
+#ifdef SHOW_UNCOMMENTED_SYMBOL_WARNING
             sym.sourcePos.warning("No comment for public symbol %s:%s/%s",
                 assets->getPackage().string(), className.string(),
                 String8(sym.name).string());
+#endif
         }
         ann.printAnnotations(fp, getIndentSpace(indent));
         fprintf(fp, "%spublic static final String %s=\"%s\";\n",
