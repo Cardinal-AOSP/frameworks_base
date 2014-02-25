@@ -2811,6 +2811,7 @@ public final class ActiveServices {
             }
             final long origId = Binder.clearCallingIdentity();
             serviceDoneExecutingLocked(r, inDestroying, inDestroying);
+            getServiceMapLocked(r.userId).ensureNotStartingBackgroundLocked(r);
             Binder.restoreCallingIdentity(origId);
         } else {
             Slog.w(TAG, "Done executing unknown service from pid "
