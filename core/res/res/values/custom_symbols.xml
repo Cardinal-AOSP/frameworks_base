@@ -21,11 +21,20 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Older rotation sensors are not setting event.timestamp correctly. Setting to
-         true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
-      <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+   <!-- Older rotation sensors are not setting event.timestamp correctly. Setting to
+        true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
+   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
 
-    <!-- Config.xml entries -->
-      <java-symbol type="bool" name="config_samsung_stk" />
+  <!-- Config.xml entries -->
+   <java-symbol type="bool" name="config_samsung_stk" />
+
+  <!-- Proximity check on screen on -->
+  <java-symbol type="bool" name="config_proximityCheckOnWake" />
+
+  <!-- Proximity check timeout -->
+  <java-symbol type="integer" name="config_proximityCheckTimeout" />
+
+  <!-- Proximity check on screen on default -->
+  <java-symbol type="bool" name="config_proximityCheckOnWakeEnabledByDefault" />
 
 </resources>
