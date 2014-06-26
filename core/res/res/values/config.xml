@@ -2915,4 +2915,4 @@
     <!-- An array of packages that need to be treated as type service in battery settings -->
     <string-array translatable="false" name="config_batteryPackageTypeService"/>
 
-</resources>
+ </resources>
