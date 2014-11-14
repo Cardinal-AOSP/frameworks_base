@@ -20,4 +20,7 @@
 
     <!-- Screen timeout tile -->
     <string name="quick_settings_screen_off">Screen off</string>
+
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template"><xliff:g id="level" example="45">%d</xliff:g>%%</string>
 </resources>
