@@ -33,4 +33,8 @@
 
   <!-- Config to show hwkeys settings in Wings! -->
   <java-symbol type="bool" name="config_showHwKeys" />
+
+  <!-- LED pulse -->
+  <java-symbol type="bool" name="config_ledCanPulse" />
+
 </resources>
