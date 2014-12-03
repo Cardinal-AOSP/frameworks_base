@@ -2590,7 +2590,6 @@ public final class Settings {
 
         private static final Validator VOLUME_MASTER_MUTE_VALIDATOR = sBooleanValidator;
 
- 
         /**
          * Microphone mute (int 1 = mute, 0 = not muted).
          *
