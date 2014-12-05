@@ -4355,7 +4355,13 @@ public final class Settings {
         public static final String HEADS_UP_WHITELIST_VALUES = "heads_up_whitelist_values";
 
         /**
-         * Indicates whether ANBI (Accidental navigation button interaction) is enabled.
+         * Show the pending notification counts as overlays on the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+
+        /**
+         * Indicates whether ANBI (Accidental navigation button interaction) is enable$
          *
          * @hide
          */
