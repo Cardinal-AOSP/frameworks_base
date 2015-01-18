@@ -374,6 +374,7 @@ public class AudioService extends IAudioService.Stub {
     };
 
     private final boolean mUseFixedVolume;
+    private boolean mLinkNotificationWithVolume;
 
     private final AudioSystem.ErrorCallback mAudioSystemCallback = new AudioSystem.ErrorCallback() {
         public void onError(int error) {
@@ -457,7 +458,8 @@ public class AudioService extends IAudioService.Stub {
 
     // List of binder death handlers for setMode() client processes.
     // The last process to have called setMode() is at the top of the list.
-    private final ArrayList <SetModeDeathHandler> mSetModeDeathHandlers = new ArrayList <SetModeDeathHandler>();
+    private final ArrayList <SetModeDeathHandler> mSetModeDeathHandlers =
+                    new ArrayList <SetModeDeathHandler>();
 
     // List of clients having issued a SCO start request
     private final ArrayList <ScoClient> mScoClients = new ArrayList <ScoClient>();
@@ -665,6 +667,9 @@ public class AudioService extends IAudioService.Stub {
 
         mUseFixedVolume = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_useFixedVolume);
+
+        mLinkNotificationWithVolume = Settings.System.getIntForUser(mContentResolver,
+                Settings.System.VOLUME_LINK_NOTIFICATION, 1, UserHandle.USER_CURRENT) == 1;
 
         // must be called before readPersistedSettings() which needs a valid mStreamVolumeAlias[]
         // array initialized by updateStreamVolumeAlias()
@@ -1076,6 +1081,11 @@ public class AudioService extends IAudioService.Stub {
         }
 
         mStreamVolumeAlias[AudioSystem.STREAM_DTMF] = dtmfStreamAlias;
+        if (mLinkNotificationWithVolume) {
+            mStreamVolumeAlias[AudioSystem.STREAM_NOTIFICATION] = AudioSystem.STREAM_RING;
+        } else {
+            mStreamVolumeAlias[AudioSystem.STREAM_NOTIFICATION] = AudioSystem.STREAM_NOTIFICATION;
+        }
         if (updateVolumes) {
             mStreamStates[AudioSystem.STREAM_DTMF].setAllIndexes(mStreamStates[dtmfStreamAlias],
                     caller);
@@ -1180,7 +1190,8 @@ public class AudioService extends IAudioService.Stub {
     }
 
     private int rescaleIndex(int index, int srcStream, int dstStream) {
-        return (index * mStreamStates[dstStream].getMaxIndex() + mStreamStates[srcStream].getMaxIndex() / 2) / mStreamStates[srcStream].getMaxIndex();
+        return (index * mStreamStates[dstStream].getMaxIndex()
+            + mStreamStates[srcStream].getMaxIndex() / 2) / mStreamStates[srcStream].getMaxIndex();
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -4711,6 +4722,8 @@ public class AudioService extends IAudioService.Stub {
                 Settings.System.MODE_RINGER_STREAMS_AFFECTED), false, this);
             mContentResolver.registerContentObserver(Settings.Global.getUriFor(
                 Settings.Global.DOCK_AUDIO_MEDIA_ENABLED), false, this);
+            mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.VOLUME_LINK_NOTIFICATION), false, this);
         }
 
         @Override
@@ -4730,7 +4743,16 @@ public class AudioService extends IAudioService.Stub {
                 }
                 readDockAudioSettings(mContentResolver);
             }
-        }
+
+                mLinkNotificationWithVolume = Settings.System.getIntForUser(mContentResolver,
+                        Settings.System.VOLUME_LINK_NOTIFICATION, 1, UserHandle.USER_CURRENT) == 1;
+                if (mLinkNotificationWithVolume) {
+                    mStreamVolumeAlias[AudioSystem.STREAM_NOTIFICATION] = AudioSystem.STREAM_RING;
+                } else {
+                    mStreamVolumeAlias[AudioSystem.STREAM_NOTIFICATION] =
+                        AudioSystem.STREAM_NOTIFICATION;
+                }
+          }
     }
 
     // must be called synchronized on mConnectedDevices
@@ -6417,3 +6439,4 @@ public class AudioService extends IAudioService.Stub {
         }
     }
 }
+
