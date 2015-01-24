@@ -27,4 +27,8 @@
     <!-- Content description of the caffeine tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_caffeine_on">Caffeine on.</string>
 
+    <!-- Screen timeout QS tile -->
+    <string name="quick_settings_timeout_label">Timeout</string>
+    <string name="quick_settings_screen_timeout_detail_title">Screen timeout</string>
+
 </resources>
