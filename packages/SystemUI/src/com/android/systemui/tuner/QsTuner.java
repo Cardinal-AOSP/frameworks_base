@@ -202,6 +202,7 @@ public class QsTuner extends Fragment implements Callback {
         else if (spec.equals("hotspot")) return R.string.quick_settings_hotspot_label;
         else if (spec.equals("screenoff")) return R.string.quick_settings_screen_off;
         else if (spec.equals("music")) return R.string.quick_settings_music_label;
+        else if (spec.equals("screenshot")) return R.string.quick_settings_screenshot_label;
         return 0;
     }
 
@@ -447,7 +448,8 @@ public class QsTuner extends Fragment implements Callback {
             else if (mSpec.equals("hotspot")) return R.drawable.ic_hotspot_enable;
             else if (mSpec.equals("screenoff")) return R.drawable.ic_qs_power;
             else if (mSpec.equals("music")) return R.drawable.ic_qs_media_play;
-           return R.drawable.android;
+            else if (mSpec.equals("screenshot")) return R.drawable.ic_qs_screenshot;
+            return R.drawable.android;
         }
 
         @Override
