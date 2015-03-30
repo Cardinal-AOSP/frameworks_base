@@ -806,6 +806,7 @@ public class NetworkControllerImpl extends BroadcastReceiver
                             datatype.equals("e") ? TelephonyIcons.E :
                             datatype.equals("g") ? TelephonyIcons.G :
                             datatype.equals("h") ? TelephonyIcons.H :
+                            datatype.equals("hp") ? TelephonyIcons.HP :
                             datatype.equals("lte") ? TelephonyIcons.LTE :
                             datatype.equals("roam") ? TelephonyIcons.ROAMING :
                             TelephonyIcons.UNKNOWN;
@@ -877,6 +878,7 @@ public class NetworkControllerImpl extends BroadcastReceiver
         boolean showRsrpSignalLevelforLTE;
         boolean showLocale;
         boolean showRat;
+	      boolean hspapDataDistinguishable;
 
         static Config readConfig(Context context) {
             Config config = new Config();
@@ -895,7 +897,8 @@ public class NetworkControllerImpl extends BroadcastReceiver
                     res.getBoolean(com.android.internal.R.bool.config_monitor_locale_change);
             config.showRat =
                     res.getBoolean(com.android.internal.R.bool.config_display_rat);
-
+            config.hspapDataDistinguishable =
+                    res.getBoolean(R.bool.config_hspap_data_distinguishable);
             return config;
         }
     }
