@@ -2423,4 +2423,11 @@
   <!-- keypress optimization -->
   <java-symbol type="bool" name="config_enableKeypressOptimization" />
   <java-symbol type="array" name="keypress_param_value" />
+
+
+		<! -- Our Extras Begin -->
+
+
+  <!-- Doze invert -->
+  <java-symbol type="bool" name="config_invert_colors_on_doze" />
 </resources>
