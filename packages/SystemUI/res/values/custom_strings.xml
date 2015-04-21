@@ -32,7 +32,7 @@
     <string name="accessibility_quick_settings_location_sensors_only">Location reporting: sensors only mode.</string>
     <!-- Content description of the location tile in quick settings when on, high accuracy mode (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_location_high_accuracy">Location reporting: high accuracy mode.</string>
-    
+
     <!-- QuickSettings: Location (On, low-power) [CHAR LIMIT=NONE] -->
     <string name="quick_settings_location_battery_saving_label">Battery saving</string>
     <!-- QuickSettings: Location (On, gps-only) [CHAR LIMIT=NONE] -->
@@ -47,10 +47,10 @@
     <!-- [CHAR LIMIT=30] Location detail panel, battery saving location mode -->
     <string name="quick_settings_location_detail_mode_battery_saving_title">Battery saving</string>
     <!-- [CHAR LIMIT=30] Location detail panel, device only location mode -->
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Device only</string>    
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Device only</string>
     <!-- [CHAR LIMIT=30] Location detail panel, high accuracy location mode -->
     <string name="quick_settings_location_detail_mode_high_accuracy_title">High accuracy</string>
-    
+
     <!-- [CHAR LIMIT=130] Location detail panel, description for battery saving mode -->
     <string name="quick_settings_location_detail_mode_battery_saving_description">Use Wi\u2011Fi and cellular networks to determine location</string>
     <!-- [CHAR LIMIT=130] Location detail panel, description for sensors only mode -->
@@ -65,18 +65,25 @@
 
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Screen is being recorded</string>
- 
+
     <!-- Screenrecord notification title -->
     <string name="screenrecord_notif_title">Recording screen</string>
- 
+
     <!-- Screenrecord notification action: Stop -->
     <string name="screenrecord_notif_stop">Stop</string>
- 
+
     <!-- Screenrecord notification action: show/hide pointer -->
     <string name="screenrecord_notif_pointer_on">Show pointer</string>
     <string name="screenrecord_notif_pointer_off">Hide pointer</string>
- 
+
     <!-- Screen record notification error title -->
     <string name="screenrecord_notif_error">Unable to record screen</string>
+
+    <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Heads up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads up off.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads up turned off.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads up turned on.</string>
 
 </resources>

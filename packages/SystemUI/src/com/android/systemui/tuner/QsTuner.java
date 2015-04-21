@@ -209,6 +209,7 @@ public class QsTuner extends Fragment implements Callback {
         else if (spec.equals("timeout")) return R.string.quick_settings_timeout_label;
         else if (spec.equals("navigation_bar")) return R.string.quick_settings_smartbar;
         else if (spec.equals("compass")) return R.string.quick_settings_compass;
+        else if (spec.equals("heads_up")) return R.string.quick_settings_heads_up_label;
         return 0;
     }
 
@@ -455,6 +456,7 @@ public class QsTuner extends Fragment implements Callback {
             else if (mSpec.equals("timeout")) return R.drawable.ic_qs_screen_timeout_vector;
             else if (mSpec.equals("navigation_bar")) return R.drawable.ic_qs_smartbar;
             else if (mSpec.equals("compass")) return R.drawable.ic_qs_compass_on;
+            else if (mSpec.equals("heads_up")) return R.drawable.ic_qs_heads_up_on;
             return R.drawable.android;
         }
 
