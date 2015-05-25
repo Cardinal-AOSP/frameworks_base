@@ -26,5 +26,8 @@
 
   <java-symbol type="string" name="config_deviceHardwareKeyLightsFilePath" />
 
+   <java-symbol type="integer" name="config_longPressOnMenuBehavior" />
+   <java-symbol type="integer" name="config_longPressOnAppSwitchBehavior" />
+
 </resources>
 
