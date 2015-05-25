@@ -33,4 +33,9 @@ implied.
   <java-symbol type="bool" name="config_multiColorBatteryLed" />
   <java-symbol type="array" name="notification_light_package_mapping" />
   <java-symbol type="array" name="config_notificationNoAlertsVibePattern" />
+
+  <!-- long press switch -->
+  <java-symbol type="integer" name="config_longPressOnMenuBehavior" />
+  <java-symbol type="integer" name="config_longPressOnAppSwitchBehavior" />
+
 </resources>
