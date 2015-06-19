@@ -19,6 +19,7 @@
     <array name="shutdown_reboot_options" translatable="false">
         <item>@string/reboot_reboot</item>
         <item>@string/reboot_soft</item>
+        <item>@string/reboot_systemui</item>
         <item>@string/reboot_recovery</item>
         <item>@string/reboot_bootloader</item>
     </array>
@@ -28,6 +29,7 @@
     <string-array name="shutdown_reboot_actions" translatable="false">
         <item></item>
         <item>soft_reboot</item>
+        <item>systemui_reboot</item>
         <item>recovery</item>
         <item>bootloader</item>
      </string-array>
