@@ -2600,4 +2600,8 @@
         config to 7. -->
     <integer name="config_deviceHardwareKeys">0</integer>
     
+      <!-- Do the battery/notification LEDs support pulsing?
+        Used to decide if we show pulse settings -->
+   <bool name="config_ledCanPulse">true</bool>
+
 </resources>
