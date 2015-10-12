@@ -22,7 +22,7 @@ import android.app.ActivityManagerInternal.SleepToken;
 import android.app.ActivityManagerNative;
 import android.app.AppOpsManager;
 import android.app.IUiModeManager;
-import android.app.ProgressDialog;
+import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.app.StatusBarManager;
 import android.app.UiModeManager;
@@ -6632,7 +6632,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         screenTurnedOn();
     }
 
-    ProgressDialog mBootMsgDialog = null;
+    AlertDialog mBootMsgDialog = null;
 
     /**
      * name of package currently being dex optimized
@@ -6663,7 +6663,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         theme = 6;
                     }
 
-                    mBootMsgDialog = new ProgressDialog(mContext, theme) {
+                    mBootMsgDialog = new AlertDialog(mContext, theme) {
                         // This dialog will consume all events coming in to
                         // it, to avoid it trying to do things too early in boot.
                         @Override public boolean dispatchKeyEvent(KeyEvent event) {
@@ -6691,8 +6691,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     } else {
                         mBootMsgDialog.setTitle(R.string.android_start_title);
                     }
-                    mBootMsgDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                    mBootMsgDialog.setIndeterminate(true);
                     mBootMsgDialog.getWindow().setType(
                             WindowManager.LayoutParams.TYPE_BOOT_PROGRESS);
                     mBootMsgDialog.getWindow().addFlags(
@@ -6703,6 +6701,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     lp.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
                     mBootMsgDialog.getWindow().setAttributes(lp);
                     mBootMsgDialog.setCancelable(false);
+		    mBootMsgDialog.setMessage("");
                     mBootMsgDialog.show();
                 }
 
