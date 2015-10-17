@@ -8,9 +8,9 @@
 LOCAL_PATH := frameworks/base/data/sounds
 
 # Simple files that do not require renaming
-ALARM_FILES := Argon Carbon Helium Krypton Neon Oxygen Osmium Platinum Timer
+ALARM_FILES := Argon Carbon Helium Krypton Neon Oxygen Osmium Platinum
 NOTIFICATION_FILES := Ariel Ceres Carme Elara Europa Iapetus Io Rhea Salacia Titan Tethys
-RINGTONE_FILES := Atria Callisto Dione Ganymede Luna Oberon Phobos Pyxis Sedna Titania Triton \
+RINGTONE_FILES := Atria Callisto Dione Ganymede Luna Oberon Phobos Sedna Titania Triton \
 	Umbriel
 EFFECT_FILES := Effect_Tick KeypressReturn KeypressInvalid KeypressDelete KeypressSpacebar KeypressStandard \
 	Lock Unlock Trusted
