@@ -87,6 +87,8 @@
 
     </RelativeLayout>
 
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/zen_conditions"
         android:layout_width="match_parent"
