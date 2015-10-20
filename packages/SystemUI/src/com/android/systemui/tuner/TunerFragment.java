@@ -17,10 +17,7 @@ package com.android.systemui.tuner;
 
 import static com.android.systemui.BatteryMeterView.SHOW_PERCENT_SETTING;
 
-import android.app.AlertDialog;
 import android.app.FragmentTransaction;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,10 +28,7 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.SwitchPreference;
-import android.provider.Settings;
 import android.provider.Settings.System;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.android.internal.logging.MetricsLogger;
@@ -44,15 +38,9 @@ import com.android.systemui.tuner.TunerService.Tunable;
 
 public class TunerFragment extends PreferenceFragment {
 
-    private static final String TAG = "TunerFragment";
-
     private static final String KEY_QS_TUNER = "qs_tuner";
     private static final String KEY_DEMO_MODE = "demo_mode";
     private static final String KEY_BATTERY_PCT = "battery_pct";
-
-    public static final String SETTING_SEEN_TUNER_WARNING = "seen_tuner_warning";
-
-    private static final int MENU_REMOVE = Menu.FIRST + 1;
 
     private final SettingObserver mSettingObserver = new SettingObserver();
 
@@ -86,19 +74,6 @@ public class TunerFragment extends PreferenceFragment {
             }
         });
         mBatteryPct = (SwitchPreference) findPreference(KEY_BATTERY_PCT);
-        if (Settings.Secure.getInt(getContext().getContentResolver(), SETTING_SEEN_TUNER_WARNING,
-                0) == 0) {
-            new AlertDialog.Builder(getContext())
-                    .setTitle(R.string.tuner_warning_title)
-                    .setMessage(R.string.tuner_warning)
-                    .setPositiveButton(R.string.got_it, new OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.Secure.putInt(getContext().getContentResolver(),
-                                    SETTING_SEEN_TUNER_WARNING, 1);
-                        }
-                    }).show();
-        }
     }
 
     @Override
@@ -148,23 +123,10 @@ public class TunerFragment extends PreferenceFragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(Menu.NONE, MENU_REMOVE, Menu.NONE, R.string.remove_from_settings);
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 getActivity().finish();
-                return true;
-            case MENU_REMOVE:
-                TunerService.showResetRequest(getContext(), new Runnable() {
-                    @Override
-                    public void run() {
-                        getActivity().finish();
-                    }
-                });
                 return true;
         }
         return super.onOptionsItemSelected(item);
