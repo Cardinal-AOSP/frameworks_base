@@ -53,6 +53,7 @@ import android.app.WallpaperManager;
 import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentCallbacks2;
+import android.content.ContentResolver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -787,6 +788,8 @@ public class StatusBar extends SystemUI implements DemoMode,
     private NavigationBarFragment mNavigationBar;
     private View mNavigationBarView;
 
+    private boolean mLockscreenMediaMetadata;
+
     @Override
     public void start() {
         mNetworkController = Dependency.get(NetworkController.class);
@@ -889,6 +892,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         createAndAddWindows();
 
         mSettingsObserver.onChange(false); // set up
+        mCustomSettingsObserver.observe();
+        mCustomSettingsObserver.update();
         mCommandQueue.disable(switches[0], switches[6], false /* animate */);
         setSystemUiVisibility(switches[1], switches[7], switches[8], 0xffffffff,
                 fullscreenStackBounds, dockedStackBounds);
@@ -2437,7 +2442,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
 
         Drawable artworkDrawable = null;
-        if (mMediaMetadata != null) {
+        if (mMediaMetadata != null && mLockscreenMediaMetadata) {
             Bitmap artworkBitmap = null;
             artworkBitmap = mMediaMetadata.getBitmap(MediaMetadata.METADATA_KEY_ART);
             if (artworkBitmap == null) {
@@ -5836,6 +5841,37 @@ public class StatusBar extends SystemUI implements DemoMode,
             updateNotifications();
         }
     };
+
+    private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
+    private class CustomSettingsObserver extends ContentObserver {
+        CustomSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_MEDIA_METADATA),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_MEDIA_METADATA))) {
+                setLockscreenMediaMetadata();
+            }
+        }
+
+        public void update() {
+            setLockscreenMediaMetadata();
+        }
+    }
+
+    private void setLockscreenMediaMetadata() {
+        mLockscreenMediaMetadata = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT) == 1;
+    }
 
     private RemoteViews.OnClickHandler mOnClickHandler = new RemoteViews.OnClickHandler() {
 
