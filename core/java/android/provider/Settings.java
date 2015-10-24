@@ -3765,6 +3765,12 @@ public final class Settings {
                 "notification_light_pulse_custom_values";
 
         /**
+         * Whether to show media art on lockscreen
+         * @hide
+         */
+        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
+
+        /**
          * Whether the phone volume up / down effect should be played
          * @hide
          */
