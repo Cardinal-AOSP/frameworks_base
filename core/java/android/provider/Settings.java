@@ -4256,6 +4256,12 @@ public final class Settings {
         public static final String ALLOW_INCALL_HOME = "allow_incall_home";
 
         /**
+         * Whether to wake the screen with the volume keys, the value is boolean.
+         * @hide
+         */
+        public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4454,6 +4460,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SENSOR_BLOCK);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
             PRIVATE_SETTINGS.add(ALLOW_INCALL_HOME);
+            PRIVATE_SETTINGS.add(VOLUME_WAKE_SCREEN);
         }
 
         /**
