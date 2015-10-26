@@ -1061,12 +1061,6 @@
     <!-- Summary for battery percentage preference [CHAR LIMIT=NONE] -->
     <string name="show_battery_percentage_summary">Show battery level percentage inside the status bar icon when not charging</string>
 
-    <!-- Name of quick settings -->
-    <string name="quick_settings">Quick Settings</string>
-
-    <!-- Name of status bar -->
-    <string name="status_bar">Status bar</string>
-
     <!-- Name of demo mode (mode with preset icons for screenshots) -->
     <string name="demo_mode">Demo mode</string>
 
