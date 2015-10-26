@@ -42,10 +42,8 @@ import com.android.systemui.tuner.TunerService.Tunable;
 
 public class TunerFragment extends PreferenceFragment {
 
-    private static final String TAG = "TunerFragment";
-
-    private static final String KEY_QS_TUNER = "qs_tuner";
     private static final String KEY_DEMO_MODE = "demo_mode";
+    private static final String TAG = "TunerFragment";
 
     public static final String SETTING_SEEN_TUNER_WARNING = "seen_tuner_warning";
 
@@ -60,17 +58,6 @@ public class TunerFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.tuner_prefs);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         setHasOptionsMenu(true);
-
-        findPreference(KEY_QS_TUNER).setOnPreferenceClickListener(new OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(android.R.id.content, new QsTuner(), "QsTuner");
-                ft.addToBackStack(null);
-                ft.commit();
-                return true;
-            }
-        });
         findPreference(KEY_DEMO_MODE).setOnPreferenceClickListener(new OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
@@ -99,7 +86,6 @@ public class TunerFragment extends PreferenceFragment {
     @Override
     public void onResume() {
         super.onResume();
-
         registerPrefs(getPreferenceScreen());
         MetricsLogger.visibility(getContext(), MetricsLogger.TUNER, true);
     }
@@ -162,7 +148,7 @@ public class TunerFragment extends PreferenceFragment {
         return super.onOptionsItemSelected(item);
     }
 
-    private final class SettingObserver extends ContentObserver {
+    public final class SettingObserver extends ContentObserver {
         public SettingObserver() {
             super(new Handler());
         }
@@ -172,5 +158,4 @@ public class TunerFragment extends PreferenceFragment {
             super.onChange(selfChange, uri, userId);
         }
     }
-
 }
