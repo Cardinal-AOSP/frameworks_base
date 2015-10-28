@@ -364,8 +364,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     private int mNavigationBarWindowState = WINDOW_STATE_SHOWING;
 
-    private int mStatusBarHeaderHeight; 
-
     // the tracker view
     int mTrackingPosition; // the position of the top of the tracking view.
 
@@ -377,6 +375,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     ArrayList<Runnable> mPostCollapseRunnables = new ArrayList<>();
 
     private int mStatusBarHeaderHeight;
+    private boolean mAutomaticBrightness; 
     private boolean mBrightnessControl;
     private boolean mBrightnessChanged;
     private float mScreenWidth;
@@ -452,10 +451,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                      false, this, UserHandle.USER_ALL);
             update();
         }
-
+        
         public void update() {
-           ContentResolver resolver = mContext.getContentResolver();
-                int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
+            ContentResolver resolver = mContext.getContentResolver();
+            int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
                             Settings.System.SCREEN_BRIGHTNESS_MODE,
                             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
                             UserHandle.USER_CURRENT);
