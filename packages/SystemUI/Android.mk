@@ -6,8 +6,10 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(call all-java-files-under, src) \
     src/com/android/systemui/EventLogTags.logtags
 
-LOCAL_STATIC_JAVA_LIBRARIES := Keyguard
-LOCAL_JAVA_LIBRARIES := telephony-common
+LOCAL_STATIC_JAVA_LIBRARIES := Keyguard \
+    org.dirtyunicorns.navigation-static
+
+LOCAL_JAVA_LIBRARIES := telephony-common org.dirtyunicorns.utils
 
 LOCAL_PACKAGE_NAME := SystemUI
 LOCAL_CERTIFICATE := platform
