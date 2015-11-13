@@ -68,11 +68,6 @@ public class KeyguardStatusBarView extends RelativeLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         mSystemIconsSuperContainer = findViewById(R.id.system_icons_super_container);
-        MinitBattery mb = (MinitBattery) mSystemIconsSuperContainer.findViewById(R.id.minitBattery);
-        if(!mb.isSetup()){
-           BatteryMeterView bmv = (BatteryMeterView) mSystemIconsSuperContainer.findViewById(R.id.battery);
-           bmv.setVisibility(View.VISIBLE);
-        }
         mMultiUserSwitch = (MultiUserSwitch) findViewById(R.id.multi_user_switch);
         mMultiUserAvatar = (ImageView) findViewById(R.id.multi_user_avatar);
         mCarrierLabel = (TextView) findViewById(R.id.keyguard_carrier_text);
