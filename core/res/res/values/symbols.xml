@@ -3027,5 +3027,4 @@
 
   <java-symbol type="array" name="config_batteryPackageTypeSystem" />
   <java-symbol type="array" name="config_batteryPackageTypeService" />
-
 </resources>
