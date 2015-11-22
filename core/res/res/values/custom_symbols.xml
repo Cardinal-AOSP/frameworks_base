@@ -24,4 +24,8 @@
 
   <!-- Setting to false will disable IME switcher implementation for tablets -->
   <java-symbol type="bool" name="config_show_IMESwitcher"/>
+
+    <!-- Older rotation sensors are not setting event.timestamp correctly. Setting to
+         true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
+  <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
 </resources>
