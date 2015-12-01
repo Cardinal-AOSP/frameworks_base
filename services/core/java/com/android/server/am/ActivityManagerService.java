@@ -6938,6 +6938,9 @@ public class ActivityManagerService extends IActivityManager.Stub
                 Slog.w(TAG, "Unattached app died before broadcast acknowledged, skipping");
                 skipPendingBroadcastLocked(pid);
             }
+            if (app.persistent && !app.isolated) {
+                addAppLocked(app.info, null, false, null /* ABI override */);
+            }
         } else {
             Slog.w(TAG, "Spurious process start timeout - pid not known for " + app);
         }
