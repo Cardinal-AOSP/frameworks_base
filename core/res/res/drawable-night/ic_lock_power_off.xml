@@ -14,19 +14,6 @@
      limitations under the License.
 -->
 
-<!-- Colors specific to Material themes. -->
-<resources>
-    <!-- Primary & accent colors -->
-    <eat-comment />
-
-    <color name="material_grey_900">#ff21272b</color>
-    <color name="material_grey_850">#ff21272b</color>
-    <color name="material_grey_800">#ff263238</color>
-    <color name="material_grey_600">#ff546e7a</color>
-    <color name="material_grey_300">#ff90a4ae</color>
-    <color name="material_grey_100">#ffcfd8dc</color>
-    <color name="material_grey_50">#ffeceff1</color>
-
-    <color name="material_deep_teal_200">#ff009688</color>
-    <color name="background_floating_material_dark">@color/material_grey_850</color>
-</resources>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ic_lock_power_off_alpha"
+    android:tint="?attr/colorAccent" />
