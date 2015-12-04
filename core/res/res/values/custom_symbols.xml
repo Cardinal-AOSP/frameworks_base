@@ -67,5 +67,7 @@ implied.
     <!-- First-Boot-Logo -->
     <java-symbol type="drawable" name="cardinal" />
 
+  <!-- Screen Recording -->
+  <java-symbol type="bool" name="config_enableScreenrecordChord" />
 
 </resources>
