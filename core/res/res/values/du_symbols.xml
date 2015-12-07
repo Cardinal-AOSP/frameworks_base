@@ -41,4 +41,8 @@
   <!-- Wifi AP Disabled from Subscription change -->
   <java-symbol type="string" name="subscription_change_disabled_wifi_ap" />
 
+  <java-symbol type="drawable" name="ic_audio_notification_new" />
+  <java-symbol type="drawable" name="ic_audio_notification_mute_new" />
+  <java-symbol type="drawable" name="ic_audio_notification_mute_alpha" />
+
 </resources>
