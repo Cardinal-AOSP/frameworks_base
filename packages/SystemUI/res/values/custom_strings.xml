@@ -52,6 +52,10 @@
     <string name="accessibility_quick_settings_caffeine_off">Caffeine off.</string>
     <string name="accessibility_quick_settings_caffeine_on">Caffeine on.</string>
 
+    <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop">Expanded</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+
     <!-- NFC QS tile -->
     <string name="quick_settings_nfc_label">NFC</string>
     <string name="accessibility_quick_settings_nfc_off">NFC off.</string>
