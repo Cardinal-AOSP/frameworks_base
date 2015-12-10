@@ -18,4 +18,6 @@
 <resources>
     <color name="background_floating_material_dark">@color/material_grey_850</color>
     <color name="notification_action_color_filter">#9F9F9F</color>
+    <!-- background of the picture in the big material notification template -->
+    <color name="notification_mtrl_big_picture_bg">#CC111111</color>
 </resources>
