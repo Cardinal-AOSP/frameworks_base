@@ -34,4 +34,11 @@
     <!-- App killed message -->
     <string name="app_killed_message">App killed</string>
 
+    <!-- Navigation bar Tile -->
+    <string name="quick_settings_navigation_bar">Awesome bar</string>
+    <string name="quick_settings_smartbar_off">Smartbar off</string>
+    <string name="quick_settings_smartbar">SmartBar</string>
+    <string name="quick_settings_fling">Fling gesture</string>
+    <string name="quick_settings_fling_off">Fling gesture off</string> 
+
 </resources>
