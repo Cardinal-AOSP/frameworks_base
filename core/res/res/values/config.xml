@@ -2557,4 +2557,7 @@
 
     <!-- Whether to show icon and name of optimized apps on the boot dexopt screen. -->
     <bool name="config_bootDexoptHideAppDetails">false</bool>
+
+    <!-- Show battery fully charged notification -->
+    <bool name="config_showBatteryFullyChargedNotification">false</bool>
 </resources>
