@@ -29,6 +29,7 @@ import com.android.systemui.R;
 import com.android.systemui.qs.QSTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
+import com.android.systemui.qs.tiles.CaffeineTile;
 import com.android.systemui.qs.tiles.CastTile;
 import com.android.systemui.qs.tiles.CellularTile;
 import com.android.systemui.qs.tiles.ColorInversionTile;
@@ -266,6 +267,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
         else if (tileSpec.equals("screenoff")) return new ScreenOffTile(this);
         else if (tileSpec.equals("music")) return new MusicTile(this);
         else if (tileSpec.equals("screenshot")) return new ScreenshotTile(this);
+        else if (tileSpec.equals("caffeine")) return new CaffeineTile(this);
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else throw new IllegalArgumentException("Bad tile spec: " + tileSpec);
     }
