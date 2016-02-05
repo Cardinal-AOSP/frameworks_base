@@ -3765,13 +3765,19 @@ public final class Settings {
                 "notification_light_pulse_custom_values";
 
         /**
+         * Whether the phone volume up / down effect should be played
+         * @hide
+         */
+        public static final String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
          * the setting value. See an example above.
          */
 
-	/**
+	      /**
          * Whether user can enable/disable navigation bar.
          * <p>
          * Type: int (0 for false, 1 for true)
