@@ -35,4 +35,7 @@
   <java-symbol type="attr" name="unitsLeft" />
   <java-symbol type="attr" name="unitsRight" />
 
+  <!-- Hardware key binding -->
+  <java-symbol type="integer" name="config_deviceHardwareKeys" />
+
 </resources>
