@@ -16,6 +16,8 @@
 -->
 <resources>
 
+    <color name="navbutton_ripple_color">#ffffffff</color>
+
     <!-- Colors for the system bars -->
     <color name="status_bar_background_opaque">@color/system_bar_background_opaque</color>
     <color name="status_bar_background_semi_transparent">
