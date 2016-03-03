@@ -3598,6 +3598,16 @@ public final class Settings {
         public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";        
   
         /**
+         * Whether to swap app switch button with back button, the value is boolean.
+         * @hide
+         */
+        public static final String APP_SWITCH_SWAP_BUTTONS = "app_switch_swap_buttons";
+
+        /** @hide */
+        public static final Validator APP_SWITCH_SWAP_BUTTONS_VALIDATOR =
+                sBooleanValidator;
+  
+        /**
          * Action to perform when the app switch key is long-pressed. (default: ACTION_NULL)
          * (See ButtonsConstants.java for valid values)
          * @hide
