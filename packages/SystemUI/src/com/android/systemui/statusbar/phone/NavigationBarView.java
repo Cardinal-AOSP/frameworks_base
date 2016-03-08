@@ -812,7 +812,7 @@ public class NavigationBarView extends LinearLayout {
         View leftMenuKeyView = getLeftMenuButton();
         View rightMenuKeyView = getRightMenuButton();
 
-        // Only show Menu if IME switcher and IME arrowsnot shown.
+        // Only show Menu if IME switcher and IME arrows not shown.
         boolean showLeftMenuButton = (((mMenuVisibility == MENU_VISIBILITY_ALWAYS || show)
                 && (mMenuSetting == SHOW_LEFT_MENU || mMenuSetting == SHOW_BOTH_MENU)
                 && (mMenuVisibility != MENU_VISIBILITY_NEVER))
