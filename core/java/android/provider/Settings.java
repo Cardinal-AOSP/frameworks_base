@@ -3473,6 +3473,12 @@ public final class Settings {
          */
         public static final String DISABLE_HW_KEYS = "disable_hw_keys";
 
+         /**
+         * Whether the capacitive hardware keys lights are disabled
+         * @hide
+         */
+        public static final String DISABLE_HW_KEY_LIGHTS = "disable_hw_key_lights";
+
         /**
          * Action to perform when the back key is pressed (default: ACTION_BACK)
          * (See ButtonsConstants.java for valid values)

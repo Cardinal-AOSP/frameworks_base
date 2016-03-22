@@ -21,5 +21,8 @@
 
   <!-- Hardware key disable path -->
   <java-symbol type="string" name="config_controlPathHardwareKeys" />
+
+  <!-- Hardware key lights path -->
+  <java-symbol type="string" name="config_controlPathHardwareKeyLights" />
 </resources>
 
