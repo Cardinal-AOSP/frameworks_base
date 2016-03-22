@@ -3468,6 +3468,12 @@ public final class Settings {
         public static final String HARDWARE_KEY_REBINDING = "hardware_key_rebinding";
 
         /**
+         * Whether the capacitive hardware keys are disabled
+         * @hide
+         */
+        public static final String DISABLE_HW_KEYS = "disable_hw_keys";
+
+        /**
          * Action to perform when the back key is pressed (default: ACTION_BACK)
          * (See ButtonsConstants.java for valid values)
          * @hide
