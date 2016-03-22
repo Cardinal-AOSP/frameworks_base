@@ -20,9 +20,11 @@
   <java-symbol type="integer" name="config_deviceHardwareKeys" />
 
   <!-- Hardware key disable path -->
-  <java-symbol type="string" name="config_controlPathHardwareKeys" />
+  <java-symbol type="string" name="config_deviceHardwareKeysFilePath" />
 
   <!-- Hardware key lights path -->
-  <java-symbol type="string" name="config_controlPathHardwareKeyLights" />
+
+  <java-symbol type="string" name="config_deviceHardwareKeyLightsFilePath" />
+
 </resources>
 

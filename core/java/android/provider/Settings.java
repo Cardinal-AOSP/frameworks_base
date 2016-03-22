@@ -3471,13 +3471,13 @@ public final class Settings {
          * Whether the capacitive hardware keys are disabled
          * @hide
          */
-        public static final String DISABLE_HW_KEYS = "disable_hw_keys";
+        public static final String HARDWARE_KEYS_ENABLED = "hardware_keys_enabled";
 
          /**
          * Whether the capacitive hardware keys lights are disabled
          * @hide
          */
-        public static final String DISABLE_HW_KEY_LIGHTS = "disable_hw_key_lights";
+        public static final String HARDWARE_KEY_LIGHTS_ENABLED = "hardware_key_lights_enabled";
 
         /**
          * Action to perform when the back key is pressed (default: ACTION_BACK)

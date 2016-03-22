@@ -18,10 +18,10 @@
 
     <!-- Control path for disabling the capacitive hardware keys.
          For example: "/proc/touchpanel/keypad_enable"  -->
-    <string name="config_controlPathHardwareKeys" translatable="false">@null</string>
+    <string name="config_deviceHardwareKeysFilePath" translatable="false">@null</string>
 
     <!-- Max Brightness path for the capacitive hardware key lights.
          For example: "/sys/class/leds/button-backlight/max_brightness"  -->
-    <string name="config_controlPathHardwareKeyLights" translatable="false">@null</string>
+    <string name="config_deviceHardwareKeyLightsFilePath" translatable="false">@null</string>
 
 </resources>
