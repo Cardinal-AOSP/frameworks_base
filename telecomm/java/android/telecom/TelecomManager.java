@@ -375,14 +375,6 @@ public class TelecomManager {
      */
     public static final String EXTRA_TTY_PREFERRED_MODE =
             "android.telecom.intent.extra.TTY_PREFERRED";
-   /**
-     * Broadcast intent action for letting custom component know to show the missed call
-     * notification.
-     * @hide
-     */
-    @SystemApi
-    public static final String ACTION_SHOW_MISSED_CALLS_NOTIFICATION =
-            "android.telecom.action.SHOW_MISSED_CALLS_NOTIFICATION";
 
     /**
      * Broadcast intent action for letting custom component know to show the missed call
