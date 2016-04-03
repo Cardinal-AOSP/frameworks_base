@@ -47,6 +47,9 @@ import com.android.systemui.statusbar.NotificationData;
 import com.android.systemui.statusbar.SignalClusterView;
 import com.android.systemui.statusbar.StatusBarIconView;
 import com.android.systemui.statusbar.policy.Clock;
+import com.android.systemui.statusbar.policy.NetworkTraffic;
+
+>>>>>>> 5504f6d... Add network traffic color configuration (1/2)
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
