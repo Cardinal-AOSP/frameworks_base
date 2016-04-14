@@ -5230,6 +5230,12 @@ public final class Settings {
          * Best-effort location computation allowed.
          */
         public static final int LOCATION_MODE_HIGH_ACCURACY = 3;
+        /**
+         * Setting to configure Wifi disconnect delay duration in seconds.
+         * @hide
+         **/
+        public static final String WIFI_DISCONNECT_DELAY_DURATION =
+                "wifi_disconnect_delay_duration";
 
         /**
          * A flag containing settings used for biometric weak
@@ -6885,7 +6891,8 @@ public final class Settings {
             DOZE_ENABLED,
             DOZE_PULSE_ON_PICK_UP,
             DOZE_PULSE_ON_DOUBLE_TAP,
-            NFC_PAYMENT_DEFAULT_COMPONENT
+            NFC_PAYMENT_DEFAULT_COMPONENT,
+            WIFI_DISCONNECT_DELAY_DURATION
         };
 
         /**
