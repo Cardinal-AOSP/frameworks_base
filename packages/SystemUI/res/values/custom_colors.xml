@@ -31,4 +31,11 @@
     <color name="icon_color_split_screen_dark">@color/dark_mode_icon_color_single_tone</color>
     <color name="icon_color_home_dark">@color/dark_mode_icon_color_single_tone</color>
     <color name="icon_color_overview_dark">@color/dark_mode_icon_color_single_tone</color>
+
+    <!-- Navigation button ripple color -->
+    <color name="navbutton_ripple_color">#FFFFFFFF</color>
+
+    <!-- Navigation button ripple color for LightNavigationBar -->
+    <color name="navbutton_ripple_color_dark">#ff000000</color>
+
 </resources>
