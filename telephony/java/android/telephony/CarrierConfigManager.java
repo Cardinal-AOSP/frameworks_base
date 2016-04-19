@@ -465,6 +465,7 @@ public class CarrierConfigManager {
     public static final String KEY_BROADCAST_EMERGENCY_CALL_STATE_CHANGES_BOOL =
             "broadcast_emergency_call_state_changes_bool";
 
+    /**
      * Flag specifying whether CDMA call waiting and call forwarding are enabled
      * @hide
      */
