@@ -3462,16 +3462,16 @@ public final class Settings {
         public static final String MENU_LOCATION = "menu_location";
 
         /**
+         * Whether hardware keys are enabled
+         * @hide
+         */
+        public static final String DISABLE_HARDWARE_KEYS = "disable_hardware_keys";
+
+        /**
          * Whether custom hardware key rebinding is enabled
          * @hide
          */
         public static final String HARDWARE_KEY_REBINDING = "hardware_key_rebinding";
-
-        /**
-         * Whether the capacitive hardware keys are disabled
-         * @hide
-         */
-        public static final String HARDWARE_KEYS_ENABLED = "hardware_keys_enabled";
 
          /**
          * Whether the capacitive hardware keys lights are disabled

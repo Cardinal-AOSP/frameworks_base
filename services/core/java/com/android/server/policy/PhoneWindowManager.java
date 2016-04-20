@@ -292,6 +292,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     private DeviceKeyHandler mDeviceKeyHandler;
 
+    private boolean HardwareKeysDisabled;
+    static boolean disableHardwareKeyHaptic;
+
     /**
      * Lock protecting internal state.  Must not call out into window
      * manager with lock held.  (This lock will be acquired in places
@@ -946,6 +949,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.KEY_BACK_DOUBLE_TAP_ACTION), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DISABLE_HARDWARE_KEYS), false, this,
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HARDWARE_KEY_REBINDING), false, this,
@@ -1844,11 +1850,26 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final boolean noAppSwitch = (mDeviceHardwareKeys & KEY_MASK_APP_SWITCH) == 0;
         final boolean noCamera = (mDeviceHardwareKeys & KEY_MASK_CAMERA) == 0;
 
+        // Setup hardware keys disable
+        HardwareKeysDisabled = Settings.System.getIntForUser(
+                mContext.getContentResolver(),
+                Settings.System.DISABLE_HARDWARE_KEYS, 0,
+                UserHandle.USER_CURRENT) != 0;
+
         // Setup hardware keys
         boolean keyRebindingDisabled = Settings.System.getIntForUser(
                 mContext.getContentResolver(),
                 Settings.System.HARDWARE_KEY_REBINDING, 0,
                 UserHandle.USER_CURRENT) == 0;
+
+	if (HardwareKeysDisabled) {
+	    if (DEBUG_INPUT)
+		Log.d(TAG, "Hardware Keys have been disaled, key presses will be hijacked! :-)\n");
+	    // Hardware Keys are disabled. Reset key rebinding
+	    keyRebindingDisabled = true;
+	} else {
+	    disableHardwareKeyHaptic = false; // just in case
+	}
 
         // Home button
         mPressOnHomeBehavior =
@@ -3084,6 +3105,15 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             return -1;  // ignore the physical key here
         }
 
+	if ((HardwareKeysDisabled) && (!virtualKey)) {
+	    // Prema Chand Alugu (premaca@gmail.com)
+	    // Hardware Keys are disabled. 
+	    // We could have ignore the event for Hardware Keys here itself.
+	    // However then any piece of code required below, or controlling
+	    // vibration could be problematic sometime. Hence this will be handled below
+	    // for each key type individually
+	}
+
         // If we think we might have a volume down & power key chord on the way
         // but we're not sure, then tell the dispatcher to wait a little while and
         // try again later before dispatching.
@@ -3116,6 +3146,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         // it handle it, because that gives us the correct 5 second
         // timeout.
         if (keyCode == KeyEvent.KEYCODE_HOME) {
+
+	    if ((HardwareKeysDisabled) && (!virtualKey)) {
+	    	return -1;
+	    }
 
             // If we have released the home key, and didn't do anything else
             // while it was pressed, then it is time to go home!
@@ -3237,6 +3271,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             // Hijack modified menu keys for debugging features
             final int chordBug = KeyEvent.META_SHIFT_ON;
 
+	    if ((HardwareKeysDisabled) && (!virtualKey)) {
+	    	return -1;
+	    }
+
             // If we have released the menu key, and didn't do anything else
             // while it was pressed, then it is time to process the menu action!
             if (!down && mMenuPressed) {
@@ -3334,6 +3372,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 return -1;
             }
         } else if (keyCode == KeyEvent.KEYCODE_SEARCH) {
+	    if ((HardwareKeysDisabled) && (!virtualKey)) {
+	    	return -1;
+	    }
             if (down) {
                 if (repeatCount == 0) {
                     mSearchKeyShortcutPending = true;
@@ -3671,6 +3712,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
             return -1;
             } else if (keyCode == KeyEvent.KEYCODE_BACK) {
+		if ((HardwareKeysDisabled) && (!virtualKey)) {
+		    return -1;
+		}
+
             // If we have released the back key, and didn't do anything else
             // while it was pressed, then it is time to process the back action!
             if (!down && mBackPressed) {
@@ -6052,6 +6097,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
 
         if (useHapticFeedback) {
+	    final boolean isVirtualKey = event.getDeviceId() == KeyCharacterMap.VIRTUAL_KEYBOARD;
+	    if ((HardwareKeysDisabled) && (!isVirtualKey)) {
+	    	// Prema Chand Alugu (premaca@gmail.com)
+		// Disable Haptic here for each press
+		disableHardwareKeyHaptic = true;
+	    } else {
+		disableHardwareKeyHaptic = false;
+	    }
             performHapticFeedbackLw(null, HapticFeedbackConstants.VIRTUAL_KEY, false);
         }
 
@@ -7524,6 +7577,16 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (hapticsDisabled && !always) {
             return false;
         }
+
+	if (HardwareKeysDisabled) {
+	    // Hardware Keys are not enabled. Suppress the vibration and
+	    // return true
+	    if (disableHardwareKeyHaptic) {
+		disableHardwareKeyHaptic = false; // reset
+	    	return false;
+	    }
+	}
+
         long[] pattern = null;
         switch (effectId) {
             case HapticFeedbackConstants.LONG_PRESS:
