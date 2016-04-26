@@ -3396,6 +3396,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
             return 0;
         } else if (keyCode == KeyEvent.KEYCODE_APP_SWITCH) {
+	    if ((HardwareKeysDisabled) && (!virtualKey)) {
+	    	return -1;
+	    }
 
             // If we have released the app switch key, and didn't do anything else
             // while it was pressed, then it is time to process the app switch action!
