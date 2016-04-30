@@ -2085,6 +2085,8 @@ public final class BluetoothAdapter {
                 }
 
                 synchronized (mProxyServiceStateCallbacks) {
+                    Log.d(TAG, "onBluetoothServiceDown: Sending callbacks to " +
+                                    mProxyServiceStateCallbacks.size() + " clients");
                     for (IBluetoothManagerCallback cb : mProxyServiceStateCallbacks ){
                         try {
                             if (cb != null) {
@@ -2092,11 +2094,10 @@ public final class BluetoothAdapter {
                             } else {
                                 Log.d(TAG, "onBluetoothServiceDown: cb is null!");
                             }
-                        } catch (Exception e) {
-                            Log.e(TAG,"",e);
-                        }
+                        } catch (Exception e)  { Log.e(TAG,"",e);}
                     }
                 }
+                Log.d(TAG, "onBluetoothServiceDown: Finished sending callbacks to registered clients");
             }
 
             public void onBrEdrDown() {
