@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2013-14 The Android Open Source Project
  * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2016 The ParanoidAndroid Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +18,10 @@
 
 package com.android.systemui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -68,6 +72,7 @@ public class BatteryMeterView extends View implements DemoMode,
     private final int mCriticalLevel;
 
     private boolean mAnimationsEnabled;
+    private boolean mChargingAnimationsEnabled;
 
     private BatteryController mBatteryController;
     private boolean mPowerSaveEnabled;
@@ -274,6 +279,9 @@ public class BatteryMeterView extends View implements DemoMode,
     @Override
     public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
         // TODO: Use this callback instead of own broadcast receiver.
+        if (mBatteryMeterDrawable != null) {
+            mBatteryMeterDrawable.onBatteryLevelChanged(level, pluggedIn, charging);
+        }
     }
 
     @Override
@@ -285,7 +293,17 @@ public class BatteryMeterView extends View implements DemoMode,
     public void setAnimationsEnabled(boolean enabled) {
         if (mAnimationsEnabled != enabled) {
             mAnimationsEnabled = enabled;
-            setLayerType(mAnimationsEnabled ? LAYER_TYPE_HARDWARE : LAYER_TYPE_NONE, null);
+            setLayerType(mAnimationsEnabled || mChargingAnimationsEnabled ?
+                    LAYER_TYPE_HARDWARE : LAYER_TYPE_NONE, null);
+            invalidate();
+        }
+    }
+
+    public void setChargingAnimationsEnabled(boolean enabled) {
+        if (mChargingAnimationsEnabled != enabled) {
+            mChargingAnimationsEnabled = enabled;
+            setLayerType(mAnimationsEnabled || mChargingAnimationsEnabled ?
+                    LAYER_TYPE_HARDWARE : LAYER_TYPE_NONE, null);
             invalidate();
         }
     }
@@ -435,12 +453,13 @@ public class BatteryMeterView extends View implements DemoMode,
 
     protected interface BatteryMeterDrawable {
         void onDraw(Canvas c, BatteryTracker tracker);
+        void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging);
         void onSizeChanged(int w, int h, int oldw, int oldh);
         void onDispose();
         void setDarkIntensity(int backgroundColor, int fillColor);
     }
 
-    protected class AllInOneBatteryMeterDrawable  implements BatteryMeterDrawable {
+    protected class AllInOneBatteryMeterDrawable implements BatteryMeterDrawable {
         private static final boolean SINGLE_DIGIT_PERCENT = false;
         private static final boolean SHOW_100_PERCENT = false;
 
@@ -463,6 +482,11 @@ public class BatteryMeterView extends View implements DemoMode,
 
         private BatteryMeterMode mMode;
         private int mTextGravity;
+
+        private int mLevelAlpha;
+        private ValueAnimator mAnimator;
+        private int mLevel;
+
 
         public AllInOneBatteryMeterDrawable(Resources res, BatteryMeterMode mode) {
             super();
@@ -518,6 +542,68 @@ public class BatteryMeterView extends View implements DemoMode,
             if (mAnimationsEnabled) {
                 // TODO: Allow custom animations to be used
             }
+	}
+
+        @Override
+        public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
+            if (pluggedIn && !mChargingAnimationsEnabled
+                    && mLevel != level) {
+                startChargingAnimation(mLevel == 0 ? 3 : 1);
+	                mLevel = level;
+            } else if (!pluggedIn) {
+                mLevel = 0;
+                cancelChargingAnimation();
+            }
+        }
+
+        private void startChargingAnimation(final int repeat) {
+            if (mLevelAlpha == 0 || mAnimator != null
+                     || mMeterMode != BatteryMeterMode.BATTERY_METER_CIRCLE) {
+                  return;
+            }
+
+            final int defaultAlpha = mLevelAlpha;
+            mAnimator = ValueAnimator.ofInt(defaultAlpha, 0, defaultAlpha);
+            mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    mLevelDrawable.setAlpha((int) animation.getAnimatedValue());
+                    invalidate();
+                }
+            });
+            mAnimator.addListener(new AnimatorListenerAdapter() {
+                private boolean mCanceled;
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                    mCanceled = true;
+                    mLevelDrawable.setAlpha(defaultAlpha);
+                    mAnimator = null;
+                    invalidate();
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    if (mCanceled) return;
+                    mLevelDrawable.setAlpha(defaultAlpha);
+                    mAnimator = null;
+                    if (repeat <= 0) {
+                        startChargingAnimation(0);
+                    } else if (repeat != 1) {
+                        startChargingAnimation(repeat - 1);
+                    }
+                }
+            });
+            mAnimator.setDuration(2000);
+            mAnimator.setStartDelay(500);
+            mAnimator.start();
+        }
+
+        private void cancelChargingAnimation() {
+            if (mAnimator != null) {
+                mAnimator.cancel();
+                mAnimator = null;
+            }
         }
 
         @Override
@@ -529,9 +615,11 @@ public class BatteryMeterView extends View implements DemoMode,
         public void setDarkIntensity(int backgroundColor, int fillColor) {
             mIconTint = fillColor;
             // Make bolt fully opaque for increased visibility
-            mBoltDrawable.setTint(0xff000000 | fillColor);
             mFrameDrawable.setTint(backgroundColor);
-            updateBoltDrawableLayer(mBatteryDrawable, mBoltDrawable);
+            if (mBoltDrawable != null) {
+                mBoltDrawable.setTint(0xff000000 | fillColor);
+                updateBoltDrawableLayer(mBatteryDrawable, mBoltDrawable);
+            }
             invalidate();
         }
 
@@ -559,15 +647,9 @@ public class BatteryMeterView extends View implements DemoMode,
             final LayerDrawable layerDrawable = (LayerDrawable) batteryDrawable;
             final Drawable frame = layerDrawable.findDrawableByLayerId(R.id.battery_frame);
             final Drawable level = layerDrawable.findDrawableByLayerId(R.id.battery_fill);
-            final Drawable bolt = layerDrawable.findDrawableByLayerId(
-                    R.id.battery_charge_indicator);
             // now check that the required layers exist and are of the correct type
             if (frame == null) {
                 throw new BatteryMeterDrawableException("Missing battery_frame drawble");
-            }
-            if (bolt == null) {
-                throw new BatteryMeterDrawableException(
-                        "Missing battery_charge_indicator drawable");
             }
             if (level != null) {
                 // check that the level drawable is an AnimatedVectorDrawable
@@ -614,20 +696,24 @@ public class BatteryMeterView extends View implements DemoMode,
 
             // Make sure we don't draw the charge indicator if not plugged in
             Drawable d = mBatteryDrawable.findDrawableByLayerId(R.id.battery_charge_indicator);
-            if (d instanceof BitmapDrawable) {
-                // In case we are using a BitmapDrawable, which we should be unless something bad
-                // happened, we need to change the paint rather than the alpha in case the blendMode
-                // has been set to clear.  Clear always clears regardless of alpha level ;)
-                BitmapDrawable bd = (BitmapDrawable) d;
-                bd.getPaint().set(tracker.plugged ? mTextAndBoltPaint : mClearPaint);
-            } else {
-                d.setAlpha(tracker.plugged ? 255 : 0);
+            if (d != null) {
+                if (d instanceof BitmapDrawable) {
+                    // In case we are using a BitmapDrawable, which we should be unless something bad
+                    // happened, we need to change the paint rather than the alpha in case the blendMode
+                    // has been set to clear.  Clear always clears regardless of alpha level ;)
+                    BitmapDrawable bd = (BitmapDrawable) d;
+                    bd.getPaint().set(tracker.plugged ? mTextAndBoltPaint : mClearPaint);
+                } else {
+                    d.setAlpha(tracker.plugged ? 255 : 0);
+                }
             }
 
             // Now draw the level indicator
             // set the level and tint color of the fill drawable
+            int levelColor = getColorForLevel(level);
+            mLevelAlpha = Color.alpha(levelColor);
             mLevelDrawable.setCurrentFraction(level / 100f);
-            mLevelDrawable.setTint(getColorForLevel(level));
+            mLevelDrawable.setTint(levelColor);
             mBatteryDrawable.draw(canvas);
 
             // if chosen by options, draw percentage text in the middle
@@ -699,7 +785,9 @@ public class BatteryMeterView extends View implements DemoMode,
                 mTextY = widthDiv2 + bounds.height() / 2.0f;
             }
 
-            updateBoltDrawableLayer(mBatteryDrawable, mBoltDrawable);
+            if (mBoltDrawable != null) {
+                updateBoltDrawableLayer(mBatteryDrawable, mBoltDrawable);
+            }
 
             mInitialized = true;
         }

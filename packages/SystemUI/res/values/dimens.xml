@@ -312,7 +312,7 @@
     <dimen name="swipe_helper_falsing_threshold">70dp</dimen>
 
     <dimen name="notifications_top_padding">8dp</dimen>
-    
+
     <!-- Minimum distance the user has to drag down to go to the full shade. -->
     <dimen name="keyguard_drag_down_min_distance">100dp</dimen>
 
@@ -432,7 +432,7 @@
     <dimen name="qs_date_collapsed_size">14sp</dimen>
 
     <!-- Battery level text padding end when in expanded QS and on Keyguard -->
-    <dimen name="battery_level_padding_end">2dp</dimen>
+    <dimen name="battery_level_padding_end">0dp</dimen>
 
     <!-- The top padding of the clear all button -->
     <dimen name="clear_all_padding_top">12dp</dimen>
@@ -448,10 +448,10 @@
     <dimen name="header_battery_margin_expanded">6dp</dimen>
 
     <!-- Margin on the left side of the battery % when on Keyguard. -->
-    <dimen name="header_battery_margin_keyguard">6dp</dimen>
+    <dimen name="header_battery_margin_keyguard">3dp</dimen>
 
     <!-- Margin on the right side of the system icon group on Keyguard. -->
-    <dimen name="system_icons_keyguard_padding_end">4dp</dimen>
+    <dimen name="system_icons_keyguard_padding_end">0dp</dimen>
 
     <!-- Additional translation (downwards) for appearing notifications when going to the full shade
          from Keyguard. -->
@@ -523,7 +523,7 @@
 
     <!-- The maximum width of the navigation bar ripples. -->
     <dimen name="key_button_ripple_max_width">95dp</dimen>
-    
+
     <!-- Inset shadow for FakeShadowDrawable. It is used to avoid gaps between the card
          and the shadow. -->
     <dimen name="fake_shadow_inset">1dp</dimen>
