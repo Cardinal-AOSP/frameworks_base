@@ -72,7 +72,7 @@
 #define SYSTEM_ENCRYPTED_BOOTANIMATION_FILE "/system/media/bootanimation-encrypted.zip"
 #define OEM_BOOT_MUSIC_FILE "/oem/media/boot.wav"
 #define SYSTEM_BOOT_MUSIC_FILE "/system/media/boot.wav"
-
+#define THEME_BOOTANIMATION_FILE "/data/system/theme/bootanimation.zip"
 #define EXIT_PROP_NAME "service.bootanim.exit"
 
 namespace android {
@@ -355,6 +355,12 @@ status_t BootAnimation::readyToRun() {
 
             ((access(getAnimationFileName(IMG_DATA), R_OK) == 0) &&
             ((zipFile = ZipFileRO::open(getAnimationFileName(IMG_DATA))) != NULL)) ||
+
+            ((access(THEME_BOOTANIMATION_FILE, R_OK) == 0) &&
+            ((zipFile = ZipFileRO::open(THEME_BOOTANIMATION_FILE)) != NULL)) ||
+
+            ((access(OEM_BOOTANIMATION_FILE, R_OK) == 0) &&
+            ((zipFile = ZipFileRO::open(OEM_BOOTANIMATION_FILE)) != NULL)) ||
 
             ((access(getAnimationFileName(IMG_SYS), R_OK) == 0) &&
             ((zipFile = ZipFileRO::open(getAnimationFileName(IMG_SYS))) != NULL))) {
