@@ -32,6 +32,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
+import android.net.Uri;
 import android.os.Handler;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
