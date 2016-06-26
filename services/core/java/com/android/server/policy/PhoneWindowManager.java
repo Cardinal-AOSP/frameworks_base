@@ -1774,8 +1774,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         mPressOnAssistBehavior = KEY_ACTION_SEARCH;
         mLongPressOnAssistBehavior = KEY_ACTION_VOICE_SEARCH;
         mPressOnAppSwitchBehavior = KEY_ACTION_APP_SWITCH;
-        mLongPressOnAppSwitchBehavior = mContext.getResources().getInteger(
-                com.android.internal.R.integer.config_longPressOnAppSwitchBehavior);
+        mLongPressOnAppSwitchBehavior = KEY_ACTION_NOTHING;
 
         mLongPressOnHomeBehavior = mContext.getResources().getInteger(
                 com.android.internal.R.integer.config_longPressOnHomeBehavior);
