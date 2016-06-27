@@ -7231,7 +7231,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                                                             "</font></b>"));
                 }
                 else {
-                    mBootMsgDialog.setMessage(msg);
+                    mBootMsgDialog.setMessage("Welcome to Cardinal-AOSP\n\n" + msg   
+                    + "\n\nGetting Wings Ready!");
                 }
             }
         });
