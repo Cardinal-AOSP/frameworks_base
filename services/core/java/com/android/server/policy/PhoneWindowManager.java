@@ -7202,8 +7202,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     } else {
                         mBootMsgDialog.setTitle(R.string.android_start_title);
                     }
-                    mBootMsgDialog.getWindow().setType(
                     mBootMsgDialog.setIcon(com.android.internal.R.drawable.cardinal);
+                    mBootMsgDialog.getWindow().setType(
                             WindowManager.LayoutParams.TYPE_BOOT_PROGRESS);
                     mBootMsgDialog.getWindow().addFlags(
                             WindowManager.LayoutParams.FLAG_DIM_BEHIND
