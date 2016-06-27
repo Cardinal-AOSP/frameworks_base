@@ -7203,6 +7203,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         mBootMsgDialog.setTitle(R.string.android_start_title);
                     }
                     mBootMsgDialog.getWindow().setType(
+                    mBootMsgDialog.setIcon(com.android.internal.R.drawable.cardinal);
                             WindowManager.LayoutParams.TYPE_BOOT_PROGRESS);
                     mBootMsgDialog.getWindow().addFlags(
                             WindowManager.LayoutParams.FLAG_DIM_BEHIND
@@ -7211,6 +7212,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     WindowManager.LayoutParams lp = mBootMsgDialog.getWindow().getAttributes();
                     lp.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
                     mBootMsgDialog.getWindow().setAttributes(lp);
+                    mBootMsgDialog.setMessage("");
                     mBootMsgDialog.setCancelable(false);
 		    mBootMsgDialog.setMessage("");
                     mBootMsgDialog.show();
