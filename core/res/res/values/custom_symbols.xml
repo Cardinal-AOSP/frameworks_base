@@ -125,4 +125,6 @@
   <!-- Power button flashlight proximity -->
   <java-symbol type="integer" name="config_flashlightProximityTimeout" />
 
+  <!-- Whether to persist the notification for when a usb drive device is plugged in -->
+  <java-symbol type="bool" name="config_persistUsbDriveNotification" />
 </resources>
