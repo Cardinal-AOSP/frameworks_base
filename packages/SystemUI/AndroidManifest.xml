@@ -217,7 +217,7 @@
                   android:theme="@android:style/Theme.Material.Settings"
                   android:label="@string/systemui_tuner_qs_title"
                   android:process=":tuner"
-                  android:parentActivityName="com.android.settings.krexus.SystemUISettings"
+                  android:parentActivityName="com.android.settings.cardinal.WingSetting"
                   android:exported="true">
         </activity>
 
