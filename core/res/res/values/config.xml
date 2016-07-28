@@ -2578,4 +2578,7 @@
 
     <!-- If this is true, key chords can be used to take a screen record on the device. -->
     <bool name="config_enableScreenrecordChord">true</bool>
+
+    <!-- Whether to show icon and name of optimized apps on the boot dexopt screen. -->
+    <bool name="config_bootDexoptHideAppDetails">false</bool>
 </resources>
