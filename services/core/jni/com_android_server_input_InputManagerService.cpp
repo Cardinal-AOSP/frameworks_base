@@ -197,7 +197,6 @@ public:
     void setSystemUiVisibility(int32_t visibility);
     void setPointerSpeed(int32_t speed);
     void setShowTouches(bool enabled);
-    void setAppSwitchSwapButtonsEnabled(bool enabled);
     void setInteractive(bool interactive);
     void reloadCalibration();
 
@@ -264,9 +263,6 @@ private:
         // Show touches feature enable/disable.
         bool showTouches;
 
-        // Swap app switch button with back button
-        bool appSwitchSwapButtonsEnabled;
-
         // Sprite controller singleton, created on first use.
         sp<SpriteController> spriteController;
 
@@ -303,7 +299,6 @@ NativeInputManager::NativeInputManager(jobject contextObj,
         mLocked.pointerSpeed = 0;
         mLocked.pointerGesturesEnabled = true;
         mLocked.showTouches = false;
-        mLocked.appSwitchSwapButtonsEnabled = false;
     }
     mInteractive = true;
 
@@ -451,7 +446,6 @@ void NativeInputManager::getReaderConfiguration(InputReaderConfiguration* outCon
         outConfig->pointerGesturesEnabled = mLocked.pointerGesturesEnabled;
 
         outConfig->showTouches = mLocked.showTouches;
-        outConfig->appSwitchSwapButtonsEnabled = mLocked.appSwitchSwapButtonsEnabled;
 
         outConfig->setDisplayInfo(false /*external*/, mLocked.internalViewport);
         outConfig->setDisplayInfo(true /*external*/, mLocked.externalViewport);
@@ -774,22 +768,6 @@ void NativeInputManager::setShowTouches(bool enabled) {
 
     mInputManager->getReader()->requestRefreshConfiguration(
             InputReaderConfiguration::CHANGE_SHOW_TOUCHES);
-}
-
-void NativeInputManager::setAppSwitchSwapButtonsEnabled(bool enabled) {
-    { // acquire lock
-        AutoMutex _l(mLock);
-
-        if (mLocked.appSwitchSwapButtonsEnabled == enabled) {
-            return;
-        }
-
-        ALOGI("Setting app switch swap button enabled to %s.", enabled ? "enabled" : "disabled");
-        mLocked.appSwitchSwapButtonsEnabled = enabled;
-    } // release lock
-
-    mInputManager->getReader()->requestRefreshConfiguration(
-            InputReaderConfiguration::CHANGE_APP_SWITCH_BUTTONS);
 }
 
 void NativeInputManager::setInteractive(bool interactive) {
@@ -1314,13 +1292,6 @@ static void nativeSetShowTouches(JNIEnv* /* env */,
     im->setShowTouches(enabled);
 }
 
-static void nativeSetAppSwitchSwapButtonsEnabled(JNIEnv* env,
-        jclass clazz, jlong ptr, jboolean enabled) {
-    NativeInputManager* im = reinterpret_cast<NativeInputManager*>(ptr);
-
-    im->setAppSwitchSwapButtonsEnabled(enabled);
-}
-
 static void nativeSetInteractive(JNIEnv* env,
         jclass clazz, jlong ptr, jboolean interactive) {
     NativeInputManager* im = reinterpret_cast<NativeInputManager*>(ptr);
@@ -1438,8 +1409,6 @@ static JNINativeMethod gInputManagerMethods[] = {
             (void*) nativeSetPointerSpeed },
     { "nativeSetShowTouches", "(JZ)V",
             (void*) nativeSetShowTouches },
-    { "nativeSetAppSwitchSwapButtonsEnabled", "(JZ)V",
-            (void*) nativeSetAppSwitchSwapButtonsEnabled },
     { "nativeSetInteractive", "(JZ)V",
             (void*) nativeSetInteractive },
     { "nativeReloadCalibration", "(J)V",
