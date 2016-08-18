@@ -1119,8 +1119,9 @@ public final class SystemServer {
                 gestureService.systemReady();
             } catch (Throwable e) {
                 reportWtf("making Gesture Sensor Service ready", e);
+            }
         }
-
+        
          if (edgeGestureService != null) {
             try {
                 edgeGestureService.systemReady();

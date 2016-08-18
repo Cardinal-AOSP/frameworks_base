@@ -997,10 +997,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         // make sure carrier label is not covered by navigation bar
         if (mCarrierLabel != null && mNavigationBarView != null) {
-            MarginLayoutParams mlp = (MarginLayoutParams) mCarrierLabel.getLayoutParams();
-            if (mlp != null && mlp.bottomMargin < mNavigationBarView.mBarSize) {
-                mlp.bottomMargin = mNavigationBarView.mBarSize;
-                mCarrierLabel.setLayoutParams(mlp);
+            Resources navRes = mContext.getResources();
+            int mBarSize = navRes.getDimensionPixelSize(R.dimen.navigation_bar_size);
+                MarginLayoutParams mlp = (MarginLayoutParams) mCarrierLabel.getLayoutParams();
+                    if (mlp != null && mlp.bottomMargin < mBarSize) {
+                    mlp.bottomMargin = mBarSize;
+                    mCarrierLabel.setLayoutParams(mlp);
             }
         }
         mFlashlightController = new FlashlightController(mContext);
