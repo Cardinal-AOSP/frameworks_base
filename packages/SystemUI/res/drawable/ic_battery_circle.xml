@@ -30,4 +30,8 @@
         android:id="@+id/battery_fill"
         android:drawable="@drawable/ic_battery_circle_avd"/>
 
+    <item
+        android:id="@+id/battery_charge_indicator"
+        android:drawable="@drawable/ic_battery_bolt"/>
+
 </layer-list>
