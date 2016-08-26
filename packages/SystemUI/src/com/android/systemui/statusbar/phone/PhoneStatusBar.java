@@ -114,7 +114,6 @@ import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
 import com.android.keyguard.ViewMediatorCallback;
 import com.android.systemui.BatteryMeterView;
-import com.android.systemui.BatteryLevelTextView;
 import com.android.systemui.DemoMode;
 import com.android.systemui.EventLogConstants;
 import com.android.systemui.EventLogTags;
@@ -964,7 +963,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         // Other icons
         mLocationController = new LocationControllerImpl(mContext,
                 mHandlerThread.getLooper()); // will post a notification
-        mBatteryController = new BatteryController(mContext, mHandler);
+        mBatteryController = new BatteryController(mContext);
         mBatteryController.addStateChangedCallback(new BatteryStateChangeCallback() {
             @Override
             public void onPowerSaveChanged() {
@@ -975,10 +974,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             }
             @Override
             public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
-                // noop
-            }
-            @Override
-            public void onBatteryStyleChanged(int style, int percentMode) {
                 // noop
             }
         });
@@ -1080,12 +1075,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mUserInfoController.reloadUserInfo();
 
         mHeader.setBatteryController(mBatteryController);
-        BatteryMeterView batteryMeterView =
-                ((BatteryMeterView) mStatusBarView.findViewById(R.id.battery));
-        batteryMeterView.setBatteryController(mBatteryController);
-        batteryMeterView.setAnimationsEnabled(false);
-        ((BatteryLevelTextView) mStatusBarView.findViewById(R.id.battery_level_text))
-                .setBatteryController(mBatteryController);
+        ((BatteryMeterView) mStatusBarView.findViewById(R.id.battery)).setBatteryController(
+                mBatteryController);
         mKeyguardStatusBar.setBatteryController(mBatteryController);
         mHeader.setNextAlarmController(mNextAlarmController);
 
@@ -3187,9 +3178,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         if (mSecurityController != null) {
             mSecurityController.onUserSwitched(mCurrentUserId);
         }
-        if (mBatteryController != null) {
-            mBatteryController.setUserId(mCurrentUserId);
-        }
     }
 
     private void resetUserSetupObserver() {
@@ -3482,7 +3470,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     public void dispatchDemoCommand(String command, Bundle args) {
         if (!mDemoModeAllowed) {
             mDemoModeAllowed = Settings.Global.getInt(mContext.getContentResolver(),
-                    "sysui_demo_allowed", 0) != 0;
+                    DEMO_MODE_ALLOWED, 0) != 0;
         }
         if (!mDemoModeAllowed) return;
         if (command.equals(COMMAND_ENTER)) {
