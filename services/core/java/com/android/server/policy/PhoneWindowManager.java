@@ -22,7 +22,7 @@ import android.app.ActivityManagerInternal.SleepToken;
 import android.app.ActivityManagerNative;
 import android.app.AppOpsManager;
 import android.app.IUiModeManager;
-import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.app.StatusBarManager;
 import android.app.UiModeManager;
@@ -142,7 +142,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashSet;
-import java.util.Random;
 import java.util.List;
 import java.lang.reflect.Constructor;
 
@@ -6889,19 +6888,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         screenTurnedOn();
     }
 
-    AlertDialog mBootMsgDialog = null;
-
-    /**
-     * name of package currently being dex optimized
-     * as shown through this.showBootMessage(msg, always);
-     */
-    static String currentPackageName;
-    public void setPackageName(String pkgName) {
-        if (pkgName == null) {
-            pkgName = "stop.looking.at.me.swan";
-        }
-        this.currentPackageName = pkgName;
-    }
+    ProgressDialog mBootMsgDialog = null;
 
     /** {@inheritDoc} */
     @Override
@@ -6920,7 +6907,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         theme = 6;
                     }
 
-                    mBootMsgDialog = new AlertDialog(mContext, theme) {
+                    mBootMsgDialog = new ProgressDialog(mContext, theme) {
                         // This dialog will consume all events coming in to
                         // it, to avoid it trying to do things too early in boot.
                         @Override public boolean dispatchKeyEvent(KeyEvent event) {
@@ -6948,7 +6935,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     } else {
                         mBootMsgDialog.setTitle(R.string.android_start_title);
                     }
-                    mBootMsgDialog.setIcon(com.android.internal.R.drawable.cardinal);
+                    mBootMsgDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                    mBootMsgDialog.setIndeterminate(true);
                     mBootMsgDialog.getWindow().setType(
                             WindowManager.LayoutParams.TYPE_BOOT_PROGRESS);
                     mBootMsgDialog.getWindow().addFlags(
@@ -6958,28 +6946,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     WindowManager.LayoutParams lp = mBootMsgDialog.getWindow().getAttributes();
                     lp.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
                     mBootMsgDialog.getWindow().setAttributes(lp);
-                    mBootMsgDialog.setMessage("");
                     mBootMsgDialog.setCancelable(false);
-		    mBootMsgDialog.setMessage("");
                     mBootMsgDialog.show();
                 }
-
-                // Only display the current package name if the main message says "Optimizing app N of M".
-                // We don't want to do this when the message says "Starting apps" or "Finishing boot", etc.
-                if (always && (currentPackageName != null)) {                    
-
-                    // Calculate random text color
-                    Random rand = new Random();
-                    String randomColor = Integer.toHexString(rand.nextInt(0xFFFFFF) & 0xFCFCFC );
-                    mBootMsgDialog.setMessage(Html.fromHtml(msg +
-                                                            "<br><b><font color=\"#" + randomColor + "\">" +
-                                                            currentPackageName +
-                                                            "</font></b>"));
-                }
-                else {
-                    mBootMsgDialog.setMessage("Welcome to Cardinal-AOSP\n\n" + msg   
-                    + "\n\nGetting Wings Ready!");
-                }
+                mBootMsgDialog.setMessage(msg);
             }
         });
     }
