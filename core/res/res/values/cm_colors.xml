@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cardinal_green">#009688</color>
+
+    <!-- Boot dexopt layout -->
+    <color name="dexopt_background">@color/black</color>
+    <color name="dexopt_bottom">#263238</color>
+    <color name="dexopt_text_primary">#deffffff</color>
+    <color name="dexopt_text_secondary">#8affffff</color>
+    <color name="dexopt_logo">#263238</color>
+    <color name="dexopt_device_bg">@color/cardinal_green</color>
+    <color name="dexopt_obscured_bg">#455a64</color>
+</resources>

@@ -2603,27 +2603,10 @@
       has violated its self-enforced StrictMode policy.</string>
 
     <!-- [CHAR LIMIT=40] Title of dialog that is shown when performing a system upgrade. -->
-    <string name="android_upgrading_title">The birds are evolving\u2026</string>
+    <string name="android_upgrading_title">Android is upgrading\u2026</string>
 
     <!-- [CHAR LIMIT=40] Title of dialog that is shown when system is starting. -->
-    <string name="android_start_title">Preparing for flight\u2026</string>
-
-    <!-- [CHAR LIMIT=NONE] Message shown in upgrading dialog when doing an fstrim. -->
-    <string name="android_upgrading_fstrim">Optimizing storage.</string>
-
-    <!-- [CHAR LIMIT=NONE] Message shown in upgrading dialog for each .apk that is optimized. -->
-    <string name="android_upgrading_apk">Feeding birds
-        <xliff:g id="number" example="123">%1$d</xliff:g> of
-        <xliff:g id="number" example="123">%2$d</xliff:g>.</string>
-
-    <!-- [CHAR LIMIT=NONE] Message shown in upgrading dialog for each .apk pre boot broadcast -->
-    <string name="android_preparing_apk">Preparing <xliff:g id="appname">%1$s</xliff:g>.</string>
-
-    <!-- [CHAR LIMIT=NONE] Message to show in upgrading dialog when reached the point of starting apps. -->
-    <string name="android_upgrading_starting_apps">Initiating Wings.</string>
-
-    <!-- [CHAR LIMIT=NONE] Message to show in upgrading dialog when the bulk of the upgrade work is done. -->
-    <string name="android_upgrading_complete">Preparing for take-off.</string>
+    <string name="android_start_title">Android is starting\u2026</string>
 
     <!-- Notification text to tell the user that a heavy-weight application is running. -->
     <string name="heavy_weight_notification"><xliff:g id="app">%1$s</xliff:g> running</string>
@@ -4124,4 +4107,13 @@
     <string name="China_Mobile">China Mobile</string>
     <string name="China_Unicom">China Unicom</string>
     <string name="China_Telecom">China Telecom</string>
+
+    <!-- Custom booot dexopt -->
+    <string name="android_upgrading_starting_apps">Starting apps\u2026</string>
+    <string name="android_upgrading_fstrim">Optimizing storage\u2026</string>
+    <string name="android_upgrading_complete">Preparing to start\u2026</string>
+    <string name="android_upgrading_complete_details">Optimization completed.</string>
+    <string name="android_preparing_apk">Preparing %1$s\u2026</string>
+    <string name="android_preparing_apk_obscured">Preparing apps\u2026</string>
+    <string name="android_upgrading_apk">%1$d of %2$d apps</string>
 </resources>

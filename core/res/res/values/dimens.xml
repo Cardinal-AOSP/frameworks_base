@@ -401,4 +401,9 @@
 
     <item type="dimen" format="integer" name="time_picker_column_start_material">0</item>
     <item type="dimen" format="integer" name="time_picker_column_end_material">1</item>
+
+    <!-- Boot dexopt layout -->
+    <dimen name="dexopt_bottom_height">96dp</dimen>
+    <dimen name="dexopt_padding_generic">24dp</dimen>
+    <dimen name="dexopt_icon_size">48dp</dimen>
 </resources>
