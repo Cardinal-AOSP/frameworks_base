@@ -469,8 +469,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     boolean mTranslucentDecorEnabled = true;
     boolean mUseTvRouting;
 
-    int mDeviceHardwareKeys;
-
     // Button wake control flags
     boolean mVolumeRockerWake;
 
@@ -2120,8 +2118,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 updateWakeGestureListenerLp();
             }
 
-            updateKeyAssignments();
-
             mNavigationBarLeftInLandscape = Settings.System.getInt(resolver,
                     Settings.System.NAVBAR_LEFT_IN_LANDSCAPE, 0) == 1;
 
@@ -3116,8 +3112,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final boolean down = event.getAction() == KeyEvent.ACTION_DOWN;
         final boolean canceled = event.isCanceled();
         final int keyCode = event.getKeyCode();
-        final boolean longPress = (flags & KeyEvent.FLAG_LONG_PRESS) != 0;
-        final boolean virtualKey = event.getDeviceId() == KeyCharacterMap.VIRTUAL_KEYBOARD;
 
         if (DEBUG_INPUT) {
             Log.d(TAG, "interceptKeyTi keyCode=" + keyCode + " down=" + down + " repeatCount="
