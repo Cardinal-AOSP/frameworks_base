@@ -142,7 +142,6 @@ public class QsTuner extends Fragment implements Callback {
             @Override
             public void onDrop(String sourceText) {
                 mTileHost.remove(sourceText);
-                mQsPanel.refreshAllTiles();
             }
         });
     }
@@ -187,7 +186,6 @@ public class QsTuner extends Fragment implements Callback {
     @Override
     public void onTilesChanged() {
         mQsPanel.setTiles(mTileHost.getTiles());
-        mQsPanel.refreshAllTiles();
     }
 
     private static int getLabelResource(String spec) {
@@ -396,6 +394,11 @@ public class QsTuner extends Fragment implements Callback {
         public QSTileView createTileView(Context context) {
             mView = super.createTileView(context);
             return mView;
+        }
+
+        @Override
+        public boolean supportsDualTargets() {
+            return "wifi".equals(mSpec) || "bt".equals(mSpec);
         }
 
         @Override
