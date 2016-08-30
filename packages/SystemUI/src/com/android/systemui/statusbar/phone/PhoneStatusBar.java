@@ -249,9 +249,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
             .build();
 
-    public static final int FADE_KEYGUARD_START_DELAY = 100;
-    public static final int FADE_KEYGUARD_DURATION = 300;
-
     public static final int FADE_KEYGUARD_START_DELAY = 50;
     public static final int FADE_KEYGUARD_DURATION = 150;
     public static final int FADE_KEYGUARD_DURATION_PULSING = 96;
@@ -374,6 +371,16 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     int[] mAbsPos = new int[2];
     ArrayList<Runnable> mPostCollapseRunnables = new ArrayList<>();
+
+    private int mStatusBarHeaderHeight;
+    private boolean mBrightnessControl;
+    private boolean mBrightnessChanged;
+    private float mScreenWidth;
+    private int mMinBrightness;
+    private boolean mJustPeeked;
+    int mLinger;
+    int mInitialTouchX;
+    int mInitialTouchY;
 
     // for disabling the status bar
     int mDisabled1 = 0;
