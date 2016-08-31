@@ -131,6 +131,7 @@ import com.android.systemui.navigation.NavigationController;
 import com.android.systemui.navigation.Navigator;
 import com.android.systemui.qs.QSPanel;
 import com.android.systemui.recents.ScreenPinningRequest;
+import com.android.systemui.settings.BrightnessController; 
 import com.android.systemui.statusbar.ActivatableNotificationView;
 import com.android.systemui.statusbar.BackDropView;
 import com.android.systemui.statusbar.BarTransitions;
@@ -193,6 +194,7 @@ import static android.app.StatusBarManager.NAVIGATION_HINT_IME_SHOWN;
 import static android.app.StatusBarManager.WINDOW_STATE_HIDDEN;
 import static android.app.StatusBarManager.WINDOW_STATE_SHOWING;
 import static android.app.StatusBarManager.windowStateToString;
+import static com.android.systemui.settings.BrightnessController.BRIGHTNESS_ADJ_RESOLUTION; 
 import static com.android.systemui.statusbar.BarTransitions.MODE_LIGHTS_OUT;
 import static com.android.systemui.statusbar.BarTransitions.MODE_LIGHTS_OUT_TRANSPARENT;
 import static com.android.systemui.statusbar.BarTransitions.MODE_OPAQUE;
@@ -362,6 +364,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     private int mNavigationBarWindowState = WINDOW_STATE_SHOWING;
 
+    private int mStatusBarHeaderHeight; 
+
     // the tracker view
     int mTrackingPosition; // the position of the top of the tracking view.
 
@@ -451,11 +455,14 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         public void update() {
            ContentResolver resolver = mContext.getContentResolver();
-           boolean autoBrightness = Settings.System.getInt(
-                    resolver, Settings.System.SCREEN_BRIGHTNESS_MODE, 0) ==
-                    Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
-            mBrightnessControl = !autoBrightness && Settings.System.getInt(
-                    resolver, Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1;
+                int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                            Settings.System.SCREEN_BRIGHTNESS_MODE,
+                            Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
+                            UserHandle.USER_CURRENT);
+            mAutomaticBrightness = mode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
+            mBrightnessControl = Settings.System.getIntForUser(
+                   resolver, Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0,
+                   UserHandle.USER_CURRENT) == 1;
         }
     }
 
@@ -2500,7 +2507,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
     }
 
-    private void adjustBrightness(int x) {
+        private void adjustBrightness(int x) {
         mBrightnessChanged = true;
         float raw = ((float) x) / mScreenWidth;
 
@@ -2510,19 +2517,41 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                 Math.max(BRIGHTNESS_CONTROL_PADDING, raw));
         float value = (padded - BRIGHTNESS_CONTROL_PADDING) /
                 (1 - (2.0f * BRIGHTNESS_CONTROL_PADDING));
-
-        int newBrightness = mMinBrightness + (int) Math.round(value *
-                (android.os.PowerManager.BRIGHTNESS_ON - mMinBrightness));
-        newBrightness = Math.min(newBrightness, android.os.PowerManager.BRIGHTNESS_ON);
-        newBrightness = Math.max(newBrightness, mMinBrightness);
-
         try {
             IPowerManager power = IPowerManager.Stub.asInterface(
                     ServiceManager.getService("power"));
             if (power != null) {
-                power.setTemporaryScreenBrightnessSettingOverride(newBrightness);
-                Settings.System.putInt(mContext.getContentResolver(),
-                        Settings.System.SCREEN_BRIGHTNESS, newBrightness);
+                if (mAutomaticBrightness) {
+                    float adj = (value * 100) / (BRIGHTNESS_ADJ_RESOLUTION / 2f) - 1;
+                    adj = Math.max(adj, -1);
+                    adj = Math.min(adj, 1);
+                    final float val = adj;
+                    power.setTemporaryScreenAutoBrightnessAdjustmentSettingOverride(val);
+                    AsyncTask.execute(new Runnable() {
+                        public void run() {
+                            Settings.System.putFloatForUser(mContext.getContentResolver(),
+                                    Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, val,
+                                    UserHandle.USER_CURRENT);
+                        }
+                    });
+                } else {
+                    int newBrightness = mMinBrightness + (int) Math.round(value *
+                            (android.os.PowerManager.BRIGHTNESS_ON - mMinBrightness));
+                    newBrightness = Math.min(newBrightness, android.os.PowerManager.BRIGHTNESS_ON);
+                    newBrightness = Math.max(newBrightness, mMinBrightness);
+                    final int val = newBrightness;
+                    power.setTemporaryScreenBrightnessSettingOverride(val);
+                    AsyncTask.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            Settings.System.putIntForUser(mContext.getContentResolver(),
+                                    Settings.System.SCREEN_BRIGHTNESS, val,
+                                    UserHandle.USER_CURRENT);
+                        }
+                    });
+                }
+
+
             }
         } catch (RemoteException e) {
             Log.w(TAG, "Setting Brightness failed: " + e);
@@ -2615,8 +2644,19 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
         if (mBrightnessChanged && upOrCancel) {
             mBrightnessChanged = false;
-            if (mJustPeeked && mExpandedVisible) {
+           if (mJustPeeked) {
+                /**
+                 * if we were just peeking, eat the event and collapse the status bar, otherwise
+                 * the event gets passed down and a full expand might happen.
+                 */
                 mNotificationPanel.fling(10, false);
+                if (mExpandedVisible) {
+                    mExpandedVisible = false;
+                    visibilityChanged(false);
+                    setInteracting(StatusBarManager.WINDOW_STATUS_BAR, false);
+                }
+                disable(mDisabledUnmodified1, mDisabledUnmodified2, true /* animate */);
+                return true;
             }
         }
         return false;
