@@ -1876,6 +1876,9 @@
   <java-symbol type="string" name="smv_application" />
   <java-symbol type="string" name="smv_process" />
   <java-symbol type="string" name="tethered_notification_message" />
+  <java-symbol type="string" name="tethered_notification_no_device_message" />
+  <java-symbol type="string" name="tethered_notification_one_device_message" />
+  <java-symbol type="string" name="tethered_notification_multi_device_message" />
   <java-symbol type="string" name="tethered_notification_title" />
   <java-symbol type="string" name="usb_accessory_notification_title" />
   <java-symbol type="string" name="usb_mtp_notification_title" />
@@ -2765,4 +2768,6 @@
   <java-symbol type="bool" name="use_lock_pattern_drawable" />
   <java-symbol type="drawable" name="lockscreen_notselected" />
   <java-symbol type="drawable" name="lockscreen_selected" />
+
+  <java-symbol type="bool" name="config_softap_extention" />
 </resources>
