@@ -24,6 +24,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
+import android.graphics.Typeface;
 import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.AttributeSet;
