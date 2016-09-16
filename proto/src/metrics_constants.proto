@@ -2249,5 +2249,9 @@ message MetricsEvent {
 
     // Add new aosp constants above this line.
     // END OF AOSP CONSTANTS
+
+    // Cardinal Settings
+    CARDINAL_SETTINGS = 744;
+
   }
 }
