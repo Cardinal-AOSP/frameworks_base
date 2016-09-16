@@ -2221,7 +2221,12 @@ message MetricsEvent {
     // Add new aosp constants above this line.
     // END OF AOSP CONSTANTS
 
+    // The Wings
+    THE_WINGS = 411;
+    
     // Devinfo
     DEVINFO = 420;
+
+
   }
 }
