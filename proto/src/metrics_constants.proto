@@ -2223,10 +2223,11 @@ message MetricsEvent {
 
     // The Wings
     THE_WINGS = 411;
-    
+
     // Devinfo
     DEVINFO = 420;
 
-
+    // Quick setting tiles
+    QUICK_SETTINGS = 412;
   }
 }
