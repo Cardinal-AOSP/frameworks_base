@@ -22,6 +22,7 @@ import com.android.systemui.R;
 import com.android.systemui.plugins.qs.*;
 import com.android.systemui.plugins.qs.QSTileView;
 import com.android.systemui.qs.external.CustomTile;
+import com.android.systemui.qs.tiles.AdbOverNetworkTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.ANBITile;
 import com.android.systemui.qs.tiles.BatterySaverTile;
@@ -85,6 +86,7 @@ public class QSFactoryImpl implements QSFactory {
         else if (tileSpec.equals("heads_up")) return new HeadsUpTile(mHost);
         else if (tileSpec.equals("anbi")) return new ANBITile(mHost);
         else if (tileSpec.equals("compass")) return new CompassTile(mHost);
+        else if (tileSpec.equals("adb_network")) return new AdbOverNetworkTile(mHost);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(mHost, tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(mHost, tileSpec);
