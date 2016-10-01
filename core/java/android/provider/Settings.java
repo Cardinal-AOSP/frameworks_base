@@ -2481,7 +2481,7 @@ public final class Settings {
          * SCREEN_BRIGHTNESS_MODE value for automatic mode.
          */
         public static final int SCREEN_BRIGHTNESS_MODE_AUTOMATIC = 1;
-
+  
         /**
          * Enable/disable brightness control in statusbar
          * @hide
@@ -3566,7 +3566,7 @@ public final class Settings {
          * the setting value. See an example above.
          */
 
-
+       
         /**
          * Whether wifi settings will connect to access point automatically
          * 0 = automatically
@@ -3749,16 +3749,10 @@ public final class Settings {
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
 
         /**
-	       * Network stats Color style
+	 * Network stats Color style
          * @hide
          */
-	      public static final String NETWORK_TRAFFIC_COLOR = "network_traffic_color";
-
-        /**
-          * Enable double tap gesture anywhere on the lock screen put device to sleep
-          * @hide
-          */
-        public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
+	public static final String NETWORK_TRAFFIC_COLOR = "network_traffic_color";
 
         /**
          * Boolean value whether to link ringtone and notification volume
