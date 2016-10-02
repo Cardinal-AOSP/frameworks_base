@@ -2,15 +2,8 @@
 
 <resources>
 
-    <!-- quick QuickSettings pulldown:
-        0: disabled
-        1: same side as the clock / signal cluster view (old: right)
-        2: opposite of the clock / signal cluster view (old: left)
-    -->
-    <integer name="config_quick_qs_pulldown">0</integer>
-
      <!-- Enable the Advanced Location tile in QuickSettings -->
-    <bool name="config_qs_advancedlocation">false</bool>
+    <bool name="config_qs_advancedlocation">true</bool>
 
     <!-- Double tap anywhere in lockscreen makes the device go to sleep -->
     <bool name="config_doubletap_lockscreen_sleep">true</bool>
