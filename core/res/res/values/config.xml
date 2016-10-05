@@ -2709,5 +2709,4 @@
          If review is not required, permissions are reviewed before the app
          is installed. -->
     <bool name="config_permissionReviewRequired">false</bool>
-
 </resources>
