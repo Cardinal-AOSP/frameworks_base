@@ -437,6 +437,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.LOCK_QS_DISABLED),
+                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_LAYOUT_COLUMNS),
                     false, this, UserHandle.USER_ALL);
@@ -449,6 +452,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
 
         public void update() {
+            if (mNotificationPanel != null) {
+                mNotificationPanel.updateSettings();
+            }
+
             if (mHeader != null) {
                 mHeader.updateSettings();
             }

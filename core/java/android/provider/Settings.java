@@ -6970,6 +6970,13 @@ public final class Settings {
          */
 
         /**
+         * Disable expanding quick settings on secure lock screens
+         *
+         * @hide
+         */
+        public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+
+        /**
          * Low brightness level for the advanced night mode tile
          * @hide
          */
