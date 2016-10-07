@@ -30,4 +30,7 @@
 
   <!-- Screenrecord -->
   <java-symbol type="bool" name="config_enableScreenrecordChord" />
+
+  <!-- Config to show hwkeys settings in Wings! -->
+  <java-symbol type="bool" name="config_showHwKeys" />
 </resources>

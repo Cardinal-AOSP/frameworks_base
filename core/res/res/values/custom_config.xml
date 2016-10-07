@@ -28,4 +28,8 @@
 
     <!-- If this is true, key chords can be used to take a screen record on the device. -->
     <bool name="config_enableScreenrecordChord">true</bool>
+
+    <!-- Bool whether to show Hardware keys settings in TeslaCoil -->
+    <bool name="config_showHwKeys">false</bool>
+
 </resources>
