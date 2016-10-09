@@ -396,6 +396,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     private TextView mCarrierLabel;
     boolean mExpandedVisible;
 
+    // Cardinal-AOSP logo
+    private boolean mCardinalLogo;
+    private ImageView cardinalLogo;
+
     private int mNavigationBarWindowState = WINDOW_STATE_SHOWING;
 
     // the tracker view
@@ -433,7 +437,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     private boolean mNavigationBarViewAttached;
 
-    class SettingsObserver extends ContentObserver {
+    private SettingsObserver mSettingsObserver;
+
+    protected class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
             super(handler);
         }
@@ -455,8 +461,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_CARRIER),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_CARDINAL_LOGO), false, this,
+                    UserHandle.USER_ALL);
             update();
-        }
+       }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
@@ -477,6 +486,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             ContentResolver resolver = mContext.getContentResolver();
             mShowCarrierLabel = Settings.System.getIntForUser(resolver,
                     Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+
+            mCardinalLogo = Settings.System.getIntForUser(resolver,
+                    Settings.System.STATUS_BAR_CARDINAL_LOGO, 0, mCurrentUserId) == 1;
+            showCardinalLogo(mCardinalLogo);
 
             if (mNotificationPanel != null) {
                 mNotificationPanel.updateSettings();
@@ -786,8 +799,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             // no window manager? good luck with that
         }
 
-        SettingsObserver observer = new SettingsObserver(mHandler);
-        observer.observe();
+        if (mSettingsObserver == null) {
+            mSettingsObserver = new SettingsObserver(new Handler());
+        }
+        mSettingsObserver.observe();
 
 
         // Lastly, call to the icon policy to install/update all the icons.
@@ -3733,6 +3748,15 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             }
         }, cancelAction, afterKeyguardGone);
     }
+
+    public void showCardinalLogo(boolean show) {
+          if (mStatusBarView == null) return;
+          ContentResolver resolver = mContext.getContentResolver();
+          cardinalLogo = (ImageView) mStatusBarView.findViewById(R.id.cardinal_logo);
+          if (cardinalLogo != null) {
+              cardinalLogo.setVisibility(show ? (mCardinalLogo ? View.VISIBLE : View.GONE) : View.GONE);
+          }
+     }
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
