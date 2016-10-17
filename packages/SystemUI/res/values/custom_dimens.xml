@@ -35,4 +35,7 @@
     <dimen name="opa_overshoot_translation">8.0dip</dimen>
     <dimen name="opa_return_translation">-1.0dip</dimen>
     <dimen name="opa_rest_to_collapse">7.0dip</dimen>
+
+    <!-- carrier label text height -->
+    <dimen name="status_bar_carrier_height">14dp</dimen>
 </resources>

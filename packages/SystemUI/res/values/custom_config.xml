@@ -17,4 +17,7 @@
 <resources>
     <!-- Allow Opa (Pixel navbar) layout -->
     <bool name="config_allowOpaLayout">true</bool>
+
+    <!-- carrier label color -->
+    <color name="status_bar_carrier_color">#FFFFFFFF</color>
 </resources>
