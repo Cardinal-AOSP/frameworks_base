@@ -36,4 +36,6 @@
     <color name="qs_tile_tint_inactive">#4DFFFFFF</color>
     <color name="qs_tile_tint_active">#FFFFFFFF</color>
 
+    <!-- Status bar battery level text color -->
+    <color name="status_bar_battery_level_text_color">#ffffff</color>
 </resources>

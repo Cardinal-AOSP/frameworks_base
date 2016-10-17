@@ -6853,6 +6853,15 @@ public final class Settings {
          */
         public static final String NIGHT_DISPLAY_CUSTOM_END_TIME = "night_display_custom_end_time";
 
+       /**
+         * Status bar battery %
+         * 0: Hide the battery percentage
+         * 1: Display the battery percentage inside the icon
+         * 2: Display the battery percentage next to the icon
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+
         /**
          * Names of the service components that the current user has explicitly allowed to
          * be a VR mode listener, separated by ':'.
@@ -7099,7 +7108,8 @@ public final class Settings {
             DOZE_PULSE_ON_PICK_UP,
             DOZE_PULSE_ON_DOUBLE_TAP,
             NFC_PAYMENT_DEFAULT_COMPONENT,
-            WIFI_DISCONNECT_DELAY_DURATION
+            WIFI_DISCONNECT_DELAY_DURATION,
+            STATUS_BAR_SHOW_BATTERY_PERCENT
         };
 
         /**
