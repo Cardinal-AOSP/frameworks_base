@@ -86,6 +86,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private LinearLayout mCenterClockLayout;
     private View mCenterClock;
 
+    // Custom Carrier
+    private View mCustomCarrierLabel;
+    private int mShowCarrierLabel;
+
     private class CustomSettingsObserver extends ContentObserver {
         CustomSettingsObserver(Handler handler) {
             super(handler);
@@ -128,6 +132,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SHOW_BATTERY_PERCENT),
                     false, this, UserHandle.USER_ALL);
+            getContext().getContentResolver().registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.STATUS_BAR_CARRIER),
+                    false, this, UserHandle.USER_ALL);
+                    
         }
 
         @Override
@@ -186,6 +194,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mCardinalLogo = mStatusBar.findViewById(R.id.status_bar_logo);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mCardinalLogo);
         mCustomSettingsObserver.observe();
+        mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);        
         updateSettings(false);
         // initTickerView() already called above from updateSettings(false)
         ((Clock)mClock).updateSettings();
@@ -412,6 +421,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 Settings.System.STATUS_BAR_SHOW_TICKER, 0,
                 UserHandle.USER_CURRENT);
         initTickerView();
+
+        mShowCarrierLabel = Settings.System.getIntForUser(mContentResolver,
+                Settings.System.STATUS_BAR_CARRIER, 1,
+                UserHandle.USER_CURRENT);
     }
 
     private void initTickerView() {

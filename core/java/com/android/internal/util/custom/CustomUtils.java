@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.hardware.input.InputManager;
 import android.net.ConnectivityManager;
 import android.os.Handler;
@@ -40,6 +41,7 @@ import android.provider.Settings;
 import com.android.internal.statusbar.IStatusBarService;
 
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Some custom utilities
@@ -193,5 +195,11 @@ public class CustomUtils {
         keyguardIntent.setPackage(SYSTEMUI_PACKAGE_NAME);
         keyguardIntent.putExtra(DISMISS_KEYGUARD_EXTRA_INTENT, launchIntent);
         context.sendBroadcastAsUser(keyguardIntent, user);
+    }
+    
+    // Check for Chinese language
+    public static boolean isChineseLanguage() {
+       return Resources.getSystem().getConfiguration().locale.getLanguage().startsWith(
+               Locale.CHINESE.getLanguage());
     }
 }
