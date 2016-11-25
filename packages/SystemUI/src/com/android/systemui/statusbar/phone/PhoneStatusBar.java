@@ -443,11 +443,23 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_LAYOUT_COLUMNS),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_ROWS_PORTRAIT),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_ROWS_LANDSCAPE),
+                    false, this, UserHandle.USER_ALL);
             update();
         }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
+            if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.QS_ROWS_PORTRAIT))
+                    || uri.equals(Settings.System.getUriFor(
+                    Settings.System.QS_ROWS_LANDSCAPE))) {
+                    updateResources();
+            }
             update();
         }
 
