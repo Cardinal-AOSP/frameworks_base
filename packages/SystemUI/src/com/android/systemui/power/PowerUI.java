@@ -54,6 +54,7 @@ public class PowerUI extends SystemUI {
     private static final long TEMPERATURE_INTERVAL = 30 * DateUtils.SECOND_IN_MILLIS;
     private static final long TEMPERATURE_LOGGING_INTERVAL = DateUtils.HOUR_IN_MILLIS;
     private static final int MAX_RECENT_TEMPS = 125; // TEMPERATURE_LOGGING_INTERVAL plus a buffer
+    private static final String POWER_NOTIFICATIONS_SILENT_URI = "silent";
 
     private final Handler mHandler = new Handler();
     private final Receiver mReceiver = new Receiver();
@@ -359,7 +360,7 @@ public class PowerUI extends SystemUI {
         final String soundPath =
                 Settings.Global.getString(cr, Settings.Global.POWER_NOTIFICATIONS_RINGTONE);
 
-        if (soundPath != null) {
+        if (soundPath != null && !soundPath.equals(POWER_NOTIFICATIONS_SILENT_URI) ) {
             Ringtone powerRingtone = RingtoneManager.getRingtone(mContext, Uri.parse(soundPath));
             if (powerRingtone != null) {
                 powerRingtone.play();
