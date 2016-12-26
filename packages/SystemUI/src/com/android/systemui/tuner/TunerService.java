@@ -48,7 +48,6 @@ import com.android.systemui.statusbar.phone.SystemUIDialog;
 import java.util.HashMap;
 import java.util.Set;
 
-
 public class TunerService extends SystemUI {
 
     public static final String ACTION_CLEAR = "com.android.systemui.action.CLEAR_TUNER";
