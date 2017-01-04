@@ -17,6 +17,7 @@
 ** limitations under the License.
 */
 -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- SysUI Tuner: Labels for different types of navigation bar buttons [CHAR LIMIT=60] -->
     <string-array name="nav_bar_buttons_custom">
         <item>Keyboard left cursor</item>
