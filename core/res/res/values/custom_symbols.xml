@@ -22,4 +22,6 @@
   <!-- System update service -->
   <java-symbol type="array" name="config_forceEnabledComponents" />
 
+  <!-- Emergency button in power menu -->
+  <java-symbol type="bool" name="config_showEmergencyButtonInPowerMenu" />
 </resources>
