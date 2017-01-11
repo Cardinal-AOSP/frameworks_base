@@ -88,7 +88,7 @@ public class KeyguardIndicationController {
     private boolean mPowerCharged;
     private int mChargingSpeed;
     private int mChargingCurrent;
-    private int mChargingVoltage;
+    private double mChargingVoltage;
     private int mChargingWattage;
     private int mTemperature;
     private String mMessageToShowOnScreenOn;
@@ -383,7 +383,7 @@ public class KeyguardIndicationController {
             }
             if (mChargingVoltage > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
-                        (mChargingVoltage / 1000 / 1000) + "V";
+                        String.format("%.1f", (mChargingVoltage / 1000 / 1000)) + "V";
             }
             if (mTemperature > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
