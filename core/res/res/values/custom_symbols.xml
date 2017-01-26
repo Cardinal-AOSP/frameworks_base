@@ -127,4 +127,7 @@
 
   <!-- Whether to persist the notification for when a usb drive device is plugged in -->
   <java-symbol type="bool" name="config_persistUsbDriveNotification" />
+
+  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <java-symbol type="string" name="custom_system_error_manufacturer" />
 </resources>
