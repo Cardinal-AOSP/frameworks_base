@@ -5399,6 +5399,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
                     false, this, UserHandle.USER_ALL);
+            mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.LOCK_QS_DISABLED),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5422,8 +5425,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.HEADS_UP_WHITELIST_VALUES))) {
 		        setHeadsUpWhitelist();
             } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
-		        setDoubleTapSleep();
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE)) ||
+                    uri.equals(Settings.Secure.getUriFor(Settings.Secure.LOCK_QS_DISABLED))) {
+		        setUpdateSettings();
             }
         }
 
@@ -5433,7 +5437,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setShowNavBar();
             setHeadsUpBlacklist();
             setHeadsUpWhitelist();
-            setDoubleTapSleep();
+            setUpdateSettings();
         }
     }
 
@@ -5474,9 +5478,12 @@ public class StatusBar extends SystemUI implements DemoMode,
         splitAndAddToArrayList(mWhitelist, whitelistString, "\\|");
     }
 
-    private void setDoubleTapSleep() {
+    private void setUpdateSettings() {
+        if (mNotificationPanel != null) {
+                mNotificationPanel.updateSettings();
+        }
         if (mStatusBarWindow != null) {
-            mStatusBarWindow.updateSettings();
+                mStatusBarWindow.updateSettings();
         }
     }
 
