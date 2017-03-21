@@ -1393,4 +1393,11 @@ interface ITelephony {
      * for a particular subId.
      */
     byte[] getAtrUsingSubId(int subId);
+
+    /**
+     * ToggE_GSM, NT_MODE_WCDMA_PREF)
+     * @param boolean to turn on and off 2G
+     * @hide
+     */
+     void toggle2G(boolean on);
 }
