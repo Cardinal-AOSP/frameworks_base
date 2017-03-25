@@ -1182,4 +1182,9 @@ interface ITelephony {
      * @hide
      */
     void setPolicyDataEnabled(boolean enabled, int subId);
+
+    /**
+     * Return if the current radio is LTE on GSM
+     */
+    int getLteOnGsmMode();
 }
