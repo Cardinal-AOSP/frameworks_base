@@ -37,6 +37,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
@@ -52,10 +53,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+import android.os.Handler;
 import android.os.Process;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Slog;
 import android.view.Display;
@@ -449,6 +452,7 @@ class GlobalScreenshot {
     private AsyncTask<Void, Void, Void> mSaveInBgTask;
 
     private MediaActionSound mCameraSound;
+    private SettingsObserver mSettingsObserver = new SettingsObserver();
 
     private final int mSfHwRotation;
 
@@ -517,12 +521,28 @@ class GlobalScreenshot {
         mPreviewWidth = panelWidth;
         mPreviewHeight = r.getDimensionPixelSize(R.dimen.notification_max_height);
 
-        // Setup the Camera shutter sound
-        mCameraSound = new MediaActionSound();
-        mCameraSound.load(MediaActionSound.SHUTTER_CLICK);
+        mSettingsObserver.register();
+        updateCameraSound();
 
         // Load hardware rotation from prop
         mSfHwRotation = android.os.SystemProperties.getInt("ro.sf.hwrotation", 0) / 90;
+    }
+
+    private void updateCameraSound() {
+        final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.SCREENSHOT_SHUTTER_SOUND, 1) == 1;
+
+        if (enabled) {
+            if (mCameraSound == null) {
+                // Setup the Camera shutter sound
+                mCameraSound = new MediaActionSound();
+                mCameraSound.load(MediaActionSound.SHUTTER_CLICK);
+            }
+        }
+        else if(mCameraSound != null) {
+            mCameraSound.release();
+            mCameraSound = null;
+        }
     }
 
     /**
@@ -733,8 +753,10 @@ class GlobalScreenshot {
         mScreenshotLayout.post(new Runnable() {
             @Override
             public void run() {
-                // Play the shutter sound to notify that we've taken a screenshot
-                mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
+                if (mCameraSound != null) {
+                    // Play the shutter sound to notify that we've taken a screenshot
+                    mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
+                }
 
                 mScreenshotView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
                 mScreenshotView.buildLayer();
@@ -964,6 +986,26 @@ class GlobalScreenshot {
 
             // And delete the image from the media store
             new DeleteImageInBackgroundTask(context).execute(uri);
+        }
+    }
+
+    private final class SettingsObserver extends ContentObserver {
+        private final Uri SCREENSHOT_SHUTTER_SOUND_URI =
+                Settings.System.getUriFor(Settings.System.SCREENSHOT_SHUTTER_SOUND);
+
+        public SettingsObserver() {
+            super(new Handler());
+        }
+
+        public void register() {
+            final ContentResolver cr = mContext.getContentResolver();
+            cr.registerContentObserver(SCREENSHOT_SHUTTER_SOUND_URI, false, this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            super.onChange(selfChange, uri);
+            GlobalScreenshot.this.updateCameraSound();
         }
     }
 }
