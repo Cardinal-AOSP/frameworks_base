@@ -57,4 +57,7 @@
   <java-symbol type="bool" name="config_button_brightness_support" />
   <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
   <java-symbol type="integer" name="config_button_brightness_default" />
+
+  <!-- Assist manager -->
+  <java-symbol type="string" name="no_assist_found" />
 </resources>
