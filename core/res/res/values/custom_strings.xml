@@ -30,4 +30,6 @@
     <!-- ADB notification message-->
     <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
 
+    <!-- Assist manager -->
+    <string name="no_assist_found">No assist manager found</string>
 </resources>
