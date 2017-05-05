@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
- * Copyright 2013, The Android Open Source Project
+ * Copyright 2016, BrokenROM - xWASABI
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,21 @@
  * limitations under the License.
  */
 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-    android:src="@drawable/ic_lock_airplane_mode_off_am_alpha"
-    android:autoMirrored="true"
-    android:tint="#ff27e4a0" />
+<item>
+	<shape android:shape="rectangle">
+		<solid android:color="#ff27e4a0"/>
+	</shape>
+</item>
+
+<item
+	android:top="0.0dip"
+	android:bottom="2.0dip"
+	android:left="0.0dip"
+	android:right="0.0dip">
+	<shape android:shape="rectangle">
+		<solid android:color="@color/system_primary_color"/>
+	</shape>
+</item>
+</layer-list>
