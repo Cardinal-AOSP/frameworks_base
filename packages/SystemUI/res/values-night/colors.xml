@@ -29,7 +29,11 @@
     <color name="notification_guts_title_color">#FFFFFFFF</color>
     <color name="notification_guts_text_color">#b2FFFFFF</color>
     <color name="notification_guts_btn_color">#FFFFFFFF</color>
+    <!-- Shade color of notification guts background -->
+    <color name="notification_shade_background_color">#33181422</color>
+    <color name="notification_gear_color">@color/cardinal_accent_neon_green</color>
 
+   <!-- Backgrounds -->
     <!-- The color of the legacy notification background -->
     <color name="notification_legacy_background_color">@color/cardinal_dark_indigo</color>
     <!-- The color of the material notification background -->
@@ -45,4 +49,17 @@
     <!-- Quick Settings tiles -->
     <color name="qs_tile_divider">@color/cardinal_accent_neon_green</color>
     <color name="switch_accent_color">@color/cardinal_accent_neon_green</color>
+
+    <!-- QS battery % text color -->
+    <color name="qs_battery_text_color">@color/cardinal_accent_neon_green</color>
+    <!-- QS battery graph text color -->
+    <color name="qs_battery_graph_text_color">@color/cardinal_accent_neon_green</color>
+    <!-- QS battery accent color -->
+    <color name="qs_battery_accent">@color/cardinal_accent_neon_green</color>
+    <!-- QS edit page background color -->
+    <color name="qs_edit_item_decoration_bg">@color/cardinal_dark_indigo</color>
+    <!-- QS alarm status text color -->
+    <color name="qs_alarm_status_text_color">@color/cardinal_accent_neon_green</color>
+    <!-- External QS tile tint color -->
+    <color name="external_qs_tile_tint_color">@color/cardinal_accent_neon_green</color>
 </resources>

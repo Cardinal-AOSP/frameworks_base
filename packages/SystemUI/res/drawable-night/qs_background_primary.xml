@@ -26,7 +26,7 @@
 
 <item
 	android:top="0.0dip"
-	android:bottom="2.0dip"
+	android:bottom="1.0dip"
 	android:left="0.0dip"
 	android:right="0.0dip">
 	<shape android:shape="rectangle">
