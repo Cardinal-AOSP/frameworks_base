@@ -37,7 +37,7 @@
         <item name="textColor">@color/secondary_text_material_dark</item>
         <item name="textSize">@dimen/notification_subtext_size</item>
     </style>
-    
+
     <style name="TextAppearance.Material.Notification.Emphasis">
         <item name="textColor">#FFFFFF</item>
     </style>
