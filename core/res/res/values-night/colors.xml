@@ -22,8 +22,7 @@
   <color name="background_leanback_dark">@color/cardinal_dark_indigo</color>
 
  <!-- Notification action text/button -->
-  <color name="primary_text_material_light">#FF000000</color>
-  <color name="secondary_text_material_light">#FF000000</color>
+  <color name="secondary_text_material_light">#FFA2A2A2</color>
   <color name="primary_text_material_dark">#FFFFFFFF</color>
   <color name="secondary_text_material_dark">#FFFFFFFF</color>
   <color name="primary_text_default_material_light">#FF000000</color>
