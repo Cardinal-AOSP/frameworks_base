@@ -15,13 +15,18 @@
 
 <!-- Main Accents and Background -->
   <color name="cardinal_dark_indigo">#1b1523</color>
+  <color name="cardinal_light_indigo">#221B33</color>
   <color name="cardinal_accent_neon_green">#27e4a0</color>
 
 <!-- Backgrounds -->
+  <color name="background_floating_material_light">@color/cardinal_dark_indigo</color>
   <color name="background_floating_material_dark">@color/cardinal_dark_indigo</color>
   <color name="background_leanback_dark">@color/cardinal_dark_indigo</color>
 
+  <color name="foreground_material_light">@color/white</color>
+
  <!-- Notification action text/button -->
+
   <color name="secondary_text_material_light">#FFA2A2A2</color>
   <color name="primary_text_material_dark">#FFFFFFFF</color>
   <color name="secondary_text_material_dark">#FFFFFFFF</color>
@@ -41,5 +46,6 @@
   <!-- System - Accents -->
  	<color name="accent_material_light">@*android:color/cardinal_accent_neon_green</color>
  	<color name="accent_material_dark">@*android:color/cardinal_accent_neon_green</color>
+  <color name="app_permission_icon_tint">@*android:color/cardinal_accent_neon_green</color>
 
 </resources>

@@ -42,6 +42,12 @@
         <item name="textColor">#FFFFFF</item>
     </style>
 
+    <style name="TextAppearance.Material.Subhead">
+        <item name="textSize">@dimen/text_size_subhead_material</item>
+        <item name="fontFamily">@string/font_family_subhead_material</item>
+        <item name="textColor">#FFFFFF</item>
+    </style>
+
     <!-- Theme used for the intent picker activity. -->
     <style name="Theme.DeviceDefault.Resolver" parent="Theme.Material">
         <item name="windowIsTranslucent">true</item>
