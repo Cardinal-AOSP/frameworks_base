@@ -62,4 +62,5 @@
     <color name="qs_alarm_status_text_color">@color/cardinal_accent_neon_green</color>
     <!-- External QS tile tint color -->
     <color name="external_qs_tile_tint_color">@color/cardinal_accent_neon_green</color>
+
 </resources>
