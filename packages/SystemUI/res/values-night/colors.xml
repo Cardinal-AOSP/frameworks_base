@@ -63,4 +63,9 @@
     <!-- External QS tile tint color -->
     <color name="external_qs_tile_tint_color">@color/cardinal_accent_neon_green</color>
 
+    <!-- Quick Settings Tiles tint -->
+    <color name="qs_tile_tint_unavailable">#4027e4a0</color>
+    <color name="qs_tile_tint_inactive">#4D27e4a0</color>
+    <color name="qs_tile_tint_active">#ff27e4a0</color>
+
 </resources>
