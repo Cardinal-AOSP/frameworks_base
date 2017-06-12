@@ -2251,7 +2251,7 @@ message MetricsEvent {
     // END OF AOSP CONSTANTS
 
     // Cardinal Settings
-    CARDINAL_SETTINGS = 744;
+    WINGS = 744;
 
   }
 }
