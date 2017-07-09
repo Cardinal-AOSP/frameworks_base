@@ -74,4 +74,8 @@
 
   <!-- Assist manager -->
   <java-symbol type="string" name="no_assist_found" />
+
+  <!-- Sensor block-per package -->
+  <java-symbol type="array" name="config_blockPackagesSensorDrain" />
+
 </resources>
