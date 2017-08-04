@@ -4187,6 +4187,12 @@ public final class Settings {
         public static final String ANBI_ENABLED = "anbi_enabled";
 
         /**
+         * Sensor block per-package
+         * @hide
+         */
+        public static final String SENSOR_BLOCK = "sensor_block";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4372,6 +4378,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
             PRIVATE_SETTINGS.add(HEADS_UP_WHITELIST_VALUES);
             PRIVATE_SETTINGS.add(ANBI_ENABLED);
+            PRIVATE_SETTINGS.add(SENSOR_BLOCK);
         }
 
         /**
