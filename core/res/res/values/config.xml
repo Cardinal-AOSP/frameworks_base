@@ -2236,10 +2236,12 @@
          "silent" = silent mode
          "users" = list of users
          "restart" = restart device
+         "recovery" = restart to recovery or bootloader
          -->
     <string-array translatable="false" name="config_globalActionsList">
         <item>power</item>
         <item>restart</item>
+        <item>recovery</item>
         <item>bugreport</item>
         <item>users</item>
     </string-array>
