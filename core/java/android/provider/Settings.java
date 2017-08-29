@@ -4237,6 +4237,12 @@ public final class Settings {
         public static final String SENSOR_BLOCK = "sensor_block";
 
         /**
+         *  Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4432,6 +4438,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(HEADS_UP_WHITELIST_VALUES);
             PRIVATE_SETTINGS.add(ANBI_ENABLED);
             PRIVATE_SETTINGS.add(SENSOR_BLOCK);
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
         }
 
         /**
