@@ -120,4 +120,8 @@
   <java-symbol type="array" name="notification_light_package_mapping" />
   <java-symbol type="array" name="config_notificationNoAlertsVibePattern" />
 
+  <!-- Buttons brightness -->
+  <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
+  <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
+
 </resources>

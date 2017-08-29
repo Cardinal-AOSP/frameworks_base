@@ -133,4 +133,8 @@
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorNotificationLed">false</bool>
 
+    <!-- Buttons brightness -->
+    <integer name="config_buttonBrightnessSettingDefault">255</integer>
+    <bool name="config_deviceHasVariableButtonBrightness">false</bool>
+
 </resources>
