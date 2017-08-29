@@ -5878,7 +5878,11 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.NAVIGATION_BAR_SHOW),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.HEADS_UP_WHITELIST_VALUES), false, this);
+                    Settings.System.HEADS_UP_WHITELIST_VALUES),
+                    false, this);
+            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5897,7 +5901,10 @@ public class StatusBar extends SystemUI implements DemoMode,
                 setShowNavBar();   
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_WHITELIST_VALUES))) {
-		setHeadsUpWhitelist();
+		        setHeadsUpWhitelist();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
+		        setDoubleTapSleep();
             }
         }
 
@@ -5906,6 +5913,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setQsRowsColumns();
             setShowNavBar();
             setHeadsUpWhitelist();
+            setDoubleTapSleep();
         }
     }
 
@@ -5938,6 +5946,12 @@ public class StatusBar extends SystemUI implements DemoMode,
         final String whitelistString = Settings.System.getString(mContext.getContentResolver(),
                     Settings.System.HEADS_UP_WHITELIST_VALUES);
         splitAndAddToArrayList(mWhitelist, whitelistString, "\\|");
+    }
+
+    private void setDoubleTapSleep() {
+        if (mStatusBarWindow != null) {
+            mStatusBarWindow.updateSettings();
+        }
     }
 
     private RemoteViews.OnClickHandler mOnClickHandler = new RemoteViews.OnClickHandler() {
