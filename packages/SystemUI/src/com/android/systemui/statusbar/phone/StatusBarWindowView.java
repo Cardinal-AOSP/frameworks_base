@@ -21,6 +21,7 @@ import android.annotation.DrawableRes;
 import android.annotation.LayoutRes;
 import android.app.StatusBarManager;
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -747,11 +748,15 @@ public class StatusBarWindowView extends FrameLayout {
         }
     };
 
-    public void updateSettings() {
-        boolean doubleTapToSleepEnabled = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0,
-                UserHandle.USER_CURRENT) == 1;
+     public void setStatusBarWindowViewOptions() {
+        ContentResolver resolver = mContext.getContentResolver();
+        boolean isDoubleTapLockscreenEnabled = Settings.System.getIntForUser(resolver,
+                 Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT) == 1;
+        boolean doubleTapToSleepEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 1, UserHandle.USER_CURRENT) == 1;
+
         if (mNotificationPanel != null) {
+            mNotificationPanel.setLockscreenDoubleTapToSleep(isDoubleTapLockscreenEnabled);
             mNotificationPanel.updateDoubleTapToSleep(doubleTapToSleepEnabled);
         }
         if (mDragDownHelper != null) {
@@ -759,4 +764,3 @@ public class StatusBarWindowView extends FrameLayout {
         }
     }
 }
-

@@ -4513,7 +4513,7 @@ public final class Settings {
          * @hide
          */
         public static final String DEVICE_GESTURE_FEEDBACK_ENABLED = "device_gesture_feedback_enabled";
-        
+
         /**
          * Enable Off-Screen Gesture Haptic feedback
          * KeyHandler
@@ -4665,6 +4665,13 @@ public final class Settings {
          * @hide
          */
         public static final String FORCE_AMBIENT_FOR_MEDIA = "force_ambient_for_media";
+
+        /**
+         * Double tap on lockscreen to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_LOCKSCREEN =
+                "double_tap_sleep_lockscreen";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -4964,6 +4971,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_DISPLAY);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_LOCKSCREEN);
         }
 
         /**

@@ -6327,6 +6327,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.FORCE_AMBIENT_FOR_MEDIA),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -6355,7 +6358,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE)) ||
                     uri.equals(Settings.Secure.getUriFor(Settings.Secure.LOCK_QS_DISABLED))) {
-		        setUpdateSettings();
+		        setStatusBarWindowViewOptions();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.SYSTEM_UI_THEME))) {
                 updateTheme();
@@ -6373,6 +6376,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.FORCE_AMBIENT_FOR_MEDIA))) {
                 setForceAmbient();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN))) {
+                setStatusBarWindowViewOptions();
             }
         }
 
@@ -6382,11 +6388,11 @@ public class StatusBar extends SystemUI implements DemoMode,
             setShowNavBar();
             setHeadsUpBlacklist();
             setHeadsUpWhitelist();
-            setUpdateSettings();
             setQsPanelOptions();
             updateBatterySettings();
             updateTickerAnimation();
             setForceAmbient();
+            setStatusBarWindowViewOptions();
         }
     }
 
@@ -6446,15 +6452,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         splitAndAddToArrayList(mWhitelist, whitelistString, "\\|");
     }
 
-    private void setUpdateSettings() {
-        if (mNotificationPanel != null) {
-                mNotificationPanel.updateSettings();
-        }
-        if (mStatusBarWindow != null) {
-                mStatusBarWindow.updateSettings();
-        }
-    }
-
     private void updateTickerAnimation() {
         mTickerAnimationMode = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, 1, UserHandle.USER_CURRENT);
@@ -6480,6 +6477,12 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private boolean isAmbientContainerAvailable() {
         return mAmbientMediaPlaying != 0 && mAmbientIndicationContainer != null;
+    }
+
+    private void setStatusBarWindowViewOptions() {
+        if (mStatusBarWindow != null) {
+            mStatusBarWindow.setStatusBarWindowViewOptions();
+        }
     }
 
     private RemoteViews.OnClickHandler mOnClickHandler = new RemoteViews.OnClickHandler() {
