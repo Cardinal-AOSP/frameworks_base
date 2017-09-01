@@ -124,4 +124,11 @@
 
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <java-symbol type="string" name="custom_system_error_manufacturer" />
+
+  <!-- Path to the library that contains a device specific key handler -->
+  <java-symbol type="string" name="config_deviceKeyHandlerLib" />
+
+  <!-- Name of that key handler class -->  
+  <java-symbol type="string" name="config_deviceKeyHandlerClass" />
+
 </resources>
