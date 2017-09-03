@@ -3842,9 +3842,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     public void onKeyguardOccludedChanged(boolean keyguardOccluded) {
-        if (mNavigationBar != null) {
-            mNavigationBar.onKeyguardOccludedChanged(keyguardOccluded);
-        }
+        mNavigationBar.onKeyguardOccludedChanged(keyguardOccluded);
     }
 
     // State logging
@@ -4635,7 +4633,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     // TODO: Figure out way to remove this.
     public NavigationBarView getNavigationBarView() {
-        return mNavigationBar != null ? (NavigationBarView) mNavigationBar.getView() : null;
+        return (NavigationBarView) mNavigationBar.getView();
     }
 
     // ---------------------- DragDownHelper.OnDragDownListener ------------------------------------
