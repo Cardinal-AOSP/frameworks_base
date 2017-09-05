@@ -3982,6 +3982,18 @@ public final class Settings {
         public static final String QS_COLUMNS_LANDSCAPE = "qs_columns_landscape";
 
         /**
+         * show clear all recents button
+         * @hide
+         */
+        public static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
+
+        /**
+         * location of the clear all rectents button
+         * @hide
+         */
+        public static final String  RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+        /**
          * Whether to display qs tile titles in the qs panel
          * @hide
          */
@@ -4487,6 +4499,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VOLUME_WAKE_SCREEN);
             PRIVATE_SETTINGS.add(VOLBTN_MUSIC_CONTROLS);
             PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
+            PRIVATE_SETTINGS.add(SHOW_CLEAR_ALL_RECENTS);
+            PRIVATE_SETTINGS.add(RECENTS_CLEAR_ALL_LOCATION);
         }
 
         /**
