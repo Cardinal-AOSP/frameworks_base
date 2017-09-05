@@ -17,17 +17,21 @@
 ** limitations under the License.
 */
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="global_action_restart_advanced">Advanced reboot</string>
-    <string name="global_action_restart_recovery">Go to recovery</string>
-    <string name="global_action_restart_bootloader">Go to bootloader</string>
-
-    <!-- ADB network tile -->
-    <string name="quick_settings_adb_network">ADB network</string>
-    <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
-    <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
-
-    <string name="kb_left">Keyboard left cursor</string>
-    <string name="kb_right">Keyboard right cursor</string>
-
+    <!-- SysUI Tuner: Labels for different types of navigation bar buttons [CHAR LIMIT=60] -->
+    <string-array name="nav_bar_buttons_custom">
+        <item>Keyboard left cursor</item>
+        <item>Keyboard right cursor</item>
+        <item>Clipboard</item>
+        <item>Keycode</item>
+        <item>Keyboard switcher</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="nav_bar_button_values_custom" translatable="false">
+        <item>kb_left</item>
+        <item>kb_right</item>
+        <item>clipboard</item>
+        <item>key</item>
+        <item>menu_ime</item>
+        <item>space</item>
+    </string-array>
 </resources>
