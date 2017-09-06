@@ -27,6 +27,7 @@
     <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
     <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
 
+    <!-- Keyboard Arrows -->
     <string name="kb_left">Keyboard left cursor</string>
     <string name="kb_right">Keyboard right cursor</string>
 
@@ -46,4 +47,9 @@
 
     <!-- PiP Tile -->
     <string name="quick_settings_pip_label">PiP</string>
+
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Reboot</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+
 </resources>
