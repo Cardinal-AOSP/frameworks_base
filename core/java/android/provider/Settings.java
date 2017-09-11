@@ -3130,6 +3130,11 @@ public final class Settings {
         public static final String BUTTON_BACKLIGHT_TIMEOUT = "button_backlight_timeout";
 
         /**
+         * @hide
+         */
+        public static final String BUTTON_BACKLIGHT_ON_TOUCH_ONLY = "button_backlight_on_touch_only";
+
+        /**
          * Control whether the process CPU usage meter should be shown.
          *
          * @deprecated This functionality is no longer available as of
@@ -4646,6 +4651,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF);
             PRIVATE_SETTINGS.add(NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE);
             PRIVATE_SETTINGS.add(NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES);
+            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
         }
 
         /**
