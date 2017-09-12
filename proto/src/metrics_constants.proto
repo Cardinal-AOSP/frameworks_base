@@ -3979,5 +3979,8 @@ message MetricsEvent {
 
     // Cardinal-AOSP CONSTANTS
     WINGS = 948;
+
+    // Quick setting tiles
+    QUICK_SETTINGS = 949;
   }
 }
