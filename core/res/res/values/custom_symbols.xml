@@ -35,4 +35,7 @@
   <java-symbol type="string" name="adb_net_active_notification_title" />
   <java-symbol type="string" name="adb_both_active_notification_title" />
   <java-symbol type="string" name="adb_active_generic_notification_message" />
+
+  <!-- Setting to false will disable IME switcher implementation for tablets -->
+  <java-symbol type="bool" name="config_show_IMESwitcher"/>
 </resources>
