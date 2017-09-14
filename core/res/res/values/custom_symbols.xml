@@ -22,4 +22,6 @@
   <!-- System update service -->
   <java-symbol type="array" name="config_forceEnabledComponents" />
 
+  <!-- Setting to false will disable IME switcher implementation for tablets -->
+  <java-symbol type="bool" name="config_show_IMESwitcher"/>
 </resources>
