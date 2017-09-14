@@ -101,4 +101,7 @@
   <!-- Gesture Sensor -->
   <java-symbol type="bool" name="config_enableGestureService" />
 
+  <!-- Whether to enable doze always on -->
+  <java-symbol type="bool" name="config_enableDozeAlwaysOn"/>
+
 </resources>
