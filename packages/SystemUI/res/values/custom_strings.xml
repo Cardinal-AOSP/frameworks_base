@@ -136,4 +136,5 @@
     <string name="quick_settings_notifications_ticker_label">Ticker</string>
     <string name="quick_settings_notifications_headsup_label">Heads Up</string>
 
+     <string name="recents_app_killed">App killed</string>
 </resources>
