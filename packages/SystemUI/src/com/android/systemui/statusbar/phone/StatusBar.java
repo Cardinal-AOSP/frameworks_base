@@ -5409,7 +5409,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private void setUseLessBoringHeadsUp() {
         mLessBoringHeadsUp = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.LESS_BORING_HEADS_UP, 1,
+                Settings.System.LESS_BORING_HEADS_UP, 0,
                 UserHandle.USER_CURRENT) == 1;
     }
 
