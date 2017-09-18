@@ -3944,7 +3944,9 @@ public final class Settings {
         public static final String QS_TILE_TITLE_VISIBILITY = "qs_tile_title_visibility";
 
         /**
-         * Wheter to show network traffic indicator in statusbar
+         * Network traffic indicator, goes from least to greatest significant bitwise
+         * 0 = Display up-stream traffic if set
+         * 1 = Display down-stream traffic if set
          * @hide
          */
         public static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
