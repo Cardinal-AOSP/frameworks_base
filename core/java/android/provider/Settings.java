@@ -4007,6 +4007,12 @@ public final class Settings {
          */
         public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
 
+         /**
+         * Whether the phone volume up / down effect should be played
+         * @hide
+         */
+        public static final String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
