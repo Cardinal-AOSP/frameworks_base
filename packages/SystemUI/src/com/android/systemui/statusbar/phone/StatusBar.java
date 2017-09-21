@@ -144,6 +144,7 @@ import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.NotificationVisibility;
 import com.android.internal.statusbar.StatusBarIcon;
 import com.android.internal.util.NotificationMessagingUtil;
+import com.android.internal.util.custom.CustomUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.keyguard.KeyguardHostView.OnDismissAction;
 import com.android.keyguard.KeyguardStatusView;
@@ -5369,6 +5370,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_TILE_TITLE_VISIBILITY),
                     false, this, UserHandle.USER_ALL);
+            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.NAVIGATION_BAR_SHOW),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5385,6 +5389,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.LESS_BORING_HEADS_UP))) {
                 setUseLessBoringHeadsUp();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.NAVIGATION_BAR_SHOW))) {
+                setShowNavBar();   
             }
         }
 
@@ -5392,9 +5399,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             setLockscreenMediaMetadata();
             setQsRowsColumns();
             setUseLessBoringHeadsUp();
+            setShowNavBar();
         }
     }
-
 
     private void setLockscreenMediaMetadata() {
         mLockscreenMediaMetadata = Settings.System.getIntForUser(mContext.getContentResolver(),
@@ -5412,6 +5419,20 @@ public class StatusBar extends SystemUI implements DemoMode,
                 Settings.System.LESS_BORING_HEADS_UP, 0,
                 UserHandle.USER_CURRENT) == 1;
     }
+
+    private void setShowNavBar() {
+        int showNavBar = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.NAVIGATION_BAR_SHOW,
+                -1, mCurrentUserId);
+        if (showNavBar != -1){
+            boolean showNavBarBool = showNavBar == 1;
+            if (showNavBarBool !=  mShowNavBar){
+                updateNavigationBar();
+            }
+        }
+    }
+
+    private boolean mShowNavBar;
 
     private RemoteViews.OnClickHandler mOnClickHandler = new RemoteViews.OnClickHandler() {
 
@@ -7123,4 +7144,20 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
     // End Extra BaseStatusBarMethods.
+
+    private void updateNavigationBar() {
+        mShowNavBar = CustomUtils.deviceSupportNavigationBarForUser(mContext, mCurrentUserId);
+        if (DEBUG) Log.v(TAG, "updateNavigationBar=" + mShowNavBar);
+
+        if (mShowNavBar) {
+            if (mNavigationBarView == null) {
+                createNavigationBar();
+            }
+        } else {
+            if (mNavigationBarView != null){
+                mWindowManager.removeViewImmediate(mNavigationBarView);
+                mNavigationBarView = null;
+            }
+        }
+    }
 }
