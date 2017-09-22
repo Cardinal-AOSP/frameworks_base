@@ -66,4 +66,6 @@
     <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
     <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
 
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
 </resources>
