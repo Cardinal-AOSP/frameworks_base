@@ -456,6 +456,9 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     boolean mExpandedVisible;
 
+    ActivityManager mAm;
+    private ArrayList<String> mWhitelist = new ArrayList<String>();
+
     // the tracker view
     int mTrackingPosition; // the position of the top of the tracking view.
 
@@ -788,6 +791,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mContext.getSystemService(Context.ACCESSIBILITY_SERVICE);
 
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+
+        mAm = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
 
         mDeviceProvisionedController = Dependency.get(DeviceProvisionedController.class);
         mDeviceProvisionedController.addCallback(mDeviceProvisionedListener);
@@ -5365,6 +5370,8 @@ public class StatusBar extends SystemUI implements DemoMode,
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
                     Settings.System.NAVIGATION_BAR_SHOW),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_WHITELIST_VALUES), false, this);
         }
 
         @Override
@@ -5381,6 +5388,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.NAVIGATION_BAR_SHOW))) {
                 setShowNavBar();   
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_WHITELIST_VALUES))) {
+		setHeadsUpWhitelist();
             }
         }
 
@@ -5388,6 +5398,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setLockscreenMediaMetadata();
             setQsRowsColumns();
             setShowNavBar();
+            setHeadsUpWhitelist();
         }
     }
 
@@ -5415,6 +5426,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     private boolean mShowNavBar;
+
+    private void setHeadsUpWhitelist() {
+        final String whitelistString = Settings.System.getString(mContext.getContentResolver(),
+                    Settings.System.HEADS_UP_WHITELIST_VALUES);
+        splitAndAddToArrayList(mWhitelist, whitelistString, "\\|");
+    }
 
     private RemoteViews.OnClickHandler mOnClickHandler = new RemoteViews.OnClickHandler() {
 
@@ -6968,6 +6985,16 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     protected boolean shouldPeek(Entry entry, StatusBarNotification sbn) {
+
+        // get the info from the currently running task
+        List<ActivityManager.RunningTaskInfo> taskInfo = mAm.getRunningTasks(1);
+        ComponentName componentInfo = taskInfo.get(0).topActivity;
+
+        if(isPackageInWhitelist(componentInfo.getPackageName())
+                && !isDialerApp(sbn.getPackageName())) {
+            return false;
+        }
+
         if (!mUseHeadsUp || isDeviceInVrMode()) {
             if (DEBUG) Log.d(TAG, "No peeking: no huns or vr mode");
             return false;
@@ -7028,6 +7055,27 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
 
         return true;
+    }
+
+    private boolean isPackageInWhitelist(String packageName) {
+        return mWhitelist.contains(packageName);
+    }
+
+    private boolean isDialerApp(String packageName) {
+        return packageName.equals("com.android.dialer")
+            || packageName.equals("com.google.android.dialer");
+    }
+
+    private void splitAndAddToArrayList(ArrayList<String> arrayList,
+            String baseString, String separator) {
+        // clear first
+        arrayList.clear();
+        if (baseString != null) {
+            final String[] array = TextUtils.split(baseString, separator);
+            for (String item : array) {
+                arrayList.add(item.trim());
+            }
+        }
     }
 
     /**
