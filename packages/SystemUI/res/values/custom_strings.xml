@@ -63,4 +63,7 @@
     <string name="accessibility_quick_settings_anbi_changed_off">Accidental touch turned off</string>
     <string name="accessibility_quick_settings_anbi_changed_on">Accidental touch turned on</string>
 
+    <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
+    <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
+
 </resources>
