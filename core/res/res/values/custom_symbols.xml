@@ -69,5 +69,6 @@
 
   <!-- Boolean indicating whether we want button brightness support -->
   <java-symbol type="bool" name="config_button_brightness_support" />
+  <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
   <java-symbol type="integer" name="config_button_brightness_default" />
 </resources>

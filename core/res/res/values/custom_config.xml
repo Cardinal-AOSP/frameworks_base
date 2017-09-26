@@ -92,6 +92,7 @@
 
     <!-- Boolean indicating whether we want button brightness support -->
     <bool name="config_button_brightness_support">false</bool>
+    <bool name="config_deviceHasVariableButtonBrightness">false</bool>
     <integer name="config_button_brightness_default">255</integer>
     
 </resources>
