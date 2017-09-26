@@ -75,4 +75,11 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Heads up turned off.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Heads up turned on.</string>
 
+    <!-- ANBI Tile -->
+    <string name="quick_settings_anbi_label">Accidental touch</string>
+    <string name="accessibility_quick_settings_anbi_on">Prevent acc touch</string>
+    <string name="accessibility_quick_settings_anbi_off">Don\'t prevent acc touch</string>
+    <string name="accessibility_quick_settings_anbi_changed_off">Accidental touch turned off</string>
+    <string name="accessibility_quick_settings_anbi_changed_on">Accidental touch turned on</string>
+
 </resources>
