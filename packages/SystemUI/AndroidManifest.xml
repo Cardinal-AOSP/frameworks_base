@@ -279,7 +279,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/navbar_tuner_activity"
                   android:process=":tuner"
-                  android:parentActivityName="com.cardinal.settings.fragments.ButtonsSettings"
+                  android:parentActivityName="com.cardinal.settings.fragments.NavigationBarSettings"
                   android:exported="true">
         </activity>
 
