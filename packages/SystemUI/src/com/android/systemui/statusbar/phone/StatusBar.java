@@ -6991,7 +6991,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         ComponentName componentInfo = taskInfo.get(0).topActivity;
 
         if(isPackageInWhitelist(componentInfo.getPackageName())
-                && !isDialerApp(sbn.getPackageName())) {
+                && !isImportantHeadsUp(sbn.getPackageName().toLowerCase())) {
             return false;
         }
 
@@ -7061,9 +7061,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         return mWhitelist.contains(packageName);
     }
 
-    private boolean isDialerApp(String packageName) {
-        return packageName.equals("com.android.dialer")
-            || packageName.equals("com.google.android.dialer");
+    private boolean isImportantHeadsUp(String packageName) {
+        return packageName.contains("dialer") || packageName.contains("messaging");
     }
 
     private void splitAndAddToArrayList(ArrayList<String> arrayList,
