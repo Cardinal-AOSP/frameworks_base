@@ -457,7 +457,9 @@ public class StatusBar extends SystemUI implements DemoMode,
     boolean mExpandedVisible;
 
     ActivityManager mAm;
+    private ArrayList<String> mBlacklist = new ArrayList<String>();
     private ArrayList<String> mWhitelist = new ArrayList<String>();
+
 
     // the tracker view
     int mTrackingPosition; // the position of the top of the tracking view.
@@ -5371,6 +5373,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.NAVIGATION_BAR_SHOW),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES),
+                    false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_WHITELIST_VALUES),
                     false, this);
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
@@ -5391,7 +5396,10 @@ public class StatusBar extends SystemUI implements DemoMode,
                 setQsRowsColumns();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.NAVIGATION_BAR_SHOW))) {
-                setShowNavBar();   
+                setShowNavBar();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
+		        setHeadsUpBlacklist();   
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_WHITELIST_VALUES))) {
 		        setHeadsUpWhitelist();
@@ -5405,6 +5413,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setLockscreenMediaMetadata();
             setQsRowsColumns();
             setShowNavBar();
+            setHeadsUpBlacklist();
             setHeadsUpWhitelist();
             setDoubleTapSleep();
         }
@@ -5434,6 +5443,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     private boolean mShowNavBar;
+
+    private void setHeadsUpBlacklist() {
+        final String blacklistString = Settings.System.getString(mContext.getContentResolver(),
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES);
+        splitAndAddToArrayList(mBlacklist, blacklistString, "\\|");
+    }
 
     private void setHeadsUpWhitelist() {
         final String whitelistString = Settings.System.getString(mContext.getContentResolver(),
@@ -7004,8 +7019,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         List<ActivityManager.RunningTaskInfo> taskInfo = mAm.getRunningTasks(1);
         ComponentName componentInfo = taskInfo.get(0).topActivity;
 
-        if(isPackageInWhitelist(componentInfo.getPackageName())
-                && !isImportantHeadsUp(sbn.getPackageName().toLowerCase())) {
+        if(isPackageBlacklisted(sbn.getPackageName())
+                || (isPackageInWhitelist(componentInfo.getPackageName())
+                && !isImportantHeadsUp(sbn.getPackageName().toLowerCase()))) {
             return false;
         }
 
@@ -7069,6 +7085,11 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
 
         return true;
+    }
+
+
+    private boolean isPackageBlacklisted(String packageName) {
+        return mBlacklist.contains(packageName);
     }
 
     private boolean isPackageInWhitelist(String packageName) {
