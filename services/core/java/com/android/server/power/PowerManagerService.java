@@ -4899,7 +4899,7 @@ public final class PowerManagerService extends SystemService
                     0, UserHandle.USER_CURRENT) != 0;
             mButtonTimeout = Settings.System.getIntForUser(resolver,
                     Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
-                    0, UserHandle.USER_CURRENT) * 1000;
+                    5, UserHandle.USER_CURRENT) * 1000;
 
             mButtonTimeoutEnabled = mButtonTimeout != 0 && mButtonBacklightEnable;
             // prevent remaining timout to be triggered
