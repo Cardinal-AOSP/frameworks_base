@@ -328,7 +328,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     static final int SHORT_PRESS_WINDOW_PICTURE_IN_PICTURE = 1;
 
     // These need to match the documentation/constant in
-    // core/res/res/values/pa_config.xml
+    // core/res/res/values/custom_config.xml
     private static final int KEY_ACTION_NOTHING = 0;
     private static final int KEY_ACTION_MENU = 1;
     private static final int KEY_ACTION_APP_SWITCH = 2;
@@ -787,6 +787,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // Behavior of Back button while in-call and screen on
     int mIncallBackBehavior;
 
+    // Behavior of Home button while in-call and screen on
+    boolean mIncallHomeBehavior;
+
     Display mDisplay;
 
     private int mDisplayRotation;
@@ -1076,6 +1079,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ANBI_ENABLED), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.ALLOW_INCALL_HOME), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2685,7 +2691,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 mImmersiveModeConfirmation.loadSetting(mCurrentUserId);
             }
             mHasNavigationBar = CustomUtils.deviceSupportNavigationBar(mContext);
+
+            mIncallHomeBehavior = (Settings.System.getIntForUser(resolver,
+                    Settings.System.ALLOW_INCALL_HOME, 1, UserHandle.USER_CURRENT) == 1);
+
         }
+ 
         synchronized (mWindowManagerFuncs.getWindowManagerLock()) {
             PolicyControl.reloadFromSetting(mContext);
         }
@@ -4041,11 +4052,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 }
 
                 if (homeKey) {
-                    // If an incoming call is ringing, HOME is totally disabled.
+                    // If an incoming call is ringing & mIncallHomeBehavior=false, HOME is totally disabled.
                     // (The user is already on the InCallUI at this point,
                     // and his ONLY options are to answer or reject the call.)
                     TelecomManager telecomManager = getTelecommService();
-                    if (telecomManager != null && telecomManager.isRinging()) {
+                    if (telecomManager != null && telecomManager.isRinging()
+                            && !mIncallHomeBehavior) {
                         Log.i(TAG, "Ignoring; " + "keyCode: " + keyCode + "there's a ringing incoming call.");
                         return -1;
                     }
