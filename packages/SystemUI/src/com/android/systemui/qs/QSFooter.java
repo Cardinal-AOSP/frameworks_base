@@ -142,6 +142,7 @@ public class QSFooter extends FrameLayout implements
         mDateTimeGroup.setOnClickListener(this);
 
         mMultiUserSwitch = findViewById(R.id.multi_user_switch);
+        mMultiUserSwitch.setOnLongClickListener(this);
         mMultiUserAvatar = mMultiUserSwitch.findViewById(R.id.multi_user_avatar);
         mAlwaysShowMultiUserSwitch = res.getBoolean(R.bool.config_alwaysShowMultiUserSwitcher);
 
@@ -392,6 +393,8 @@ public class QSFooter extends FrameLayout implements
     public boolean onLongClick(View v) {
         if (v == mSettingsButton) {
             startSettingsLongClickActivity();
+        } else if (v == mMultiUserSwitch) {
+            startUserLongClickActivity();
         }
         return false;
     }
@@ -405,6 +408,13 @@ public class QSFooter extends FrameLayout implements
         Intent intent = new Intent(Intent.ACTION_MAIN);
 	intent.setClassName("com.android.settings",
             "com.android.settings.Settings$CardinalSettingsActivity");
+        mActivityStarter.startActivity(intent, true /* dismissShade */);
+    }
+
+    private void startUserLongClickActivity() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setClassName("com.android.settings",
+            "com.android.settings.Settings$UserSettingsActivity");
         mActivityStarter.startActivity(intent, true /* dismissShade */);
     }
 
