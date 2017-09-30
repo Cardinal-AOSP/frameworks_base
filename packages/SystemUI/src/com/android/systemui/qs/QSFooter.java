@@ -118,6 +118,7 @@ public class QSFooter extends FrameLayout implements
         mShowEditIcon = res.getBoolean(R.bool.config_showQuickSettingsEditingIcon);
 
         mEdit = findViewById(android.R.id.edit);
+        mEdit.setOnLongClickListener(this);
         mEdit.setVisibility(mShowEditIcon ? VISIBLE : GONE);
 
         if (mShowEditIcon) {
@@ -399,6 +400,8 @@ public class QSFooter extends FrameLayout implements
             startUserLongClickActivity();
         } else if (v == mDateTimeGroup) {
             startDateTimeLongClickActivity();
+        } else if (v == mEdit) {
+            startEditLongClickActivity();
         }
         return false;
     }
@@ -418,6 +421,13 @@ public class QSFooter extends FrameLayout implements
     private void startDateTimeLongClickActivity() {
         Intent intent = new Intent(Intent.ACTION_INSERT);
             intent.setData(Events.CONTENT_URI);
+        mActivityStarter.startActivity(intent, true /* dismissShade */);
+    }
+
+    private void startEditLongClickActivity() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+	intent.setClassName("com.android.settings",
+            "com.android.settings.Settings$QuickSettingsActivity");
         mActivityStarter.startActivity(intent, true /* dismissShade */);
     }
 
