@@ -117,6 +117,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         mEdit.setOnClickListener(view ->
                 Dependency.get(ActivityStarter.class).postQSRunnableDismissingKeyguard(() ->
                         mQsPanel.showEdit(view)));
+        mEdit.setOnLongClickListener(this);
 
         mDateTimeGroup = findViewById(id.date_time_alarm_group);
         mDate = findViewById(R.id.date);
@@ -376,6 +377,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
             startUserLongClickActivity();
         } else if (v == mDateTimeGroup) {
             startDateTimeLongClickActivity();
+        } else if (v == mEdit) {
+            startEditLongClickActivity();
         }
         return false;
     }
@@ -404,6 +407,13 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
             intent.setData(Events.CONTENT_URI);
         mActivityStarter.startActivity(intent, true /* dismissShade */);
     }
+
+    private void startEditLongClickActivity() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+	intent.setClassName("com.android.settings",
+            "com.android.settings.Settings$QuickSettingsActivity");
+        mActivityStarter.startActivity(intent, true /* dismissShade */);
+   }
 
     @Override
     public void setEmergencyCallsOnly(boolean show) {
