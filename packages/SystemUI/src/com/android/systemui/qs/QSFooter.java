@@ -29,6 +29,7 @@ import android.graphics.PorterDuff.Mode;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.UserManager;
+import android.os.Vibrator;
 import android.provider.AlarmClock;
 import android.provider.CalendarContract.Events;
 import android.support.annotation.Nullable;
@@ -105,6 +106,7 @@ public class QSFooter extends FrameLayout implements
     private View mDateTimeGroup;
     private boolean mKeyguardShowing;
     private TouchAnimator mAlarmAnimator;
+    protected Vibrator mVibrator;
 
     public QSFooter(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -148,6 +150,8 @@ public class QSFooter extends FrameLayout implements
         mMultiUserSwitch.setOnLongClickListener(this);
         mMultiUserAvatar = mMultiUserSwitch.findViewById(R.id.multi_user_avatar);
         mAlwaysShowMultiUserSwitch = res.getBoolean(R.bool.config_alwaysShowMultiUserSwitcher);
+
+        mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
 
         // RenderThread is doing more harm than good when touching the header (to expand quick
         // settings), so disable it for this view
@@ -197,6 +201,12 @@ public class QSFooter extends FrameLayout implements
         }
         setExpansion(mExpansionAmount);
     }
+
+    public void vibrateFooter(int duration) {
+        if (mVibrator != null) {
+            if (mVibrator.hasVibrator()) { mVibrator.vibrate(duration); }
+        }
+   }
 
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
@@ -403,6 +413,7 @@ public class QSFooter extends FrameLayout implements
         } else if (v == mEdit) {
             startEditLongClickActivity();
         }
+        vibrateFooter(20);
         return false;
     }
 
