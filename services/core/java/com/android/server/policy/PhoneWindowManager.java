@@ -343,6 +343,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private static final int KEY_ACTION_CAMERA = 6;
     private static final int KEY_ACTION_LAST_APP = 7;
     private static final int KEY_ACTION_SPLIT_SCREEN = 8;
+    private static final int KEY_ACTION_SCREENSHOT = 9;
+    private static final int KEY_ACTION_PARTIAL_SCREENSHOT = 10;
 
     // Special values, used internal only.
     private static final int KEY_ACTION_HOME = 100;
@@ -3732,7 +3734,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             KEY_ACTION_IN_APP_SEARCH,
             KEY_ACTION_CAMERA,
             KEY_ACTION_LAST_APP,
-            KEY_ACTION_SPLIT_SCREEN
+            KEY_ACTION_SPLIT_SCREEN,
+            KEY_ACTION_SCREENSHOT,
+            KEY_ACTION_PARTIAL_SCREENSHOT
         };
 
     /**
@@ -3947,6 +3951,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 break;
             case KEY_ACTION_SPLIT_SCREEN:
                 toggleSplitScreen();
+                break;
+            case KEY_ACTION_SCREENSHOT:
+                CustomUtils.takeScreenshot(true);
+                break;
+            case KEY_ACTION_PARTIAL_SCREENSHOT:
+                CustomUtils.takeScreenshot(false);
                 break;
         }
     }
