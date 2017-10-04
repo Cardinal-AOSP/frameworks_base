@@ -65,6 +65,8 @@
           6 - Launch camera
           7 - Launch last app
           8 - Split screen
+          9 - Screenshot
+          10 - Partial Screenshot
        This needs to match the constants in
        services/core/java/com/android/server/policy/PhoneWindowManager.java -->
 
