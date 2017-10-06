@@ -54,7 +54,7 @@ public class LockTaskNotify {
         if (lockTaskModeState == ActivityManager.LOCK_TASK_MODE_LOCKED) {
             text = mContext.getString(R.string.lock_to_app_toast_locked);
         } else if (lockTaskModeState == ActivityManager.LOCK_TASK_MODE_PINNED) {
-            text = mContext.getString(R.string.lock_to_app_toast);
+            text = mContext.getString(R.string.lock_to_app_toast_back);
         }
         if (text == null) {
             return;
