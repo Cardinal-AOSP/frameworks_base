@@ -114,4 +114,11 @@
 
     <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_data_connection_hspap">HSPA+</string>
+
+    <!-- Notification: Menu row: Snooze options: 2 minute option. [CHAR LIMIT=50]-->
+    <string name="snooze_option_2_min">2 minutes</string>
+
+    <!-- Notification: Menu row: Snooze options: 5 minute option. [CHAR LIMIT=50]-->
+    <string name="snooze_option_5_min">5 minutes</string>
+    
 </resources>

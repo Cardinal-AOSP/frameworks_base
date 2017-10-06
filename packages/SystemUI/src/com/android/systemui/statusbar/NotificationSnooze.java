@@ -117,6 +117,8 @@ public class NotificationSnooze extends LinearLayout
 
     private ArrayList<SnoozeOption> getDefaultSnoozeOptions() {
         ArrayList<SnoozeOption> options = new ArrayList<>();
+        options.add(createOption(R.string.snooze_option_2_min, 2));
+        options.add(createOption(R.string.snooze_option_5_min, 5));
         options.add(createOption(R.string.snooze_option_15_min, 15));
         options.add(createOption(R.string.snooze_option_30_min, 30));
         mDefaultOption = createOption(R.string.snooze_option_1_hour, 60);
