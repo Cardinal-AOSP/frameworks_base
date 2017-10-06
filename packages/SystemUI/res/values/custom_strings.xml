@@ -120,5 +120,8 @@
 
     <!-- Notification: Menu row: Snooze options: 5 minute option. [CHAR LIMIT=50]-->
     <string name="snooze_option_5_min">5 minutes</string>
-    
+
+    <!-- Screen pinning dialog description -->
+    <string name="screen_pinning_description_back">This keeps it in view until you unpin. Touch and hold the Back button to unpin.</string>
+
 </resources>
