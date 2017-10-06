@@ -5932,7 +5932,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private void setLockscreenMediaMetadata() {
         mLockscreenMediaMetadata = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT) == 1;
+                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1, mCurrentUserId) == 1;
     }
 
     private void setQsRowsColumns() {
