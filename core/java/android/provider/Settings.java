@@ -7498,6 +7498,13 @@ public final class Settings {
         public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
 
         /**
+         * Hide lockscreen shortcuts on secure lock screens
+         *
+         * @hide
+         */
+        public static final String HIDE_LOCK_SHORTCUTS = "hide_lock_shortcuts";
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
