@@ -124,5 +124,9 @@
 
     <!-- Screen pinning dialog description -->
     <string name="screen_pinning_description_back">This keeps it in view until you unpin. Touch and hold the Back button to unpin.</string>
-
+ 
+    <!-- Logo -->
+    <string name="status_bar_logo_title">Cardinal logo</string>
+    <string name="status_bar_logo_summary">Show Cardinal-AOSP logo on the left side of the statusbar</string>
+  
 </resources>

@@ -18,10 +18,13 @@ package com.android.systemui.tuner;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.preference.Preference;
 import android.support.v14.preference.PreferenceFragment;
+import android.support.v14.preference.SwitchPreference;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -36,9 +39,19 @@ public class StatusbarIconsFragment extends TunerFragment {
 
     private static final String TAG = "StatusbarIconsFragment";
 
+    private static final String STATUS_BAR_LOGO = "status_bar_logo";
+
+    private SwitchPreference mCardinalLogo;
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.statusbar_icon_settings);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+
+        mCardinalLogo = (SwitchPreference) findPreference(STATUS_BAR_LOGO);
+        mCardinalLogo.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_LOGO, 0) == 1));
     }
 
     @Override
@@ -47,5 +60,16 @@ public class StatusbarIconsFragment extends TunerFragment {
         getActivity().setTitle(R.string.statusbar_icons_blacklist);
 
         MetricsLogger.visibility(getContext(), MetricsEvent.TUNER, true);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if  (preference == mCardinalLogo) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                     Settings.System.STATUS_BAR_LOGO, checked ? 1:0);
+            return true;
+          }
+        return super.onPreferenceTreeClick(preference);
     }
 }
