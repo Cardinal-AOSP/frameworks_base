@@ -127,6 +127,5 @@
  
     <!-- Logo -->
     <string name="status_bar_logo_title">Cardinal logo</string>
-    <string name="status_bar_logo_summary">Show Cardinal-AOSP logo on the left side of the statusbar</string>
-  
+
 </resources>
