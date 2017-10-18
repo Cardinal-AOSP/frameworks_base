@@ -84,7 +84,7 @@ public class FingerprintUtils {
     public static void vibrateFingerprintSuccess(Context context) {
         Vibrator vibrator = context.getSystemService(Vibrator.class);
         boolean FingerprintVib = Settings.System.getIntForUser(context.getContentResolver(),
-            Settings.System.FINGERPRINT_SUCCESS_VIB, 0, UserHandle.USER_CURRENT) == 1;
+            Settings.System.FINGERPRINT_SUCCESS_VIB, 1, UserHandle.USER_CURRENT) == 1;
         if (vibrator != null && FingerprintVib) {
             vibrator.vibrate(FP_SUCCESS_VIBRATE_PATTERN, -1);
         }
