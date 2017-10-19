@@ -44,14 +44,19 @@ public class StatusbarIconsFragment extends TunerFragment {
     private SwitchPreference mCardinalLogo;
 
     @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.statusbar_icon_settings);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mCardinalLogo = (SwitchPreference) findPreference(STATUS_BAR_LOGO);
         mCardinalLogo.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_LOGO, 0) == 1));
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.statusbar_icon_settings);
     }
 
     @Override
