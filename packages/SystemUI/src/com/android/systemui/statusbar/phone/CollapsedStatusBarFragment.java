@@ -83,7 +83,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             updateSettings(true);
         }
     }
-    private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
+
+    private CustomSettingsObserver mCustomSettingsObserver;
 
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
@@ -98,6 +99,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mKeyguardMonitor = Dependency.get(KeyguardMonitor.class);
         mNetworkController = Dependency.get(NetworkController.class);
         mStatusBarComponent = SysUiServiceProvider.getComponent(getContext(), StatusBar.class);
+        if (mCustomSettingsObserver == null) {
+            mCustomSettingsObserver = new CustomSettingsObserver(new Handler());
+        }
         mCustomSettingsObserver.observe();
     }
 
