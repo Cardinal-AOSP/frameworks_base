@@ -4259,12 +4259,6 @@ public final class Settings {
         public static final String SCREENSHOT_SHUTTER_SOUND = "screenshot_shutter_sound";
 
         /**
-         * Whether to enable the pixel navbar animation
-         * @hide
-         */
-        public static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
-
-        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4459,7 +4453,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VOLBTN_MUSIC_CONTROLS);
             PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(FINGERPRINT_SUCCESS_VIB);
-            PRIVATE_SETTINGS.add(PIXEL_NAV_ANIMATION);
             PRIVATE_SETTINGS.add(SHOW_CLEAR_ALL_RECENTS);
             PRIVATE_SETTINGS.add(RECENTS_CLEAR_ALL_LOCATION);
         }
