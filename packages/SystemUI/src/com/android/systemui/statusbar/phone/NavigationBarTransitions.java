@@ -128,10 +128,7 @@ public final class NavigationBarTransitions extends BarTransitions {
     public void applyDarkIntensity(float darkIntensity) {
         SparseArray<ButtonDispatcher> buttonDispatchers = mView.getButtonDispatchers();
         for (int i = buttonDispatchers.size() - 1; i >= 0; i--) {
-            int key = buttonDispatchers.keyAt(i);
-            if (key != R.id.kb_left && key != R.id.kb_right) {
-                buttonDispatchers.valueAt(i).setDarkIntensity(darkIntensity);
-            }
+            buttonDispatchers.valueAt(i).setDarkIntensity(darkIntensity);
         }
     }
 

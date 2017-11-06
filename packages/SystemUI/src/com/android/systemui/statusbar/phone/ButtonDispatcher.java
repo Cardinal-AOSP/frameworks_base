@@ -19,6 +19,7 @@ import android.view.View;
 
 import com.android.systemui.plugins.statusbar.phone.NavBarButtonProvider.ButtonInterface;
 import com.android.systemui.statusbar.policy.KeyButtonDrawable;
+import com.android.systemui.statusbar.policy.KeyButtonView;
 
 import java.util.ArrayList;
 
@@ -181,6 +182,16 @@ public class ButtonDispatcher {
             final View view = mViews.get(i);
             if (view instanceof ButtonInterface) {
                 ((ButtonInterface) view).setVertical(vertical);
+            }
+        }
+    }
+
+    public void setCode(int code) {
+        final int N = mViews.size();
+        for (int i = 0; i < N; i++) {
+            final View view = mViews.get(i);
+            if (view instanceof KeyButtonView) {
+                ((KeyButtonView) view).setCode(code);
             }
         }
     }

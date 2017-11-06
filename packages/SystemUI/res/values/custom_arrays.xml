@@ -22,6 +22,8 @@
     <string-array name="nav_bar_buttons_custom">
         <item>Keyboard left cursor</item>
         <item>Keyboard right cursor</item>
+        <item>KB left - Prev track</item> 
+        <item>KB right - Next track</item>
         <item>Clipboard</item>
         <item>Keycode</item>
         <item>Keyboard switcher</item>
@@ -30,6 +32,8 @@
     <string-array name="nav_bar_button_values_custom" translatable="false">
         <item>kb_left</item>
         <item>kb_right</item>
+        <item>skip_prev</item> 
+         <item>skip_next</item> 
         <item>clipboard</item>
         <item>key</item>
         <item>menu_ime</item>
