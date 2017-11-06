@@ -706,4 +706,10 @@ public class NavigationBarFragment extends Fragment implements Callbacks {
         fragmentHost.addTagListener(TAG, listener);
         return navigationBarView;
     }
+
+    public void setTrackPlaying(boolean isPlaying) {
+        if (mNavigationBarView != null) {
+            mNavigationBarView.setTrackPlaying(isPlaying);
+        }
+    }
 }

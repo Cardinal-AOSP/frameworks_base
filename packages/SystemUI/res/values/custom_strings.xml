@@ -30,6 +30,8 @@
     <!-- Keyboard Arrows -->
     <string name="kb_left">Keyboard left cursor</string>
     <string name="kb_right">Keyboard right cursor</string>
+    <string name="skip_prev">KB left - Prev track</string>
+    <string name="skip_next">KB right - Next track</string>
 
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>

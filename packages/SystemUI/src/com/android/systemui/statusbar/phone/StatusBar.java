@@ -583,6 +583,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                     clearCurrentMediaNotification();
                     updateMediaMetaData(true, true);
                 }
+                setTrackPlaying();
             }
         }
 
@@ -592,8 +593,22 @@ public class StatusBar extends SystemUI implements DemoMode,
             if (DEBUG_MEDIA) Log.v(TAG, "DEBUG_MEDIA: onMetadataChanged: " + metadata);
             mMediaMetadata = metadata;
             updateMediaMetaData(true, true);
+            setTrackPlaying();
         }
     };
+
+    private void setTrackPlaying() {
+        if (mNavigationBar != null) {
+            if (PlaybackState.STATE_PLAYING ==
+                    getMediaControllerPlaybackState(mMediaController)
+                    || PlaybackState.STATE_BUFFERING ==
+                    getMediaControllerPlaybackState(mMediaController)) {
+                mNavigationBar.setTrackPlaying(true);
+            } else {
+                mNavigationBar.setTrackPlaying(false);
+            }
+        }
+    }
 
     private final OnChildLocationsChangedListener mOnChildLocationsChangedListener =
             new OnChildLocationsChangedListener() {
@@ -2258,6 +2273,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 clearCurrentMediaNotification();
                 mMediaController = controller;
                 mMediaController.registerCallback(mMediaListener);
+                setTrackPlaying();
                 mMediaMetadata = mMediaController.getMetadata();
                 if (DEBUG_MEDIA) {
                     Log.v(TAG, "DEBUG_MEDIA: insert listener, receive metadata: "
@@ -2309,6 +2325,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                         + mMediaController.getPackageName());
             }
             mMediaController.unregisterCallback(mMediaListener);
+            setTrackPlaying();
         }
         mMediaController = null;
     }
