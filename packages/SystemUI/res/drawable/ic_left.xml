@@ -19,6 +19,6 @@
         android:viewportWidth="24.0"
         android:viewportHeight="24.0">
     <path
-        android:fillColor="#FF000000"
+        android:fillColor="@color/icon_color_ime_cursor_arrows"
         android:pathData="M15.41,16.09l-4.58,-4.59 4.58,-4.59L14.0,5.5l-6.0,6.0 6.0,6.0z"/>
 </vector>

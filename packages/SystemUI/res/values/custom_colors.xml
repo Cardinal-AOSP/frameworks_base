@@ -28,6 +28,7 @@
     <color name="icon_color_split_screen_dark">@android:color/black</color>
     <color name="icon_color_home_dark">@android:color/black</color>
     <color name="icon_color_overview_dark">@android:color/black</color>
+    <color name="icon_color_ime_cursor_arrows">@android:color/white</color>
 
     <!-- Floating action button -->
     <color name="fab_color">@android:color/white</color>
