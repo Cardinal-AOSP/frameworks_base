@@ -615,6 +615,12 @@ public class StatusBar extends SystemUI implements DemoMode,
             updateMediaMetaData(true, true);
             setTrackPlaying();
         }
+
+        @Override
+        public void onSessionDestroyed() {
+            super.onSessionDestroyed();
+            setTrackPlaying();
+        }
     };
 
     private void setTrackPlaying() {
