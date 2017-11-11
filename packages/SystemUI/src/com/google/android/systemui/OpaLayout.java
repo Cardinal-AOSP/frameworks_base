@@ -117,8 +117,8 @@ public class OpaLayout extends FrameLayout implements ButtonInterface{
 
     public OpaLayout(Context context) {
         super(context);
-        mDarkModeFillColor = context.getColor(R.color.dark_mode_icon_color_single_tone);
-        mLightModeFillColor = context.getColor(R.color.light_mode_icon_color_single_tone);
+        mDarkModeFillColor = context.getColor(R.color.icon_color_home_dark);
+        mLightModeFillColor = context.getColor(R.color.icon_color_home);
         mFastOutSlowInInterpolator = Interpolators.FAST_OUT_SLOW_IN;
         mHomeDisappearInterpolator = new PathInterpolator(0.8f, 0f, 1f, 1f);
         mCollapseInterpolator = Interpolators.FAST_OUT_LINEAR_IN;
@@ -151,8 +151,8 @@ public class OpaLayout extends FrameLayout implements ButtonInterface{
 
     public OpaLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mDarkModeFillColor = context.getColor(R.color.dark_mode_icon_color_single_tone);
-        mLightModeFillColor = context.getColor(R.color.light_mode_icon_color_single_tone);
+        mDarkModeFillColor = context.getColor(R.color.icon_color_home_dark);
+        mLightModeFillColor = context.getColor(R.color.icon_color_home);
         mFastOutSlowInInterpolator = Interpolators.FAST_OUT_SLOW_IN;
         mHomeDisappearInterpolator = new PathInterpolator(0.8f, 0f, 1f, 1f);
         mCollapseInterpolator = Interpolators.FAST_OUT_LINEAR_IN;
@@ -185,8 +185,8 @@ public class OpaLayout extends FrameLayout implements ButtonInterface{
 
     public OpaLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mDarkModeFillColor = context.getColor(R.color.dark_mode_icon_color_single_tone);
-        mLightModeFillColor = context.getColor(R.color.light_mode_icon_color_single_tone);
+        mDarkModeFillColor = context.getColor(R.color.icon_color_home_dark);
+        mLightModeFillColor = context.getColor(R.color.icon_color_home);
         mFastOutSlowInInterpolator = Interpolators.FAST_OUT_SLOW_IN;
         mHomeDisappearInterpolator = new PathInterpolator(0.8f, 0f, 1f, 1f);
         mCollapseInterpolator = Interpolators.FAST_OUT_LINEAR_IN;
@@ -219,8 +219,8 @@ public class OpaLayout extends FrameLayout implements ButtonInterface{
 
     public OpaLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        mDarkModeFillColor = context.getColor(R.color.dark_mode_icon_color_single_tone);
-        mLightModeFillColor = context.getColor(R.color.light_mode_icon_color_single_tone);
+        mDarkModeFillColor = context.getColor(R.color.icon_color_home_dark);
+        mLightModeFillColor = context.getColor(R.color.icon_color_home);
         mFastOutSlowInInterpolator = Interpolators.FAST_OUT_SLOW_IN;
         mHomeDisappearInterpolator = new PathInterpolator(0.8f, 0f, 1f, 1f);
         mCollapseInterpolator = Interpolators.FAST_OUT_LINEAR_IN;
