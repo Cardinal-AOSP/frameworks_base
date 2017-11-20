@@ -623,13 +623,14 @@ public class OpaLayout extends FrameLayout implements ButtonInterface{
         mRight = mGreen;
     }
 
-    public void setOnLongClickListener(View.OnLongClickListener l) {
-        mHome.setOnLongClickListener(l);
-    }
+    //public void setOnLongClickListener(View.OnLongClickListener l) {
+    //    mHome.setOnLongClickListener(l);
+    //}
 
-    public void setOnTouchListener(View.OnTouchListener l) {
-        mHome.setOnTouchListener(l);
-    }
+    //public void setOnTouchListener(View.OnTouchListener l) {
+    //    mHome.setOnTouchListener(l);
+    //}
+    
 
     public void setOpaEnabled(boolean enabled) {
         final boolean opaToggle = Settings.System.getIntForUser(this.getContext().getContentResolver(),
