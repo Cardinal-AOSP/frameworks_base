@@ -25,6 +25,7 @@
 
     <!-- The default tiles to display in QuickSettings -->
     <string name="quick_settings_tiles_extra" translatable="false">
+    adb_network,anbi,caffeine,compass,heads_up,pip,screenshot,sound,volume
     </string>
 
 </resources>
