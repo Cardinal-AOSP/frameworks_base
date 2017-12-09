@@ -28,9 +28,8 @@ import android.service.notification.StatusBarNotification;
 import android.text.Layout.Alignment;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.Interpolator;
 import android.view.View;
 import android.widget.ImageSwitcher;
 import android.widget.TextSwitcher;
@@ -179,17 +178,8 @@ public abstract class Ticker implements DarkReceiver {
         final int imageBounds = res.getDimensionPixelSize(R.dimen.status_bar_icon_drawing_size);
         mIconScale = (float)imageBounds / (float)outerBounds;
 
-        AlphaAnimation animationIn = new AlphaAnimation(0.0f, 1.0f);
-        Interpolator interpolatorIn = AnimationUtils.loadInterpolator(context,
-                android.R.interpolator.decelerate_quad);
-        animationIn.setInterpolator(interpolatorIn);
-        animationIn.setDuration(350);
-
-        AlphaAnimation animationOut = new AlphaAnimation(1.0f, 0.0f);
-        Interpolator interpolatorOut = AnimationUtils.loadInterpolator(context,
-                android.R.interpolator.accelerate_quad);
-        animationIn.setInterpolator(interpolatorOut);
-        animationOut.setDuration(350);
+        Animation animationIn = AnimationUtils.loadAnimation(context, com.android.internal.R.anim.push_up_in);
+        Animation animationOut = AnimationUtils.loadAnimation(context, com.android.internal.R.anim.push_up_out);
 
         mIconSwitcher = (ImageSwitcher) tickerLayout.findViewById(R.id.tickerIcon);
         mIconSwitcher.setInAnimation(animationIn);
