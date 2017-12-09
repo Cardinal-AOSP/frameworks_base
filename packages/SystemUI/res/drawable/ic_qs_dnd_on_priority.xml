@@ -23,3 +23,14 @@
         android:fillColor="#FFFFFFFF"
         android:pathData="M24,4C12.95,4,4,12.95,4,24s8.95,20,20,20s20-8.95,20-20S35.05,4,24,4z M34,26h-8v8h-4v-8h-8v-4h8v-8h4v8h8V26z" />
 </vector>
+
+<resources>
+    <!-- Floating action button -->
+    <color name="fab_color">@*android:color/accent_device_default_light</color>
+    <color name="floating_action_button_icon_color">@android:color/white</color>
+
+     <!-- Recents Memory bar -->
+    <color name="recents_memory_progress_overall">@*android:color/resize_shadow_start_color</color>
+    <color name="recents_memory_progress_free">@*android:color/accent_device_default_light</color>
+</resources>
+

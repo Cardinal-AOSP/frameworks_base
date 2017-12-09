@@ -3880,7 +3880,16 @@ public final class Settings {
         };
 
         /**
-         * Setting to determine whether or not to show the battery percentage in the status bar.
+         * Whether to use the MTP by default after connecting to PC
+         * @hide
+         */
+         public static final String MTP_DIRTY_HACK = "mtp_dirty_hack";
+         /** @hide */
+         public static final String MTP_DIRTY_HACK_SAVE = "mtp_dirty_hack_save";
+ 
+        /**
+	 * Setting to determine whether or not to show the battery percentage in the status bar.
+
          *    0 - Don't show percentage
          *    1 - Show percentage
          * @hide
@@ -10448,6 +10457,11 @@ public final class Settings {
          */
         public static final String LOCATION_SETTINGS_LINK_TO_PERMISSIONS_ENABLED =
                 "location_settings_link_to_permissions_enabled";
+
+        /**
+         * @hide
+         */
+        public static final String SHOW_CPU_OVERLAY = "show_cpu_overlay";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
