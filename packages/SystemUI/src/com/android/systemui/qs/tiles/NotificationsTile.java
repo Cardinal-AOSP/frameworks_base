@@ -31,11 +31,12 @@ import com.android.systemui.qs.tileimpl.QSTileImpl;
 /** Quick settings tile: NotificationsTile **/
 public class NotificationsTile extends QSTileImpl<BooleanState> {
 
+
+    private String mNotif = getCurrentNotifier();
+
     public NotificationsTile(QSHost host) {
         super(host);
     }
-
-    private String mNotif = "";
 
 
     @Override
@@ -106,7 +107,7 @@ public class NotificationsTile extends QSTileImpl<BooleanState> {
 
     private String getCurrentNotifier() {
         if (Settings.Global.getInt(mContext.getContentResolver(),
-                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) != 0) {
+                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 0) != 0) {
             return Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED;
         } else if (Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_TICKER, 0) != 0) {
