@@ -41,7 +41,6 @@ import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
-import com.android.systemui.qs.tiles.NotificationsTile;
 import com.android.systemui.qs.tiles.PictureInPictureTile;
 import com.android.systemui.qs.tiles.RebootTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
@@ -90,7 +89,6 @@ public class QSFactoryImpl implements QSFactory {
         else if (tileSpec.equals("anbi")) return new ANBITile(mHost);
         else if (tileSpec.equals("compass")) return new CompassTile(mHost);
         else if (tileSpec.equals("adb_network")) return new AdbOverNetworkTile(mHost);
-        else if (tileSpec.equals("notifications")) return new NotificationsTile(mHost);        
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(mHost, tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(mHost, tileSpec);
