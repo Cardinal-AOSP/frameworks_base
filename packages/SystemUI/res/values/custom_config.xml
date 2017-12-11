@@ -28,4 +28,7 @@
     adb_network,anbi,caffeine,compass,notifications,pip,screenshot,sound,volume
     </string>
 
+    <!-- Whether to show Data disable prompt when user turn off data from QS -->
+    <bool name="config_show_data_disable_prompt">false</bool>
+
 </resources>
