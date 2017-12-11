@@ -97,16 +97,15 @@ public class GlobalActionsImpl implements GlobalActions {
         bar.getIndeterminateDrawable().setTint(color);
         TextView message = d.findViewById(R.id.text1);
         message.setTextColor(color);
-        if (reason != null) {
-            if (PowerManager.REBOOT_BOOTLOADER.equals(reason)) {
-                message.setText(com.android.internal.R.string.reboot_to_bootloader_message);
-            } else if (PowerManager.REBOOT_RECOVERY.equals(reason)) {
-                message.setText(com.android.internal.R.string.reboot_to_recovery_message);
-            }
-        } else if (isReboot) {
-            message.setText(R.string.reboot_to_reset_message);
-        }
 
+        if (isReboot && PowerManager.REBOOT_BOOTLOADER.equals(reason)) {
+            message.setText(com.android.internal.R.string.reboot_to_bootloader_message);
+        } else if (isReboot && PowerManager.REBOOT_RECOVERY.equals(reason)) {
+            message.setText(com.android.internal.R.string.reboot_to_recovery_message);
+        } else if (isReboot) {
+            message.setText(R.string.reboot_message);
+        }
+        
         Point displaySize = new Point();
         mContext.getDisplay().getRealSize(displaySize);
         GradientColors colors = Dependency.get(SysuiColorExtractor.class).getColors(
