@@ -143,6 +143,9 @@
     <!-- App kill -->
     <string name="recents_app_killed">App killed</string>
 
+    <!-- Vpn -->
+    <string name="status_bar_vpn">VPN</string>
+
     <!-- Roaming icon toggle -->
     <string name="status_bar_roaming">Roaming</string>
 
