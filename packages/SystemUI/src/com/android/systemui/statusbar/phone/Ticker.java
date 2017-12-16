@@ -70,6 +70,9 @@ public abstract class Ticker implements DarkReceiver {
                 && gc != Character.SPACE_SEPARATOR;
     }
 
+    private Animation mAnimationIn;
+    private Animation mAnimationOut;
+
     private final class Segment {
         StatusBarNotification notification;
         Drawable icon;
@@ -178,18 +181,18 @@ public abstract class Ticker implements DarkReceiver {
         final int imageBounds = res.getDimensionPixelSize(R.dimen.status_bar_icon_drawing_size);
         mIconScale = (float)imageBounds / (float)outerBounds;
 
-        Animation animationIn = AnimationUtils.loadAnimation(context, com.android.internal.R.anim.push_up_in);
-        Animation animationOut = AnimationUtils.loadAnimation(context, com.android.internal.R.anim.push_up_out);
+        mAnimationIn = AnimationUtils.loadAnimation(context, com.android.internal.R.anim.push_up_in);
+        mAnimationOut = AnimationUtils.loadAnimation(context, com.android.internal.R.anim.push_up_out);
 
         mIconSwitcher = (ImageSwitcher) tickerLayout.findViewById(R.id.tickerIcon);
-        mIconSwitcher.setInAnimation(animationIn);
-        mIconSwitcher.setOutAnimation(animationOut);
+        mIconSwitcher.setInAnimation(mAnimationIn);
+        mIconSwitcher.setOutAnimation(mAnimationOut);
         mIconSwitcher.setScaleX(mIconScale);
         mIconSwitcher.setScaleY(mIconScale);
 
         mTextSwitcher = (TextSwitcher) tickerLayout.findViewById(R.id.tickerText);
-        mTextSwitcher.setInAnimation(animationIn);
-        mTextSwitcher.setOutAnimation(animationOut);
+        mTextSwitcher.setInAnimation(mAnimationIn);
+        mTextSwitcher.setOutAnimation(mAnimationOut);
 
         // Copy the paint style of one of the TextSwitchers children to use later for measuring
         TextView text = (TextView) mTextSwitcher.getChildAt(0);
@@ -292,6 +295,20 @@ public abstract class Ticker implements DarkReceiver {
         mHandler.removeCallbacks(mAdvanceTicker);
         mSegments.clear();
         tickerHalting();
+    }
+
+    public void setStatusBarView(View sbv) {
+        mIconSwitcher = null;
+        mIconSwitcher = (ImageSwitcher) sbv.findViewById(R.id.tickerIcon);
+        mIconSwitcher.setInAnimation(mAnimationIn);
+        mIconSwitcher.setOutAnimation(mAnimationOut);
+        mIconSwitcher.setScaleX(mIconScale);
+        mIconSwitcher.setScaleY(mIconScale);
+
+        mTextSwitcher = null;
+        mTextSwitcher = (TextSwitcher) sbv.findViewById(R.id.tickerText);
+        mTextSwitcher.setInAnimation(mAnimationIn);
+        mTextSwitcher.setOutAnimation(mAnimationOut);
     }
 
     public void reflowText() {
