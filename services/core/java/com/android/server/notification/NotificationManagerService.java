@@ -1295,6 +1295,7 @@ public class NotificationManagerService extends SystemService {
         mAppUsageStats = LocalServices.getService(UsageStatsManagerInternal.class);
         mAlarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
         mCompanionManager = companionManager;
+        mActivityManager = activityManager;
         mKeyguardManager =
                 (KeyguardManager) getContext().getSystemService(Context.KEYGUARD_SERVICE);
 
@@ -1409,6 +1410,7 @@ public class NotificationManagerService extends SystemService {
         listenForCallState();
 
         mSettingsObserver = new LEDSettingsObserver(mHandler);
+        mSettingsObserver.observe();
 
         mArchive = new Archive(resources.getInteger(
                 R.integer.config_notificationServiceArchiveSize));
