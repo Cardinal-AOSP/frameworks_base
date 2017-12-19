@@ -16,11 +16,11 @@
 
 package com.android.systemui.qs.tiles;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 
-import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.widget.Switch;
 
@@ -70,10 +70,11 @@ public class RotationLockTile extends QSTileImpl<BooleanState> {
             mController.removeCallback(mCallback);
         }
     }
-
+    
     @Override
     public Intent getLongClickIntent() {
-        return new Intent(Settings.ACTION_DISPLAY_SETTINGS);
+        return new Intent().setComponent(new ComponentName(
+            "com.android.settings", "com.android.settings.Settings$RotationSettingsActivity"));
     }
 
     @Override
