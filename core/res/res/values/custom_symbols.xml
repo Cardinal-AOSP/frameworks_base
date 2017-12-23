@@ -27,6 +27,7 @@
 
   <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
   <java-symbol type="bool" name="config_intrusiveBatteryLed" />
+
   <!-- Does the battery LED support multiple colors?
       Used to decide if the user can change the colors -->
   <java-symbol type="bool" name="config_multiColorBatteryLed" />
@@ -48,11 +49,6 @@
   <java-symbol type="integer" name="config_longPressOnAssistKeyBehavior" />
   <java-symbol type="integer" name="config_longPressOnAppSwitchKeyBehavior" />
   <java-symbol type="integer" name="config_longPressOnCameraKeyBehavior" />
-
-  <!-- Boolean indicating whether we want button brightness support -->
-  <java-symbol type="bool" name="config_button_brightness_support" />
-  <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
-  <java-symbol type="integer" name="config_button_brightness_default" />
 
   <!-- Assist manager -->
   <java-symbol type="string" name="no_assist_found" />
