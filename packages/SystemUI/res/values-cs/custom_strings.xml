@@ -19,6 +19,8 @@
   <!-- Keyboard L/R Cursor -->
   <string name="kb_left">Levý kurzor klávesnice</string>
   <string name="kb_right">Pravý kurzor klávesnice</string>
+  <string name="skip_prev">KB vlevo - předchozí skladba</string>
+  <string name="skip_next">KB vpravo - další skladba</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kofein</string>
   <string name="accessibility_quick_settings_caffeine_off">Kofein vyp</string>
@@ -89,14 +91,24 @@
   <string name="keyguard_indication_dash_charging_time">DASH nabíjení (plně nabito za <xliff:g id="CHARGING_TIME_LEFT">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">DASH nabíjení</string>
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>chrome</item>
+    <item>youtube</item>
+    <item>netflix</item>
+  </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ADB přes síť</string>
   <string name="quick_settings_network_adb_enabled_label">ADB přes síť</string>
   <string name="quick_settings_network_adb_disabled_label">ADB přes síť</string>
   <!-- Advanced power menu -->
   <string name="global_action_restart_advanced">Rozšířený restart</string>
+  <string name="global_action_restart_recovery">Recovery</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Restartovat</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
-  <!-- Notification Tile -->
+  <!-- App kill -->
+  <string name="recents_app_killed">Aplikace ukončena</string>
+  <!-- Advance location quick setting tile -->
+  <!-- Roaming icon toggle -->
 </resources>

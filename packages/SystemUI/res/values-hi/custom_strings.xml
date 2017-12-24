@@ -19,6 +19,8 @@
   <!-- Keyboard L/R Cursor -->
   <string name="kb_left">कुंजीपटल बायाँ कर्सर</string>
   <string name="kb_right">कुंजीपटल दायाँ कर्सर</string>
+  <string name="skip_prev">KB बाएँ-पीछे ट्रैक</string>
+  <string name="skip_next">KB दायां-अगला ट्रैक</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">कैफीन</string>
   <string name="accessibility_quick_settings_caffeine_off">कैफीन बंद</string>
@@ -89,14 +91,24 @@
   <string name="keyguard_indication_dash_charging_time">डैश चार्जिंग (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> पूर्ण होने में)</string>
   <string name="keyguard_plugged_in_dash_charging">डैश चार्जिंग</string>
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>Chrome</item>
+    <item>YouTube</item>
+    <item>Netflix</item>
+  </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ADB नेटवर्क</string>
   <string name="quick_settings_network_adb_enabled_label">ADB ओवर नेट</string>
   <string name="quick_settings_network_adb_disabled_label">ADB ओवर नेट</string>
   <!-- Advanced power menu -->
   <string name="global_action_restart_advanced">उन्नत रीबूट</string>
+  <string name="global_action_restart_recovery">रिकवरी</string>
+  <string name="global_action_restart_bootloader">बूटलोडर</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">पुनः आरम्भ</string>
   <string name="quick_settings_reboot_recovery_label">रिकवरी</string>
-  <!-- Notification Tile -->
+  <!-- App kill -->
+  <string name="recents_app_killed">एप्प समाप्त</string>
+  <!-- Advance location quick setting tile -->
+  <!-- Roaming icon toggle -->
 </resources>

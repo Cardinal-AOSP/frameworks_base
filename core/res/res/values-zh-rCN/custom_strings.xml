@@ -17,20 +17,18 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Assist manager -->
-  <string name="no_assist_found">Assistente non trovato</string>
+  <string name="no_assist_found">未找到辅助管理器</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Imitazione firma pacchetto</string>
+  <string name="permlab_fakePackageSignature">允许模仿软件包签名</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Consente all\'applicazione di fingere di essere un\'altra app. Applicazioni dannose potrebbero essere in grado di utilizzare questo per accedere ai dati privati dell\'applicazione. Concedere questa autorizzazione con cautela!</string>
+  <string name="permdesc_fakePackageSignature">允许应用伪装成为其他应用。恶意应用程序可以借此来访问隐私应用程序数据。请小心授予此权限！</string>
   <!-- Notify user that they are in Lock-to-app -->
-  <string name="lock_to_app_toast_back">Per sbloccare questa schermata, tocca e tieni premuto il pulsante Indietro</string>
+  <string name="lock_to_app_toast_back">要取消固定屏幕 &amp; 请长按返回键。</string>
   <!-- ADB over network notification -->
-  <string name="adb_net_active_notification_title">ADB tramite rete abilitato</string>
+  <string name="adb_net_active_notification_title">网络调试已启用</string>
   <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">ADB tramite USB &amp; rete abilitato</string>
+  <string name="adb_both_active_notification_title">USB 和网络 ADB 均已启用</string>
   <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Tocca per disattivare il debug.</string>
+  <string name="adb_active_generic_notification_message">点击以禁用调试</string>
   <!-- Advanced power menu -->
-  <string name="reboot_title">Riavvia</string>
-  <string name="reboot_message">Riavvio del sistema</string>
 </resources>

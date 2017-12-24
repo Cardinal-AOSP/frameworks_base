@@ -19,6 +19,8 @@
   <!-- Keyboard L/R Cursor -->
   <string name="kb_left">Левый курсор клавиатуры</string>
   <string name="kb_right">Правый курсор клавиатуры</string>
+  <string name="skip_prev">Кнопка слева - прошлый трек</string>
+  <string name="skip_next">Кнопка справа - следующий трек</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Запрет сна</string>
   <string name="accessibility_quick_settings_caffeine_off">Запрет сна выкл</string>
@@ -89,14 +91,24 @@
   <string name="keyguard_indication_dash_charging_time">Зарядка (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s </xliff:g> до полной)</string>
   <string name="keyguard_plugged_in_dash_charging">Зарядка</string>
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>chrome</item>
+    <item>youtube</item>
+    <item>netflix</item>
+  </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ADB по сети</string>
   <string name="quick_settings_network_adb_enabled_label">ADB по сети</string>
   <string name="quick_settings_network_adb_disabled_label">ADB по сети</string>
   <!-- Advanced power menu -->
   <string name="global_action_restart_advanced">Расширенная перезагрузка</string>
+  <string name="global_action_restart_recovery">Режим восстановления</string>
+  <string name="global_action_restart_bootloader">Загрузчик</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Перезагрузка</string>
   <string name="quick_settings_reboot_recovery_label">Режим восстановления</string>
-  <!-- Notification Tile -->
+  <!-- App kill -->
+  <string name="recents_app_killed">Приложение завершено</string>
+  <!-- Advance location quick setting tile -->
+  <!-- Roaming icon toggle -->
 </resources>
