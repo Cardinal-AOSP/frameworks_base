@@ -31,4 +31,6 @@
   <!-- ADB notification message-->
   <string name="adb_active_generic_notification_message">डिबगिंग को अक्षम करने के लिए स्पर्श करें।</string>
   <!-- Advanced power menu -->
+  <string name="reboot_title">पुनः आरम्भ</string>
+  <string name="reboot_message">रिबूट सिस्टम</string>
 </resources>

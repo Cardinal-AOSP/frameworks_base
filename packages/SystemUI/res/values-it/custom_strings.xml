@@ -19,6 +19,8 @@
   <!-- Keyboard L/R Cursor -->
   <string name="kb_left">Cursore sinistro della tastiera</string>
   <string name="kb_right">Cursore destro della tastiera</string>
+  <string name="skip_prev">KB sinistra - traccia precedente</string>
+  <string name="skip_next">KB destra - traccia successiva</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeina</string>
   <string name="accessibility_quick_settings_caffeine_off">Caffeina off</string>
@@ -89,14 +91,24 @@
   <string name="keyguard_indication_dash_charging_time">Ricarica rapida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> alla carica piena)</string>
   <string name="keyguard_plugged_in_dash_charging">Ricarica rapida</string>
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>chrome</item>
+    <item>youtube</item>
+    <item>netflix</item>
+  </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">Rete ADB</string>
   <string name="quick_settings_network_adb_enabled_label">Adb attraverso la rete</string>
   <string name="quick_settings_network_adb_disabled_label">Adb attraverso la rete</string>
   <!-- Advanced power menu -->
   <string name="global_action_restart_advanced">Riavvio avanzato</string>
+  <string name="global_action_restart_recovery">Recovery</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Riavvia</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
-  <!-- Notification Tile -->
+  <!-- App kill -->
+  <string name="recents_app_killed">Applicazione terminata</string>
+  <!-- Advance location quick setting tile -->
+  <!-- Roaming icon toggle -->
 </resources>

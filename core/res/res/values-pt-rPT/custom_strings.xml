@@ -31,4 +31,6 @@
   <!-- ADB notification message-->
   <string name="adb_active_generic_notification_message">Toque para desativar a depuração Usb.</string>
   <!-- Advanced power menu -->
+  <string name="reboot_title">Reiniciar</string>
+  <string name="reboot_message">Reiniciar sistema</string>
 </resources>

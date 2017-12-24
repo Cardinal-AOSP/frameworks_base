@@ -19,6 +19,8 @@
   <!-- Keyboard L/R Cursor -->
   <string name="kb_left">Tastatur linker Cursor</string>
   <string name="kb_right">Tastatur rechter Cursor</string>
+  <string name="skip_prev">KB-links - Prev track</string>
+  <string name="skip_next">KB rechts - nächster Titel</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeine</string>
   <string name="accessibility_quick_settings_caffeine_off">Caffeine aus</string>
@@ -50,6 +52,10 @@
   <string name="accessibility_quick_settings_heads_up_changed_on">Heads up eingeschaltet.</string>
   <!-- ANBI Tile -->
   <string name="quick_settings_anbi_label">Unabsichtliches Berühren</string>
+  <string name="accessibility_quick_settings_anbi_on">Verhindern, dass Acc touch</string>
+  <string name="accessibility_quick_settings_anbi_off">Nicht zu verhindern, dass Acc touch</string>
+  <string name="accessibility_quick_settings_anbi_changed_off">Zufälliges Berühren ausgeschaltet</string>
+  <string name="accessibility_quick_settings_anbi_changed_on">Zufälliges Berühren eingeschaltet</string>
   <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
   <string name="drag_or_tap_to_add_tiles">Ziehen oder tippen Sie Kacheln zum hinzufügen</string>
   <!-- Lockscreen shortcuts -->
@@ -85,14 +91,24 @@
   <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="verbleibende Ladezeit" example="4 Stunden und 2 Minuten">%s</xliff:g> bis Augeladen)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>chrome</item>
+    <item>youtube</item>
+    <item>netflix</item>
+  </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ADB-Netzwerk</string>
   <string name="quick_settings_network_adb_enabled_label">ADB übers Netzwerk</string>
   <string name="quick_settings_network_adb_disabled_label">ADB übers Netzwerk</string>
   <!-- Advanced power menu -->
   <string name="global_action_restart_advanced">Erweiterter Neustart</string>
+  <string name="global_action_restart_recovery">Recovery</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Neustart</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
-  <!-- Notification Tile -->
+  <!-- App kill -->
+  <string name="recents_app_killed">Anwendung beendet</string>
+  <!-- Advance location quick setting tile -->
+  <!-- Roaming icon toggle -->
 </resources>
