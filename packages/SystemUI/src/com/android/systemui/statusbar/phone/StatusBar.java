@@ -3455,7 +3455,8 @@ public class StatusBar extends SystemUI implements DemoMode,
     @Override
     public void toggleFlashlight() {
         if (mFlashlightController != null
-                && mFlashlightController.hasFlashlight()
+                mFlashlightController.initFlashLight(); 
+		&& mFlashlightController.hasFlashlight()
                 && mFlashlightController.isAvailable()) {
             mFlashlightController.setFlashlight(!mFlashlightController.isEnabled());
         }
