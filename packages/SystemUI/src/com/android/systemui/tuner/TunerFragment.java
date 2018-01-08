@@ -18,9 +18,13 @@ package com.android.systemui.tuner;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,6 +33,7 @@ import android.view.MenuItem;
 import com.android.internal.hardware.AmbientDisplayConfiguration;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.custom.CustomUtils;
 import com.android.systemui.R;
 import com.android.systemui.plugins.PluginPrefs;
 
@@ -36,11 +41,26 @@ public class TunerFragment extends PreferenceFragment {
 
     private static final String TAG = "TunerFragment";
 
+    private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
+
+    private SwitchPreference mShowLteFourGee;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(true);
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+
+        mShowLteFourGee = (SwitchPreference) findPreference(SHOW_LTE_FOURGEE);
+        if (CustomUtils.isWifiOnly(getActivity())) {
+            prefSet.removePreference(mShowLteFourGee);
+        } else {
+            mShowLteFourGee.setChecked((Settings.System.getInt(resolver,
+                    Settings.System.SHOW_LTE_FOURGEE, 0) == 1));
+        }
     }
 
     @Override
@@ -81,5 +101,15 @@ public class TunerFragment extends PreferenceFragment {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if  (preference == mShowLteFourGee) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_LTE_FOURGEE, checked ? 1:0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 }
