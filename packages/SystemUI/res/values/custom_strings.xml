@@ -147,4 +147,7 @@
     <string name="show_lte_fourgee_summary">Display either the 4G or LTE network icon in the statusbar/QS panel</string>
     <string name="statusbar_tuner_category_title">Hide items from statusbar</string>
 
+    <!-- Battery saver tile -->
+    <string name="battery_saver_qs_tile_fully_charged">Fully Charged</string>
+
 </resources>
