@@ -122,4 +122,7 @@
   <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
   <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
 
+  <!-- Power button flashlight proximity -->
+  <java-symbol type="integer" name="config_flashlightProximityTimeout" />
+
 </resources>

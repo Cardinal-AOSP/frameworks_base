@@ -138,4 +138,7 @@
     backgrounds (requires config_allowNotificationIconTextTinting to be true)-->
     <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
 
+    <!-- Power button flashlight proximity -->
+    <integer name="config_flashlightProximityTimeout">300</integer>
+
 </resources>
