@@ -265,8 +265,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if ((diff1 & DISABLE_NOTIFICATION_ICONS) != 0) {
             if ((state1 & DISABLE_NOTIFICATION_ICONS) != 0) {
                 hideNotificationIconArea(animate);
+                hideCarrierName(animate);
             } else {
                 showNotificationIconArea(animate);
+                showCarrierName(animate);
             }
         }
     }
@@ -336,6 +338,18 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         }
         if (((Clock)mLeftClock).isEnabled()) {
             animateShow(mLeftClock, animate);
+        }
+    }
+
+    public void hideCarrierName(boolean animate) {
+        if (mCustomCarrierLabel != null) {
+            animateHide(mCustomCarrierLabel, animate, true);
+        }
+    }
+
+    public void showCarrierName(boolean animate) {
+        if (mCustomCarrierLabel != null) {
+            setCarrierLabel(animate);
         }
     }
 
@@ -425,6 +439,15 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mShowCarrierLabel = Settings.System.getIntForUser(mContentResolver,
                 Settings.System.STATUS_BAR_CARRIER, 1,
                 UserHandle.USER_CURRENT);
+        setCarrierLabel(animate);
+    }
+
+    private void setCarrierLabel(boolean animate) {
+        if (mShowCarrierLabel == 2 || mShowCarrierLabel == 3) {
+            animateShow(mCustomCarrierLabel, animate);
+        } else {
+            animateHide(mCustomCarrierLabel, animate, false);
+        }
     }
 
     private void initTickerView() {
