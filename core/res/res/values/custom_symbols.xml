@@ -134,4 +134,7 @@
   <!-- Should proximity check also affect fingerprint reader-->
   <java-symbol type="bool" name="config_proximityCheckOnFingerprintWake" />
 
+  <!-- Ambient music -->
+  <java-symbol type="bool" name="config_canForceDozeNotifications" />
+
 </resources>
