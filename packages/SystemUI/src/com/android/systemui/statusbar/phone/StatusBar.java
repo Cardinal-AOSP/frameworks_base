@@ -603,6 +603,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER);
 
     private String[] mNavArrowsExcludeList;
+    private NotificationManager mNoMan;
     private MediaSessionManager mMediaSessionManager;
     private MediaController mMediaController;
     private String mMediaNotificationKey;
@@ -647,6 +648,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                     getMediaControllerPlaybackState(mMediaController)
                     || PlaybackState.STATE_BUFFERING ==
                     getMediaControllerPlaybackState(mMediaController)) {
+                mNoMan.setTrackPlaying(true);
                 final String currentPkg = mMediaController.getPackageName().toLowerCase();
                 for (String packageName : mNavArrowsExcludeList) {
                     if (currentPkg.contains(packageName)) {
@@ -655,6 +657,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 }
                 mNavigationBar.setTrackPlaying(true);
             } else {
+                mNoMan.setTrackPlaying(false);
                 mNavigationBar.setTrackPlaying(false);
             }
         }
@@ -1154,6 +1157,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             }
         } catch (RemoteException ex) {
             // no window manager? good luck with that
+        mNoMan = (NotificationManager)
+                        mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        setTrackPlaying();
         }
 
         // figure out which pixel-format to use for the status bar.
@@ -6479,9 +6486,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                     }
                 }
             } else if (BANNER_ACTION_CANCEL.equals(action) || BANNER_ACTION_SETUP.equals(action)) {
-                NotificationManager noMan = (NotificationManager)
-                        mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-                noMan.cancel(SystemMessage.NOTE_HIDDEN_NOTIFICATIONS);
+                mNoMan.cancel(SystemMessage.NOTE_HIDDEN_NOTIFICATIONS);
 
                 Settings.Secure.putInt(mContext.getContentResolver(),
                         Settings.Secure.SHOW_NOTE_ABOUT_NOTIFICATION_HIDING, 0);
@@ -6678,9 +6683,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                                     setupIntent);
             overrideNotificationAppName(mContext, note);
 
-            NotificationManager noMan =
-                    (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-            noMan.notify(SystemMessage.NOTE_HIDDEN_NOTIFICATIONS, note.build());
+            mNoMan.notify(SystemMessage.NOTE_HIDDEN_NOTIFICATIONS, note.build());
         }
     }
 

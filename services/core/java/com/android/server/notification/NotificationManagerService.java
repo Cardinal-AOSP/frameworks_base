@@ -318,6 +318,9 @@ public class NotificationManagerService extends SystemService {
     private ArrayMap<String, NotificationLedValues> mNotificationPulseCustomLedValues;
     private Map<String, String> mPackageNameMappings;
 
+    private int mSoundVibScreenOn;
+    private boolean mIsTrackPlaying;
+
     // for checking lockscreen status
     private KeyguardManager mKeyguardManager;
 
@@ -1050,6 +1053,8 @@ public class NotificationManagerService extends SystemService {
                 = Settings.Global.getUriFor(Settings.Global.MAX_NOTIFICATION_ENQUEUE_RATE);
         private final Uri ENABLED_NOTIFICATION_LISTENERS_URI
                 = Settings.Secure.getUriFor(Settings.Secure.ENABLED_NOTIFICATION_LISTENERS);
+        private final Uri NOTIFICATION_SOUND_VIB_SCREEN_ON
+                = Settings.System.getUriFor(Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON);
 
         LEDSettingsObserver(Handler handler) {
             super(handler);
@@ -1082,6 +1087,8 @@ public class NotificationManagerService extends SystemService {
             resolver.registerContentObserver(NOTIFICATION_LIGHT_PULSE_URI,
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(NOTIFICATION_RATE_LIMIT_URI,
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(NOTIFICATION_SOUND_VIB_SCREEN_ON,
                     false, this, UserHandle.USER_ALL);
             update(null);
         }
@@ -1131,6 +1138,11 @@ public class NotificationManagerService extends SystemService {
             mScreenOnEnabled = (Settings.System.getIntForUser(resolver,
                     Settings.System.NOTIFICATION_LIGHT_SCREEN_ON,
                     mScreenOnDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0);
+
+            if (uri == null || NOTIFICATION_SOUND_VIB_SCREEN_ON.equals(uri)) {
+                mSoundVibScreenOn = Settings.System.getIntForUser(resolver,
+                            Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+            }
 
             updateNotificationPulse();
         }
@@ -3137,6 +3149,11 @@ public class NotificationManagerService extends SystemService {
                 throws RemoteException {
             new ShellCmd().exec(this, in, out, err, args, callback, resultReceiver);
         }
+
+        @Override
+        public void setTrackPlaying(boolean playing) {
+            mIsTrackPlaying = playing;
+        }
     };
 
     private void applyAdjustment(NotificationRecord r, Adjustment adjustment) {
@@ -4138,7 +4155,10 @@ public class NotificationManagerService extends SystemService {
 
         if (aboveThreshold && isNotificationForCurrentUser(record)) {
 
-            if (mSystemReady && mAudioManager != null) {
+            boolean beNoisy = !mScreenOn
+                    || (mScreenOn && mSoundVibScreenOn == 1)
+                    || (mScreenOn && mSoundVibScreenOn == 2 && !mIsTrackPlaying);
+            if (mSystemReady && mAudioManager != null && beNoisy) {
                 Uri soundUri = record.getSound();
                 hasValidSound = soundUri != null && !Uri.EMPTY.equals(soundUri);
                 long[] vibration = record.getVibration();

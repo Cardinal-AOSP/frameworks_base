@@ -1219,4 +1219,13 @@ public class NotificationManager {
         }
     }
 
+    /** @hide */
+    public void setTrackPlaying(boolean playing) {
+        final INotificationManager service = getService();
+        try {
+            service.setTrackPlaying(playing);
+        } catch (RemoteException e) {
+            throw e.rethrowFromSystemServer();
+        }
+    }
 }
