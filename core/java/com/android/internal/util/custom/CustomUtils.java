@@ -26,15 +26,18 @@ import android.net.ConnectivityManager;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.os.Looper;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.os.SystemProperties;
-import android.os.RemoteException;
 import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
 import android.provider.Settings;
+
+import com.android.internal.statusbar.IStatusBarService;
 
 import java.util.List;
 
@@ -126,5 +129,34 @@ public class CustomUtils {
         ConnectivityManager cm = (ConnectivityManager)context.getSystemService(
                 Context.CONNECTIVITY_SERVICE);
         return (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false);
+    }
+
+    // Toggle flashlight
+    public static void toggleFlashLight() {
+        FireActions.toggleFlashLight();
+    }
+
+    private static final class FireActions {
+        private static IStatusBarService mStatusBarService = null;
+        private static IStatusBarService getStatusBarService() {
+            synchronized (FireActions.class) {
+                if (mStatusBarService == null) {
+                    mStatusBarService = IStatusBarService.Stub.asInterface(
+                            ServiceManager.getService("statusbar"));
+                }
+                return mStatusBarService;
+            }
+        }
+
+        public static void toggleFlashLight() {
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    service.toggleFlashlight();
+                } catch (RemoteException e) {
+                    // do nothing.
+                }
+            }
+        }
     }
 }
