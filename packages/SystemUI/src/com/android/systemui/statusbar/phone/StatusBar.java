@@ -241,6 +241,7 @@ import com.android.systemui.statusbar.policy.DarkIconDispatcher;
 import com.android.systemui.statusbar.policy.DeviceProvisionedController;
 import com.android.systemui.statusbar.policy.DeviceProvisionedController.DeviceProvisionedListener;
 import com.android.systemui.statusbar.policy.ExtensionController;
+import com.android.systemui.statusbar.policy.FlashlightController;
 import com.android.systemui.statusbar.policy.HeadsUpManager;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.KeyguardMonitorImpl;
@@ -862,6 +863,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private NavigationBarFragment mNavigationBar;
     private View mNavigationBarView;
+    private FlashlightController mFlashlightController;
 
     private boolean mLockscreenMediaMetadata;
 
@@ -1077,6 +1079,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         mNavArrowsExcludeList = mContext.getResources().getStringArray(
                 R.array.navArrowsExcludeList);
+        mFlashlightController = Dependency.get(FlashlightController.class);
     }
 
     protected void createIconController() {
@@ -3439,6 +3442,15 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         mLightBarController.onSystemUiVisibilityChanged(fullscreenStackVis, dockedStackVis,
                 mask, fullscreenStackBounds, dockedStackBounds, sbModeChanged, mStatusBarMode);
+    }
+
+    @Override
+    public void toggleFlashlight() {
+        if (mFlashlightController != null
+                && mFlashlightController.hasFlashlight()
+                && mFlashlightController.isAvailable()) {
+            mFlashlightController.setFlashlight(!mFlashlightController.isEnabled());
+        }
     }
 
     void touchAutoHide() {
