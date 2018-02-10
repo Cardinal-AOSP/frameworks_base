@@ -126,28 +126,28 @@ public class LocationTile extends QSTileImpl<BooleanState> {
             case BATTERY_SAVING:
                 state.value = true;
                 state.contentDescription = mContext.getString(R.string.accessibility_quick_settings_location_battery_saving);
-                state.label = mContext.getString(R.string.quick_settings_location_label);
+                state.label = mContext.getString(R.string.quick_settings_location_battery_saving);
                 state.icon = ResourceIcon.get(R.drawable.ic_qs_location_battery_saving);
                 state.slash.isSlashed = false;
                 break;
             case SENSORS_ONLY:
                 state.value = true;
                 state.contentDescription = mContext.getString(R.string.accessibility_quick_settings_location_gps_only);
-                state.label = mContext.getString(R.string.quick_settings_location_label);
+                state.label = mContext.getString(R.string.quick_settings_location_gps_only);
                 state.icon = mIcon;
                 state.slash.isSlashed = false;
                 break;
             case HIGH_ACCURACY:
                 state.value = true;
                 state.contentDescription = mContext.getString(R.string.accessibility_quick_settings_location_high_accuracy);
-                state.label = mContext.getString(R.string.quick_settings_location_label);
+                state.label = mContext.getString(R.string.quick_settings_location_high_accuracy);
                 state.icon = ResourceIcon.get(R.drawable.ic_qs_location_high_accuracy);
                 state.slash.isSlashed = false;
                 break;
             case OFF:
                 state.value = false;
                 state.contentDescription = mContext.getString(R.string.accessibility_quick_settings_location_off);
-                state.label = mContext.getString(R.string.quick_settings_location_label);
+                state.label = mContext.getString(R.string.quick_settings_location_off);
                 state.icon = mIcon;
                 state.slash.isSlashed = true;
                 break;
