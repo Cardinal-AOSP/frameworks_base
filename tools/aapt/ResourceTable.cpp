@@ -144,12 +144,8 @@ status_t compileXmlFile(const Bundle* bundle,
         printXMLBlock(&tree);
     }
 
-#ifdef AAPT_COMPRESS
     target->setCompressionMethod(ZipEntry::kCompressDeflated);
-#else
-    target->setCompressionMethod(ZipEntry::kCompressStored);
-#endif
-
+    
     return err;
 }
 
