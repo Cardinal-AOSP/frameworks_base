@@ -84,13 +84,8 @@ public class BatterySaverTile extends QSTileImpl<BooleanState> implements
                 : mPowerSave ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE;
         BatterySaverIcon bsi = new BatterySaverIcon();
         bsi.mState = state.state;
-        if (mCharging) {
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_battery_saver_charging);
-            state.label = mContext.getString(R.string.keyguard_plugged_in);
-        } else {
-            state.icon = bsi;
-            state.label = mContext.getString(R.string.battery_detail_switch_title);
-        }
+        state.icon = bsi;
+        state.label = mContext.getString(R.string.battery_detail_switch_title);
         state.contentDescription = state.label;
         state.value = mPowerSave;
         state.expandedAccessibilityClassName = Switch.class.getName();
