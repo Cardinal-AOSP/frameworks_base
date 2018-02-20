@@ -470,7 +470,6 @@ class GlobalScreenshot {
     private MediaActionSound mCameraSound;
     private SettingsObserver mSettingsObserver = new SettingsObserver();
 
-    private final int mSfHwRotation;
     public static boolean mPartialShotStarted;
     public static boolean mPartialShot;
     private float mTouchDownX;
@@ -544,8 +543,9 @@ class GlobalScreenshot {
         mSettingsObserver.register();
         updateCameraSound();
 
-        // Load hardware rotation from prop
-        mSfHwRotation = android.os.SystemProperties.getInt("ro.sf.hwrotation", 0) / 90;
+        // Setup the Camera shutter sound
+        mCameraSound = new MediaActionSound();
+        mCameraSound.load(MediaActionSound.SHUTTER_CLICK);
     }
 
     private void updateCameraSound() {
@@ -607,10 +607,7 @@ class GlobalScreenshot {
         // only in the natural orientation of the device :!)
         mDisplay.getRealMetrics(mDisplayMetrics);
         float[] dims = {mDisplayMetrics.widthPixels, mDisplayMetrics.heightPixels};
-        int rot = mDisplay.getRotation();
-        // Allow for abnormal hardware orientation
-        rot = (rot + mSfHwRotation) % 4;
-        float degrees = getDegreesForRotation(rot);
+        float degrees = getDegreesForRotation(mDisplay.getRotation());
         boolean requiresRotation = (degrees > 0);
         if (requiresRotation) {
             // Get the dimensions of the device in its native orientation
