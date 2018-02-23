@@ -503,6 +503,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     private int mTickerEnabled;
     private Ticker mTicker;
     private boolean mTicking;
+    private int mTickerAnimationMode;
 
     // Tracking finger for opening/closing.
     boolean mTracking;
@@ -3720,7 +3721,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         public View mTickerView;
 
         MyTicker(Context context, View sb) {
-            super(context, sb);
+            super(context, sb, mTickerAnimationMode);
             if (mTickerEnabled == 0) {
                 Log.w(TAG, "MyTicker instantiated with mTickerEnabled=0", new Throwable());
             }
@@ -3734,21 +3735,37 @@ public class StatusBar extends SystemUI implements DemoMode,
         public void tickerStarting() {
             if (mTicker == null || mTickerEnabled == 0) return;
             mTicking = true;
+            Animation outAnim, inAnim;
+            if (mTickerAnimationMode == 1) {
+                outAnim = loadAnim(com.android.internal.R.anim.push_up_out, null);
+                inAnim = loadAnim(com.android.internal.R.anim.push_up_in, null);
+            } else {
+                outAnim = loadAnim(true, null);
+                inAnim = loadAnim(false, null);
+            }
             mStatusBarContent.setVisibility(View.GONE);
-            mStatusBarContent.startAnimation(loadAnim(true, null));
+            mStatusBarContent.startAnimation(outAnim);
             if (mTickerView != null) {
                 mTickerView.setVisibility(View.VISIBLE);
-                mTickerView.startAnimation(loadAnim(false, null));
+                mTickerView.startAnimation(inAnim);
             }
         }
 
         @Override
         public void tickerDone() {
+            Animation outAnim, inAnim;
+            if (mTickerAnimationMode == 1) {
+                outAnim = loadAnim(com.android.internal.R.anim.push_up_out, mTickingDoneListener);
+                inAnim = loadAnim(com.android.internal.R.anim.push_up_in, null);
+            } else {
+                outAnim = loadAnim(true, mTickingDoneListener);
+                inAnim = loadAnim(false, null);
+            }
             mStatusBarContent.setVisibility(View.VISIBLE);
-            mStatusBarContent.startAnimation(loadAnim(false, null));
+            mStatusBarContent.startAnimation(inAnim);
             if (mTickerView != null) {
                 mTickerView.setVisibility(View.GONE);
-                mTickerView.startAnimation(loadAnim(true, mTickingDoneListener));
+                mTickerView.startAnimation(outAnim);
             }
         }
 
@@ -3793,6 +3810,14 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
 
         return animation;
+    }
+
+    private Animation loadAnim(int id, Animation.AnimationListener listener) {
+        Animation anim = AnimationUtils.loadAnimation(mContext, id);
+        if (listener != null) {
+            anim.setAnimationListener(listener);
+        }
+        return anim;
     }
 
     private void haltTicker() {
@@ -6212,6 +6237,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -6252,6 +6280,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                     || uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE))) {
                 updateBatterySettings();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE))) {
+                updateTickerAnimation();
             }
         }
 
@@ -6264,6 +6295,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setUpdateSettings();
             setQsPanelOptions();
             updateBatterySettings();
+            updateTickerAnimation();
         }
     }
 
@@ -6324,6 +6356,29 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mStatusBarWindow.updateSettings();
         }
     }
+
+    private boolean isAmbientContainerAvailable() {
+        return mAmbientMediaPlaying != 0 && mAmbientIndicationContainer != null;
+    }
+
+    protected final ContentObserver mNavbarObserver = new ContentObserver(mHandler) {
+        @Override
+        public void onChange(boolean selfChange) {
+            boolean showing = Settings.Secure.getInt(mContext.getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_VISIBLE,
+                    DUActionUtils.hasNavbarByDefault(mContext) ? 1 : 0) != 0;
+            if (!showing && mNavigationBar != null && mNavigationBarView != null) {
+                removeNavigationBar();
+            } else if (showing && mNavigationBar == null && mNavigationBarView == null) {
+                createNavigationBar();
+            }
+            if (!DUActionUtils.hasNavbarByDefault(mContext)) {
+                Intent intent = new Intent("com.cyanogenmod.action.UserChanged");
+                intent.setPackage("com.android.settings");
+                mContext.sendBroadcastAsUser(intent, new UserHandle(UserHandle.USER_CURRENT));
+            }
+        }
+    };
 
     private void setQsPanelOptions() {
         if (mQSPanel != null) {
