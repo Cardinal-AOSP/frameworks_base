@@ -149,7 +149,7 @@ interface INotificationManager
 
     ParceledListSlice getAppActiveNotifications(String callingPkg, int userId);
 
-    void setTrackPlaying(boolean playing);
+    void setTrackPlaying(boolean isPlaying);
 
     void forceShowLedLight(int color);
     void forcePulseLedLight(int color, int onTime, int offTime);

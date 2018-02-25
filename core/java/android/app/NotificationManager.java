@@ -1220,10 +1220,10 @@ public class NotificationManager {
     }
 
     /** @hide */
-    public void setTrackPlaying(boolean playing) {
+    public void setTrackPlaying(boolean isPlaying) {
         final INotificationManager service = getService();
         try {
-            service.setTrackPlaying(playing);
+            service.setTrackPlaying(isPlaying);
         } catch (RemoteException e) {
             throw e.rethrowFromSystemServer();
         }

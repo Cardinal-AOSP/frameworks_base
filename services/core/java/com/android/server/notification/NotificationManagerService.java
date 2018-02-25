@@ -3167,8 +3167,8 @@ public class NotificationManagerService extends SystemService {
         }
 
         @Override
-        public void setTrackPlaying(boolean playing) {
-            mIsTrackPlaying = playing;
+        public void setTrackPlaying(boolean isPlaying) {
+            mIsTrackPlaying = isPlaying;
         }
 
         @Override

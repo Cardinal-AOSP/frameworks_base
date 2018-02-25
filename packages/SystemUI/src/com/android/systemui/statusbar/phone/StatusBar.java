@@ -659,10 +659,14 @@ public class StatusBar extends SystemUI implements DemoMode,
                         return;
                     }
                 }
-                mNavigationBar.setTrackPlaying(true);
+                if (mNavigationBar != null) {
+                    mNavigationBar.setTrackPlaying(true);
+                }
             } else {
                 mNoMan.setTrackPlaying(false);
-                mNavigationBar.setTrackPlaying(false);
+                if (mNavigationBar != null) {
+                    mNavigationBar.setTrackPlaying(false);
+                }
             }
         }
     }
@@ -5917,7 +5921,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         @Override
         public void onDoubleTap(float screenX, float screenY) {
-            if (screenX > 0 && screenY > 0 && mAmbientIndicationContainer != null 
+            if (screenX > 0 && screenY > 0 && mAmbientIndicationContainer != null
                 && mAmbientIndicationContainer.getVisibility() == View.VISIBLE) {
                 mAmbientIndicationContainer.getLocationOnScreen(mTmpInt2);
                 float viewX = screenX - mTmpInt2[0];
@@ -6186,7 +6190,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 setShowNavBar();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
-		        setHeadsUpBlacklist();   
+		        setHeadsUpBlacklist();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_WHITELIST_VALUES))) {
 		        setHeadsUpWhitelist();
@@ -7896,7 +7900,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 return false;
             }
         }
-        
+
         if(isPackageBlacklisted(sbn.getPackageName())) {
             return false;
         }
