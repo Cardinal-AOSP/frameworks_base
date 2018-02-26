@@ -2994,8 +2994,8 @@ public final class Settings {
          */
         public static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL =
                 "lockscreen_quick_unlock_control";
-                
-        /**                
+
+        /**
          * Whether to scramble a pin unlock layout
          * @hide
          */
@@ -4076,7 +4076,7 @@ public final class Settings {
         /**
          * Cardinal-AOSP System settings modification starts
          */
-        
+
         /**
          * Unlock keystore with fingerprint after reboot
          * @hide
@@ -4419,7 +4419,7 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
- 
+
         /**
          * Whether to show the notification ticker on the status bar
          * @hide
@@ -4453,7 +4453,7 @@ public final class Settings {
          * @hide
          */
         public static final String ACCELEROMETER_ROTATION_ANGLES = "accelerometer_rotation_angles";
-  
+
         /**
          * Whether to display the 4g or lte network icon in the statusbar
          * @hide
@@ -4703,8 +4703,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
             PRIVATE_SETTINGS.add(SHOW_LTE_FOURGEE);
             PRIVATE_SETTINGS.add(NOTIFICATION_SOUND_VIB_SCREEN_ON);
-            PRIVATE_SETTINGS.add(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD);            
-            PRIVATE_SETTINGS.add(QS_FOOTER_WARNINGS);          
+            PRIVATE_SETTINGS.add(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD);
+            PRIVATE_SETTINGS.add(QS_FOOTER_WARNINGS);
         }
 
         /**
@@ -7772,10 +7772,8 @@ public final class Settings {
          * 1: Display the battery an icon in landscape mode
          * 2: Display the battery as a circle
          * 3: Display the battery as a dotted circle
-         * 4: Display the battery as a big circle and show level into the icon
-         * 5: Display the battery as a big dotted circle and show level into the icon
-         * 6: Display the battery as text
-         * 7: Do not display the battery
+         * 4: Display the battery as text
+         * 5: Do not display the battery
          * default: 0
          * @hide
          */

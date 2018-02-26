@@ -49,10 +49,8 @@ public class BatteryMeterDrawableBase extends Drawable {
     public static final int BATTERY_STYLE_PORTRAIT = 0;
     public static final int BATTERY_STYLE_CIRCLE = 2;
     public static final int BATTERY_STYLE_DOTTED_CIRCLE = 3;
-    public static final int BATTERY_STYLE_BIG_CIRCLE = 4;
-    public static final int BATTERY_STYLE_BIG_DOTTED_CIRCLE = 5;
-    public static final int BATTERY_STYLE_TEXT = 6;
-    public static final int BATTERY_STYLE_HIDDEN = 7;
+    public static final int BATTERY_STYLE_TEXT = 4;
+    public static final int BATTERY_STYLE_HIDDEN = 5;
 
     protected final Context mContext;
     protected final Paint mFramePaint;
@@ -333,22 +331,17 @@ public class BatteryMeterDrawableBase extends Drawable {
     @Override
     public void draw(Canvas c) {
         switch (mMeterStyle) {
-            case BATTERY_STYLE_PORTRAIT:
-                drawRectangle(c);
-                break;
             case BATTERY_STYLE_CIRCLE:
             case BATTERY_STYLE_DOTTED_CIRCLE:
-                drawCircle(c, false);
+                drawCircle(c);
                 break;
-            case BATTERY_STYLE_BIG_CIRCLE:
-            case BATTERY_STYLE_BIG_DOTTED_CIRCLE:
-                drawCircle(c, true);
-                break;
+            case BATTERY_STYLE_PORTRAIT:
             default:
                 drawRectangle(c);
                 break;
         }
     }
+
 
     private void drawRectangle(Canvas c) {
         final int level = mLevel;
@@ -519,7 +512,7 @@ public class BatteryMeterDrawableBase extends Drawable {
         }
     }
 
-    private void drawCircle(Canvas c, boolean bigCircle) {
+    private void drawCircle(Canvas c) {
         final int level = mLevel;
         final Rect bounds = getBounds();
 
@@ -534,8 +527,7 @@ public class BatteryMeterDrawableBase extends Drawable {
         mBatteryPaint.setStrokeWidth(strokeWidth);
         mBatteryPaint.setStyle(Paint.Style.STROKE);
 
-        if (mMeterStyle == BATTERY_STYLE_DOTTED_CIRCLE
-                || mMeterStyle == BATTERY_STYLE_BIG_DOTTED_CIRCLE) {
+        if (mMeterStyle == BATTERY_STYLE_DOTTED_CIRCLE) {
             mBatteryPaint.setPathEffect(mPathEffect);
         } else {
             mBatteryPaint.setPathEffect(null);
@@ -592,9 +584,7 @@ public class BatteryMeterDrawableBase extends Drawable {
         if (!mCharging) {
             mTextPaint.setColor(getColorForLevel(level));
             final float full = 0.30f;
-            final float nofull =  mMeterStyle == BATTERY_STYLE_BIG_CIRCLE
-                    || mMeterStyle == BATTERY_STYLE_BIG_DOTTED_CIRCLE ? 0.48f
-                    : 0.52f;
+            final float nofull =  0.48f;
             final float single =  0.86f;
             mTextPaint.setTextSize(height * (mLevel == 100 ? full : nofull));
             mTextHeight = -mTextPaint.getFontMetrics().ascent;

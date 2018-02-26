@@ -202,9 +202,7 @@ public class BatteryMeterView extends LinearLayout implements
     }
 
     private boolean isCircleBattery() {
-        return mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_BIG_CIRCLE
-                || mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_BIG_DOTTED_CIRCLE
-                || mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_CIRCLE
+        return mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_CIRCLE
                 || mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_DOTTED_CIRCLE;
     }
 
@@ -270,13 +268,8 @@ public class BatteryMeterView extends LinearLayout implements
         res.getValue(R.dimen.status_bar_icon_scale_factor, typedValue, true);
         float iconScaleFactor = typedValue.getFloat();
 
-        boolean bigCircleBattery = mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_BIG_CIRCLE
-                || mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_BIG_DOTTED_CIRCLE;
-
-        int batteryHeight = res.getDimensionPixelSize(
-                bigCircleBattery ? R.dimen.status_bar_battery_circle_icon_height : R.dimen.status_bar_battery_icon_height);
-        int batteryWidth = res.getDimensionPixelSize(
-                bigCircleBattery ? R.dimen.status_bar_battery_circle_icon_width :R.dimen.status_bar_battery_icon_width);
+        int batteryHeight = res.getDimensionPixelSize(R.dimen.status_bar_battery_icon_height);
+        int batteryWidth = res.getDimensionPixelSize(R.dimen.status_bar_battery_icon_width);
         int marginBottom = res.getDimensionPixelSize(R.dimen.battery_margin_bottom);
 
         LinearLayout.LayoutParams scaledLayoutParams = new LinearLayout.LayoutParams(
@@ -329,19 +322,6 @@ public class BatteryMeterView extends LinearLayout implements
                 if (mBatteryIconView != null) {
                     removeView(mBatteryIconView);
                     mBatteryIconView = null;
-                }
-                break;
-            case BatteryMeterDrawableBase.BATTERY_STYLE_BIG_CIRCLE:
-            case BatteryMeterDrawableBase.BATTERY_STYLE_BIG_DOTTED_CIRCLE:
-                mDrawable.setMeterStyle(style);
-                if (mBatteryIconView == null) {
-                    mBatteryIconView = new ImageView(mContext);
-                    mBatteryIconView.setImageDrawable(mDrawable);
-                    final MarginLayoutParams mlp = new MarginLayoutParams(
-                            getResources().getDimensionPixelSize(R.dimen.status_bar_battery_circle_icon_width),
-                            getResources().getDimensionPixelSize(R.dimen.status_bar_battery_circle_icon_height));
-                    mlp.setMargins(0, 0, 0, getResources().getDimensionPixelOffset(R.dimen.battery_margin_bottom));
-                    addView(mBatteryIconView, mlp);
                 }
                 break;
             default:
