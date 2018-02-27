@@ -648,27 +648,25 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
-    private void setTrackPlaying() {
-        if (mNavigationBar != null) {
-            if (PlaybackState.STATE_PLAYING ==
-                    getMediaControllerPlaybackState(mMediaController)
-                    || PlaybackState.STATE_BUFFERING ==
-                    getMediaControllerPlaybackState(mMediaController)) {
-                mNoMan.setTrackPlaying(true);
-                final String currentPkg = mMediaController.getPackageName().toLowerCase();
-                for (String packageName : mNavArrowsExcludeList) {
-                    if (currentPkg.contains(packageName)) {
-                        return;
-                    }
+    public void setTrackPlaying() {
+        if (PlaybackState.STATE_PLAYING ==
+                getMediaControllerPlaybackState(mMediaController)
+                || PlaybackState.STATE_BUFFERING ==
+                getMediaControllerPlaybackState(mMediaController)) {
+            mNoMan.setTrackPlaying(true);
+            final String currentPkg = mMediaController.getPackageName().toLowerCase();
+            for (String packageName : mNavArrowsExcludeList) {
+                if (currentPkg.contains(packageName)) {
+                    return;
                 }
-                if (mNavigationBar != null) {
-                    mNavigationBar.setTrackPlaying(true);
-                }
-            } else {
-                mNoMan.setTrackPlaying(false);
-                if (mNavigationBar != null) {
-                    mNavigationBar.setTrackPlaying(false);
-                }
+            }
+            if (mNavigationBar != null) {
+                mNavigationBar.setTrackPlaying(true);
+            }
+        } else {
+            mNoMan.setTrackPlaying(false);
+            if (mNavigationBar != null) {
+                mNavigationBar.setTrackPlaying(false);
             }
         }
     }
