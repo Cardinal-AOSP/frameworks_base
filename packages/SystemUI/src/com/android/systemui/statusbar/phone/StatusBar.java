@@ -638,6 +638,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             if (mTickerEnabled == 2) {
                 tickTrackInfo();
             }
+            setTrackPlaying();
         }
 
         @Override
@@ -1160,6 +1161,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             mNotificationPanelDebugText.setVisibility(View.VISIBLE);
         }
 
+        mNoMan = (NotificationManager)
+                        mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        setTrackPlaying();
+
         try {
             boolean showNav = mWindowManagerService.hasNavigationBar();
             if (DEBUG) Log.v(TAG, "hasNavigationBar=" + showNav);
@@ -1168,10 +1173,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             }
         } catch (RemoteException ex) {
             // no window manager? good luck with that
-        mNoMan = (NotificationManager)
-                        mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-
-        setTrackPlaying();
         }
 
         // figure out which pixel-format to use for the status bar.
