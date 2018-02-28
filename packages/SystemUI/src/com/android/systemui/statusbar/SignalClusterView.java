@@ -184,7 +184,7 @@ public class SignalClusterView extends LinearLayout implements NetworkController
             boolean blockVpn = blockList.contains(SLOT_VPN);
 
             if (blockAirplane != mBlockAirplane || blockMobile != mBlockMobile
-                    || blockEthernet != mBlockEthernet || blockWifi != mBlockWifi || blockRoaming != mBlockRoaming) {
+                    || blockEthernet != mBlockEthernet || blockWifi != mBlockWifi || blockVolte != mBlockVolte || blockRoaming != mBlockRoaming) {
                 mBlockAirplane = blockAirplane;
                 mBlockMobile = blockMobile;
                 mBlockEthernet = blockEthernet;
