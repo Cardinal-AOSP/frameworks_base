@@ -33,4 +33,5 @@
   <!-- Advanced power menu -->
   <string name="reboot_title">पुनः आरम्भ</string>
   <string name="reboot_message">रिबूट सिस्टम</string>
+  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
 </resources>

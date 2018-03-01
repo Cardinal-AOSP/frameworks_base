@@ -88,17 +88,39 @@
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Charge Dash (complète dans <xliff:g id="charging_time_left" example="4 heures et 2 minutes">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">Charge Dash</string>
+  <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Localisation : mode économie de batterie.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Localisation : mode appareil uniquement.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Localisation : mode haute précision.</string>
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>chrome</item>
+    <item>youtube</item>
+    <item>netflix</item>
+  </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ADB réseau</string>
   <string name="quick_settings_network_adb_enabled_label">Adb par le réseau</string>
   <string name="quick_settings_network_adb_disabled_label">Adb par le réseau</string>
   <!-- Advanced power menu -->
-  <string name="global_action_restart_advanced">Redémarrage avancé</string>
+  <string name="global_action_restart_advanced">Avancée</string>
+  <string name="global_action_restart_recovery">Récupération</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
+  <string name="global_action_restart_ui">SystemUI</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Redémarrer</string>
   <string name="quick_settings_reboot_recovery_label">Récupération</string>
   <!-- App kill -->
-  <!-- Advance location quick setting tile -->
+  <string name="recents_app_killed">Application arrêtée</string>
+  <!-- Vpn -->
   <!-- Roaming icon toggle -->
+  <string name="status_bar_roaming">Itinérance</string>
+  <!-- Data saver-->
+  <!-- Show lte/4g switch -->
+  <!-- Battery saver tile -->
+  <!-- Expanded desktop QS Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

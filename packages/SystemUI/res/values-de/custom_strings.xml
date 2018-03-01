@@ -17,10 +17,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Keyboard L/R Cursor -->
-  <string name="kb_left">Tastatur linker Cursor</string>
-  <string name="kb_right">Tastatur rechter Cursor</string>
-  <string name="skip_prev">KB-links - Prev track</string>
-  <string name="skip_next">KB rechts - nächster Titel</string>
+  <string name="kb_left">Textcursor nach links</string>
+  <string name="kb_right">Textcursor nach rechts</string>
+  <string name="skip_prev">Vorhergehender Musiktitel</string>
+  <string name="skip_next">Nächster Musiktitel</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeine</string>
   <string name="accessibility_quick_settings_caffeine_off">Caffeine aus</string>
@@ -30,7 +30,7 @@
   <string name="quick_settings_region_screenshot_label">Partieller Screenshot</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
-  <string name="quick_settings_pip_tile_app_na">App unterstützt keine PiP</string>
+  <string name="quick_settings_pip_tile_app_na">App unterstützt kein PiP</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Töne</string>
   <string name="quick_settings_sound_ring">Klingelton</string>
@@ -46,23 +46,23 @@
   <string name="powernotif_tuner_activity">Erweiterte Benachrichtigungseinstellungen</string>
   <!-- Heads Up QS Tile -->
   <string name="quick_settings_heads_up_label">Heads-Up</string>
-  <string name="accessibility_quick_settings_heads_up_off">Heads-up aus.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Heads-up an.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up ausgeschaltet.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up eingeschaltet.</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads-Up aus.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Heads-Up an.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads-Up ausgeschaltet.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads-Up eingeschaltet.</string>
   <!-- ANBI Tile -->
   <string name="quick_settings_anbi_label">Unabsichtliches Berühren</string>
-  <string name="accessibility_quick_settings_anbi_on">Verhindern, dass Acc touch</string>
-  <string name="accessibility_quick_settings_anbi_off">Nicht zu verhindern, dass Acc touch</string>
-  <string name="accessibility_quick_settings_anbi_changed_off">Zufälliges Berühren ausgeschaltet</string>
-  <string name="accessibility_quick_settings_anbi_changed_on">Zufälliges Berühren eingeschaltet</string>
+  <string name="accessibility_quick_settings_anbi_on">Verhindert unabsichtliches Berühren</string>
+  <string name="accessibility_quick_settings_anbi_off">Verhindert unabsichtliches Berühren nicht</string>
+  <string name="accessibility_quick_settings_anbi_changed_off">Unabsichtliches Berühren ausgeschaltet</string>
+  <string name="accessibility_quick_settings_anbi_changed_on">Unabsichtliches Berühren eingeschaltet</string>
   <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
-  <string name="drag_or_tap_to_add_tiles">Ziehen oder tippen Sie Kacheln zum hinzufügen</string>
+  <string name="drag_or_tap_to_add_tiles">Ziehen oder tippen Sie, um Kacheln hinzu zu fügen</string>
   <!-- Lockscreen shortcuts -->
-  <string name="lockscreen_default">Standart</string>
+  <string name="lockscreen_default">Standard</string>
   <string name="lockscreen_hidden">Kein</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Zum öffnen vom Symbol wischen</string>
+  <string name="custom_hint">Zum Öffnen vom Symbol wischen</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompass</string>
   <string name="quick_settings_compass_value"><xliff:g id="Grad">%1$.0f</xliff:g>\u00b0 <xliff:g id="Richtung">%2$s</xliff:g></string>
@@ -84,12 +84,16 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screen pinning dialog description -->
-  <string name="screen_pinning_description_back">Der Bildschirm wird so lange angezeigt, bis die Fixierung aufgehoben wird. Zurück Taste drücken und halten, um die Fixierung aufzuheben.</string>
+  <string name="screen_pinning_description_back">Der Bildschirm wird so lange angezeigt, bis die Fixierung aufgehoben wird. Die Zurück-Taste drücken und halten, um die Fixierung aufzuheben.</string>
   <!-- Logo -->
-  <string name="status_bar_logo_title">Cardinal Logo</string>
+  <string name="status_bar_logo_title">Cardinal-Logo</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="verbleibende Ladezeit" example="4 Stunden und 2 Minuten">%s</xliff:g> bis Augeladen)</string>
+  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="verbleibende Ladezeit" example="4 Stunden und 2 Minuten">%s</xliff:g> bis Aufgeladen)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+  <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Standort: Energiesparmodus.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Standort: Nur Sensoren.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Standort: Hohe Genauigkeit.</string>
   <!-- Blacklist apps for ime switcher -->
   <string-array name="navArrowsExcludeList">
     <item>chrome</item>
@@ -101,14 +105,24 @@
   <string name="quick_settings_network_adb_enabled_label">ADB übers Netzwerk</string>
   <string name="quick_settings_network_adb_disabled_label">ADB übers Netzwerk</string>
   <!-- Advanced power menu -->
-  <string name="global_action_restart_advanced">Erweiterter Neustart</string>
+  <string name="global_action_restart_advanced">Erweitert</string>
   <string name="global_action_restart_recovery">Recovery</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
+  <string name="global_action_restart_ui">SystemUI</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Neustart</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <!-- App kill -->
   <string name="recents_app_killed">Anwendung beendet</string>
-  <!-- Advance location quick setting tile -->
+  <!-- Vpn -->
   <!-- Roaming icon toggle -->
+  <string name="status_bar_roaming">Roaming</string>
+  <!-- Data saver-->
+  <!-- Show lte/4g switch -->
+  <!-- Battery saver tile -->
+  <!-- Expanded desktop QS Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

@@ -37,11 +37,23 @@
   <!-- Logo -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">ড্যাশ চার্জ (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> পর্যন্ত পূর্ণ হবে)</string>
+  <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">অবস্থান প্রতিবেদন: ব্যাটারি সাশ্রয় মোড।.</string>
+  <string name="accessibility_quick_settings_location_gps_only">অবস্থান প্রতিবেদন: শুধু সেন্সর মোড।.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">অবস্থান রিপোর্ট: উচ্চ নির্ভুলতা মোড।.</string>
   <!-- Blacklist apps for ime switcher -->
   <!-- ADB network tile -->
   <!-- Advanced power menu -->
   <!-- Reboot/Recovery QS Tile -->
   <!-- App kill -->
-  <!-- Advance location quick setting tile -->
+  <!-- Vpn -->
   <!-- Roaming icon toggle -->
+  <!-- Data saver-->
+  <!-- Show lte/4g switch -->
+  <!-- Battery saver tile -->
+  <!-- Expanded desktop QS Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

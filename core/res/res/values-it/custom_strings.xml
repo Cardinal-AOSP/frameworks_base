@@ -33,4 +33,5 @@
   <!-- Advanced power menu -->
   <string name="reboot_title">Riavvia</string>
   <string name="reboot_message">Riavvio del sistema</string>
+  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
 </resources>

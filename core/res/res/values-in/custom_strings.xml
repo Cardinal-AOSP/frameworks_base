@@ -17,12 +17,19 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Assist manager -->
+  <string name="no_assist_found">Tidak perlu manajer membantu yang ditemukan</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Spoof paket tanda tangan</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Membolehkan aplikasi untuk berpura-pura sebagai aplikasi lain. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi. Bolehkan perizinan ini dengan hati-hati!</string>
   <!-- Notify user that they are in Lock-to-app -->
+  <string name="lock_to_app_toast_back">Untuk melepaskan sematan layar ini, menyentuh &amp; menahan tombol</string>
   <!-- ADB over network notification -->
+  <string name="adb_net_active_notification_title">ADB berkemampuan jaringan</string>
   <!-- ADB over USB and network notification -->
   <string name="adb_both_active_notification_title">ADB melalui USB &amp; jaringan diaktifkan</string>
   <!-- ADB notification message-->
+  <string name="adb_active_generic_notification_message">Sentuh untuk menonaktifkan debugging.</string>
   <!-- Advanced power menu -->
+  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
 </resources>
