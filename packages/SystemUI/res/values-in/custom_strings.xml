@@ -88,7 +88,7 @@
   <!-- Logo -->
   <string name="status_bar_logo_title">Logo kardinal</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">dash ngecas (<xliff: g id = "charging_time_left" contoh = "4 jam dan 2 menit">% s </ xliff: g> sampai penuh)</string>
+  <string name="keyguard_indication_dash_charging_time">dash ngecas (<xliff:g id="charging_time_left" example="4 hours dan 2 minutes">%s</xliff:g> sampai penuh)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash pengisian</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Pelaporan lokasi: mode hemat baterai.</string>
