@@ -180,4 +180,11 @@
     <string name="accessibility_quick_settings_sync_changed_off">Sync turned off.</string>
     <string name="accessibility_quick_settings_sync_changed_on">Sync turned on.</string>
 
+    <!-- NavigationBar Tile -->
+    <string name="quick_settings_navigation_bar_label">Navigation bar</string>
+    <string name="accessibility_quick_settings_sw_navigation_bar">SW buttons</string>
+    <string name="accessibility_quick_settings_hw_navigation_bar">HW buttons</string>
+    <string name="accessibility_quick_settings_sw_navigation_bar_on">Software navigation bar turned on</string>
+    <string name="accessibility_quick_settings_hw_navigation_bar_on">Hardware navigation bar turned on</string>
+
 </resources>
