@@ -135,6 +135,11 @@ public class AdbOverNetworkTile extends QSTileImpl<BooleanState> {
                 Settings.Secure.ADB_PORT, 0) > 0;
     }
 
+    @Override
+    public boolean isAvailable() {
+        return isAdbEnabled();
+    }
+
     private ContentObserver mObserver = new ContentObserver(mHandler) {
         @Override
         public void onChange(boolean selfChange, Uri uri) {
