@@ -86,6 +86,8 @@ public class BatteryMeterView extends LinearLayout implements
 
     private boolean mAttached;
 
+    private boolean mPowerSave;
+
     public BatteryMeterView(Context context) {
         this(context, null, 0);
     }
@@ -143,7 +145,7 @@ public class BatteryMeterView extends LinearLayout implements
     }
 
     public void setForceShowPercent(boolean show) {
-        mForceShowPercent = show;
+        mForceShowPercent = show || mPowerSave;
         updateShowPercent();
     }
 
@@ -211,6 +213,9 @@ public class BatteryMeterView extends LinearLayout implements
     @Override
     public void onPowerSaveChanged(boolean isPowerSave) {
         mDrawable.setPowerSave(isPowerSave);
+        mPowerSave = isPowerSave;
+        mForceShowPercent = isPowerSave;
+        updateShowPercent();
     }
 
     private TextView loadPercentView() {
@@ -346,7 +351,7 @@ public class BatteryMeterView extends LinearLayout implements
 
         if (forcePercentageQsHeader()
                 || style == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT
-                || ((isCircleBattery() || style == BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT) && mCharging)) {
+                || ((isCircleBattery() || style == BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT) && (mCharging || mPowerSave))) {
             mForceShowPercent = true;
         } else {
             mForceShowPercent = false;
