@@ -89,8 +89,12 @@
   <string name="status_bar_logo_title">Logo Cardinal</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Rýchle nabíjanie (úplne nabité za <xliff:g id="4 hours and 2 minutes">%s</xliff:g>)</string>
-  <string name="keyguard_plugged_in_dash_charging">Rýchle nabíjanie</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash nabíjanie</string>
   <!-- Advance location quick setting tile -->
+  <string name="quick_settings_location_battery_saving">Šetrenie batérie</string>
+  <string name="quick_settings_location_gps_only">Iba zariadenie</string>
+  <string name="quick_settings_location_high_accuracy">Vysoká presnosť</string>
+  <string name="quick_settings_location_off">Poloha vyputá</string>
   <string name="accessibility_quick_settings_location_battery_saving">Hlásenie polohy: režim šetrenia batérie.</string>
   <string name="accessibility_quick_settings_location_gps_only">Hlásenie polohy: iba GPS.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Hlásenie polohy: vysoká presnosť.</string>
@@ -115,14 +119,27 @@
   <!-- App kill -->
   <string name="recents_app_killed">Aplikácia bola ukončená</string>
   <!-- Vpn -->
+  <string name="status_bar_vpn">VPN</string>
   <!-- Roaming icon toggle -->
   <string name="status_bar_roaming">Roaming</string>
   <!-- Data saver-->
+  <string name="status_bar_data_saver">Šetrič dát</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Ikona siete 4G/LTE</string>
+  <string name="show_lte_fourgee_summary">Zobraziť ikonu 4G alebo LTE v stavovom riadku/paneli rýchl. nastavení</string>
+  <string name="statusbar_tuner_category_title">Skryť položky v stavovom riadku</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Úplne nabitá</string>
   <!-- Expanded desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Rozšírená plocha</string>
+  <string name="quick_settings_expanded_desktop">Rozšírená</string>
+  <string name="quick_settings_expanded_desktop_off">Normálna</string>
+  <string name="quick_settings_expanded_navigation_off">Skryť navigačnú lištu</string>
+  <string name="quick_settings_expanded_statusbar_off">Skryť stavový riadok</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <!-- Sync QS tile -->
+  <!-- NavigationBar Tile -->
 </resources>

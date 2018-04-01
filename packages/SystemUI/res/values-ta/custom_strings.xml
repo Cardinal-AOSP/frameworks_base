@@ -29,21 +29,19 @@
   <!-- Lockscreen shortcuts -->
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Compass QS Tile -->
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
   <!-- volte icon switch -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Screen pinning dialog description -->
-  <string name="screen_pinning_description_back">আনপিন না করা পর্যন্ত এটি স্ক্রিনে থাকবে | আনপিন করার জন্য ব্যাক বোতাম চেপে ধরে রাখুন |</string>
   <!-- Logo -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">ড্যাশ চার্জ (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> পর্যন্ত পূর্ণ হবে)</string>
   <!-- Advance location quick setting tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">অবস্থান প্রতিবেদন: ব্যাটারি সাশ্রয় মোড।.</string>
-  <string name="accessibility_quick_settings_location_gps_only">অবস্থান প্রতিবেদন: শুধু সেন্সর মোড।.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">অবস্থান রিপোর্ট: উচ্চ নির্ভুলতা মোড।.</string>
   <!-- Blacklist apps for ime switcher -->
   <!-- ADB network tile -->
+  <string name="quick_settings_adb_network">ஆபிபா (ADB) பிணையம்</string>
+  <string name="quick_settings_network_adb_enabled_label">ஆபிபா (Adb) வழி வலை</string>
+  <string name="quick_settings_network_adb_disabled_label">ஆபிபா (Adb) வழி வலை</string>
   <!-- Advanced power menu -->
+  <string name="global_action_restart_recovery">மீட்பு (ரெகவரி)</string>
   <!-- Reboot/Recovery QS Tile -->
   <!-- App kill -->
   <!-- Vpn -->

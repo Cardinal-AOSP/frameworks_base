@@ -91,6 +91,10 @@
   <string name="keyguard_indication_dash_charging_time">DASH nabíjení (plně nabito za <xliff:g id="CHARGING_TIME_LEFT">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">DASH nabíjení</string>
   <!-- Advance location quick setting tile -->
+  <string name="quick_settings_location_battery_saving">Úspora baterie</string>
+  <string name="quick_settings_location_gps_only">Pouze GPS</string>
+  <string name="quick_settings_location_high_accuracy">Vysoká přesnost</string>
+  <string name="quick_settings_location_off">Poloha vypnuta</string>
   <string name="accessibility_quick_settings_location_battery_saving">Hlášení polohy: úspora baterie.</string>
   <string name="accessibility_quick_settings_location_gps_only">Hlášení polohy: pouze GPS.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Hlášení polohy: vysoká přesnost.</string>
@@ -115,14 +119,27 @@
   <!-- App kill -->
   <string name="recents_app_killed">Aplikace ukončena</string>
   <!-- Vpn -->
+  <string name="status_bar_vpn">Síť VPN</string>
   <!-- Roaming icon toggle -->
   <string name="status_bar_roaming">Roaming</string>
   <!-- Data saver-->
+  <string name="status_bar_data_saver">Spořič dat</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Ikona sítě 4G/LTE</string>
+  <string name="show_lte_fourgee_summary">Zobrazit ikonu 4G nebo LTE ve stavové liště/panelu QS</string>
+  <string name="statusbar_tuner_category_title">Skrýt položky stavové lišty</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Plně nabito</string>
   <!-- Expanded desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Rozšířená plocha</string>
+  <string name="quick_settings_expanded_desktop">Rozšířená</string>
+  <string name="quick_settings_expanded_desktop_off">Normální</string>
+  <string name="quick_settings_expanded_navigation_off">Skrýt navigační panel</string>
+  <string name="quick_settings_expanded_statusbar_off">Skrýt stavovou lištu</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <!-- Sync QS tile -->
+  <!-- NavigationBar Tile -->
 </resources>
