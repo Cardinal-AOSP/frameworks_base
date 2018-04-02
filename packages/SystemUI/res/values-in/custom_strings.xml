@@ -65,7 +65,7 @@
   <string name="custom_hint">Gesek dari ikon untuk diluncurkan</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompas</string>
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
+   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">Menginisialisasi \ u2026</string>
   <string name="accessibility_quick_settings_compass_off">Kompas mati.</string>
   <string name="accessibility_quick_settings_compass_on">Kompas pada.</string>
@@ -125,4 +125,6 @@
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <!-- Sync QS tile -->
+  <!-- NavigationBar Tile -->
 </resources>

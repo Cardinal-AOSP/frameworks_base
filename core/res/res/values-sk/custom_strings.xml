@@ -32,4 +32,5 @@
   <string name="adb_active_generic_notification_message">Dotykom zakážate ladenie.</string>
   <!-- Advanced power menu -->
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="custom_system_error_manufacturer">Bol zistený nesúlad v systémových ovládačoch. Zvyčajne to znamená že ovládače sú zastarané. Skontrolujte, či ovládače zodpovedajú <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
 </resources>
