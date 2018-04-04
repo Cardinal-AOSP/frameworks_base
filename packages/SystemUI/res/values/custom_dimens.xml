@@ -39,4 +39,6 @@
     <dimen name="ticker_text_top_padding">2dp</dimen>
     <dimen name="ticker_text_end_padding">10dp</dimen>
 
+    <!-- QS content padding -->
+    <dimen name="qs_corner_content_padding">8dp</dimen>
 </resources>
