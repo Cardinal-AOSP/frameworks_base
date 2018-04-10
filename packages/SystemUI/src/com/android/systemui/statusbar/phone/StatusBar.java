@@ -6300,7 +6300,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 
-    private void updateBatterySettings() {
+    // Called from CollapsedStatusBarFragment observer
+    public void updateBatterySettings() {
         if (mStatusBarView != null) {
             mStatusBarView.updateBatterySettings();
         }
