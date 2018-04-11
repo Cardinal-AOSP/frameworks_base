@@ -549,20 +549,20 @@ public class RecentsView extends FrameLayout {
                     getDimensionPixelSize(R.dimen.floating_action_button_margin_side);
             switch (clearRecentsLocation) {
                 case 0:
-                    params.gravity = Gravity.TOP | Gravity.RIGHT;
+                    params.gravity = Gravity.TOP | Gravity.END;
                     break;
                 case 1:
-                    params.gravity = Gravity.TOP | Gravity.LEFT;
+                    params.gravity = Gravity.TOP | Gravity.START;
                     break;
                 case 2:
                     params.gravity = Gravity.TOP | Gravity.CENTER;
                     break;
                 case 3:
                 default:
-                    params.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+                    params.gravity = Gravity.BOTTOM | Gravity.END;
                     break;
                 case 4:
-                    params.gravity = Gravity.BOTTOM | Gravity.LEFT;
+                    params.gravity = Gravity.BOTTOM | Gravity.START;
                     break;
                 case 5:
                     params.gravity = Gravity.BOTTOM | Gravity.CENTER;
