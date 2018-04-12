@@ -937,7 +937,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private static final int MSG_DISPATCH_BACK_KEY_TO_AUTOFILL = 24;
     private static final int MSG_SYSTEM_KEY_PRESS = 25;
     private static final int MSG_HANDLE_ALL_APPS = 26;
-    private static final int MSG_DISPATCH_VOLKEY_WITH_WAKE_LOCK = 27;
+    private static final int MSG_DISPATCH_VOLKEY_SKIP_TRACK = 27;
     private static final int MSG_TOGGLE_TORCH = 28;
     private static final int MSG_CLEAR_PROXIMITY = 29;
 
@@ -1038,12 +1038,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 case MSG_HANDLE_ALL_APPS:
                     launchAllAppsAction();
                     break;
-                case MSG_DISPATCH_VOLKEY_WITH_WAKE_LOCK: {
-                    KeyEvent event = (KeyEvent) msg.obj;
-                    mIsLongPress = true;
-                    dispatchMediaKeyWithWakeLockToAudioService(event);
-                    dispatchMediaKeyWithWakeLockToAudioService(
-                            KeyEvent.changeAction(event, KeyEvent.ACTION_UP));
+                case MSG_DISPATCH_VOLKEY_SKIP_TRACK: {
+                    sendSkipTrackEventToStatusBar(msg.arg1);
                     break;
                 }
                 case MSG_TOGGLE_TORCH:
@@ -7326,7 +7322,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                                 // Consume key down events of all presses.
                                 break;
                             } else {
-                                mHandler.removeMessages(MSG_DISPATCH_VOLKEY_WITH_WAKE_LOCK);
+                                mHandler.removeMessages(MSG_DISPATCH_VOLKEY_SKIP_TRACK);
                                 // Consume key up events of long presses only.
                                 if (mIsLongPress) {
                                     break;
@@ -7553,7 +7549,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private void scheduleLongPressKeyEvent(KeyEvent origEvent, int keyCode) {
         KeyEvent event = new KeyEvent(origEvent.getDownTime(), origEvent.getEventTime(),
                 origEvent.getAction(), keyCode, 0);
-        Message msg = mHandler.obtainMessage(MSG_DISPATCH_VOLKEY_WITH_WAKE_LOCK, event);
+        Message msg = mHandler.obtainMessage(MSG_DISPATCH_VOLKEY_SKIP_TRACK, event);
         msg.setAsynchronous(true);
         mHandler.sendMessageDelayed(msg, ViewConfiguration.getLongPressTimeout());
     }
@@ -7594,6 +7590,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         Message message = mHandler.obtainMessage(MSG_SYSTEM_KEY_PRESS, keyCode, 0);
         message.setAsynchronous(true);
         mHandler.sendMessage(message);
+    }
+
+    private void sendSkipTrackEventToStatusBar(int keyCode) {
+        sendSystemKeyToStatusBar(keyCode);
     }
 
     /**
