@@ -188,4 +188,7 @@
     <string name="accessibility_quick_settings_hw_navigation_bar_on">Hardware navigation bar turned on</string>
 
     <string name="quick_settings_sound_search">Sound search</string>
+
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
 </resources>
