@@ -120,6 +120,6 @@ public class NavigationBarTile extends QSTileImpl<BooleanState> {
 
     @Override
     public void handleSetListening(boolean listening) {
-        // Do nothing
+     // Do nothing
     }
 }
