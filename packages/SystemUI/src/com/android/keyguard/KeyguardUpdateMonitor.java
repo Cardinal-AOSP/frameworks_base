@@ -694,6 +694,10 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
                     Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1;
     }
 
+    public boolean getFaceUnlockRunning(int userId) {
+        return mUserFaceUnlockRunning.get(userId) && !isTrustDisabled(userId);
+    }
+
     public boolean isUnlockingWithFingerprintAllowed() {
         return isFingerprintUnlockAfterRebootAllowed() ||
                 (mStrongAuthTracker.isUnlockingWithFingerprintAllowed()); 
