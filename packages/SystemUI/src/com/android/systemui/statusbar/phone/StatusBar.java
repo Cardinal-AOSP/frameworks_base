@@ -6358,8 +6358,10 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.HEADS_UP_WHITELIST_VALUES))) {
 		        setHeadsUpWhitelist();
             } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE)) ||
-                    uri.equals(Settings.Secure.getUriFor(Settings.Secure.LOCK_QS_DISABLED))) {
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
+		        setStatusBarWindowViewOptions();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.Secure.LOCK_QS_DISABLED))) {
 		        setStatusBarWindowViewOptions();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.SYSTEM_UI_THEME))) {
@@ -6482,6 +6484,10 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     private void setStatusBarWindowViewOptions() {
+        if (mNotificationPanel != null) {
+            mNotificationPanel.updateSettings();
+        }
+
         if (mStatusBarWindow != null) {
             mStatusBarWindow.setStatusBarWindowViewOptions();
         }
