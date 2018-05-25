@@ -15,6 +15,11 @@ import com.android.systemui.R;
 /** Quick settings tile: ANBI **/
 public class ANBITile extends QSTileImpl<BooleanState> {
 
+    public static final int KEY_MASK_HOME = 0x01;
+    public static final int KEY_MASK_BACK = 0x02;
+    public static final int KEY_MASK_MENU = 0x04;
+    public static final int KEY_MASK_APP_SWITCH = 0x10;
+
     public ANBITile(QSHost host) {
         super(host);
     }
@@ -40,7 +45,7 @@ public class ANBITile extends QSTileImpl<BooleanState> {
     public CharSequence getTileLabel() {
         return mContext.getString(R.string.quick_settings_anbi_label);
     }
-    
+
     private void setEnabled(boolean enabled) {
         Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.ANBI_ENABLED,
@@ -75,6 +80,21 @@ public class ANBITile extends QSTileImpl<BooleanState> {
             return mContext.getString(
                     R.string.accessibility_quick_settings_anbi_changed_off);
         }
+    }
+
+    @Override
+    public boolean isAvailable() {
+
+        final int deviceKeys = mContext.getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+
+        // read bits for present hardware keys
+        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
+        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+
+        return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey);
     }
 
     @Override

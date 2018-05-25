@@ -18,6 +18,7 @@ package com.android.systemui.qs.tiles;
 
 import android.content.ComponentName;
 import android.content.Intent;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 
@@ -26,23 +27,28 @@ import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
 import com.android.systemui.R;
 
+import com.android.internal.hardware.AmbientDisplayConfiguration;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 public class AODTile extends QSTileImpl<BooleanState> {
+
     private boolean mAodDisabled;
+
+    private final AmbientDisplayConfiguration mAmbientConfig;
+
     private final Icon mIcon = ResourceIcon.get(R.drawable.ic_qs_aod);
 
     public AODTile(QSHost host) {
         super(host);
         mAodDisabled = Settings.Secure.getInt(mContext.getContentResolver(),
                 Settings.Secure.DOZE_ALWAYS_ON, 1) == 0;
+
+        mAmbientConfig = new AmbientDisplayConfiguration(mContext);
     }
 
     @Override
     public boolean isAvailable() {
-        //final boolean deviceKeys = mContext.getResources().getBoolean(
-        //        com.android.internal.R.bool.config_showNavigationBar);
-        return true;
+        return mAmbientConfig.alwaysOnEnabled(UserHandle.USER_CURRENT);
     }
 
     @Override
