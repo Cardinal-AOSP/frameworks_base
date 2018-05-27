@@ -152,5 +152,7 @@
   <string name="accessibility_quick_settings_hw_navigation_bar">Hardwarová tlačítka</string>
   <string name="accessibility_quick_settings_sw_navigation_bar_on">Softwarová navigace zapnuta</string>
   <string name="accessibility_quick_settings_hw_navigation_bar_on">Hardwarová navigace zapnuta</string>
+  <string name="quick_settings_sound_search">Zvukové vyhledávání</string>
   <!-- AOD QS tile -->
+  <string name="quick_settings_aod_label">AOD</string>
 </resources>

@@ -57,7 +57,7 @@
   <string name="accessibility_quick_settings_anbi_changed_off">Yanlışlıkla dokunma devre dışı</string>
   <string name="accessibility_quick_settings_anbi_changed_on">Yanlışlıkla dokunma açık</string>
   <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
-  <string name="drag_or_tap_to_add_tiles">Kare eklemek için dokunun</string>
+  <string name="drag_or_tap_to_add_tiles">Kare eklemek için sürükleyin veya dokunun</string>
   <!-- Lockscreen shortcuts -->
   <string name="lockscreen_default">Varsayılan</string>
   <string name="lockscreen_hidden">Yok</string>
@@ -92,7 +92,7 @@
   <string name="keyguard_plugged_in_dash_charging">Hızlı Şarj oluyor</string>
   <!-- Advance location quick setting tile -->
   <string name="quick_settings_location_battery_saving">Pil tasarrufu</string>
-  <string name="quick_settings_location_gps_only">Sadece cihaz</string>
+  <string name="quick_settings_location_gps_only">Yalnızca cihaz</string>
   <string name="quick_settings_location_high_accuracy">Yüksek doğruluk</string>
   <string name="quick_settings_location_off">Konum kapalı</string>
   <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
@@ -152,5 +152,7 @@
   <string name="accessibility_quick_settings_hw_navigation_bar">Donanım tuşu</string>
   <string name="accessibility_quick_settings_sw_navigation_bar_on">Yazılımsal gezinme çubuğu açık</string>
   <string name="accessibility_quick_settings_hw_navigation_bar_on">Donanımsal gezinme çubuğu açık</string>
+  <string name="quick_settings_sound_search">Sesli arama</string>
   <!-- AOD QS tile -->
+  <string name="quick_settings_aod_label">AOD</string>
 </resources>

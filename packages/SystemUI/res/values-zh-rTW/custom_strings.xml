@@ -152,5 +152,7 @@
   <string name="accessibility_quick_settings_hw_navigation_bar">實體按鈕</string>
   <string name="accessibility_quick_settings_sw_navigation_bar_on">軟體導覽列開啟</string>
   <string name="accessibility_quick_settings_hw_navigation_bar_on">硬體導覽列開啟</string>
+  <string name="quick_settings_sound_search">語音搜尋</string>
   <!-- AOD QS tile -->
+  <string name="quick_settings_aod_label">AOD</string>
 </resources>
