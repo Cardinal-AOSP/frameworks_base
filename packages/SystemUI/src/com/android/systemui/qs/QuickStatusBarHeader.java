@@ -53,6 +53,7 @@ public class QuickStatusBarHeader extends RelativeLayout {
 
     private Clock mClock;
     private Clock mLeftClock;
+    private Clock mCenterClock;
 
     public QuickStatusBarHeader(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -85,6 +86,8 @@ public class QuickStatusBarHeader extends RelativeLayout {
         ((Clock)mClock).setIsQshb(true);
         mLeftClock = findViewById(R.id.left_clock);
         ((Clock)mLeftClock).setIsQshb(true);
+        mCenterClock = findViewById(R.id.center_clock);
+        ((Clock)mCenterClock).setIsQshb(true);
 
         mActivityStarter = Dependency.get(ActivityStarter.class);
     }
@@ -101,6 +104,9 @@ public class QuickStatusBarHeader extends RelativeLayout {
         }
         if (mLeftClock != null) {
             ((Clock)mLeftClock).updateSettings();
+        }
+        if (mCenterClock != null) {
+            ((Clock)mCenterClock).updateSettings();
         }
     }
 
