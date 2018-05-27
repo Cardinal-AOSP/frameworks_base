@@ -30,4 +30,6 @@
     <!-- Whether to show Data disable prompt when user turn off data from QS -->
     <bool name="config_show_data_disable_prompt">false</bool>
 
+    <!-- Config to enable/diaable qs tile tinting -->
+    <bool name="config_enable_qs_tile_tinting">false</bool>
 </resources>
