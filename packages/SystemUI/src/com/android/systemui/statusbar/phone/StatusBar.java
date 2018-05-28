@@ -6360,7 +6360,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
 		        setStatusBarWindowViewOptions();
-            } else if (uri.equals(Settings.System.getUriFor(
+            } else if (uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.LOCK_QS_DISABLED))) {
 		        setStatusBarWindowViewOptions();
             } else if (uri.equals(Settings.System.getUriFor(
