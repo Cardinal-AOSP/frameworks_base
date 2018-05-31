@@ -138,7 +138,8 @@
     backgrounds (requires config_allowNotificationIconTextTinting to be true)-->
     <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
 
-    <!-- Power button flashlight proximity -->
+    <!-- Time to give to the proximity sensor before toggling the flashlight with the Power button.
+    Set to -1 to disable the proximity sensor check at all-->
     <integer name="config_flashlightProximityTimeout">300</integer>
 
     <!-- Whether to persist the notification for when a usb drive device is plugged in -->
