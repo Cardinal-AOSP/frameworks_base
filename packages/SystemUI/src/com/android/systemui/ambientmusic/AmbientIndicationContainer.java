@@ -154,6 +154,9 @@ public class AmbientIndicationContainer extends AutoReinflateContainer {
                     && (TextUtils.isEmpty(mLastInfo) || (!TextUtils.isEmpty(mLastInfo) && !mLastInfo.equals(mInfoToSet)));
             if (mStatusBar != null && isAnotherTrack) {
                 mStatusBar.triggerAmbientForMedia();
+                if (mStatusBar.isPulsing()) {
+                    mStatusBar.getDozeScrimController().extendPulseForMusicTicker();
+                }
             }
             if (mPulsing) {
                 mLastInfo = mInfoToSet;
