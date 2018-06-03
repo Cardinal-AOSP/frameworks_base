@@ -86,6 +86,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private Record mDetailRecord;
 
     private BrightnessMirrorController mBrightnessMirrorController;
+    private ImageView mMirrorBrightnessIcon;
     private View mDivider;
 
     public QSPanel(Context context) {
@@ -284,6 +285,10 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             ToggleSliderView brightnessSlider = findViewById(R.id.brightness_slider);
             ToggleSliderView mirrorSlider = mBrightnessMirrorController.getMirror()
                     .findViewById(R.id.brightness_slider);
+            mMirrorBrightnessIcon = mBrightnessMirrorController.getMirror()
+                    .findViewById(R.id.brightness_icon);
+            mMirrorBrightnessIcon.setVisibility(mBrightnessIcon.getVisibility()
+                    == View.VISIBLE ? View.INVISIBLE : View.GONE);
             brightnessSlider.setMirror(mirrorSlider);
             brightnessSlider.setMirrorController(mBrightnessMirrorController);
         }
