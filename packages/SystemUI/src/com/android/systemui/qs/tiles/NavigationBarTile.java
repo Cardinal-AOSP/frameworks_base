@@ -19,6 +19,7 @@ package com.android.systemui.qs.tiles;
 
 import android.content.ComponentName;
 import android.content.Intent;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 
@@ -66,14 +67,14 @@ public class NavigationBarTile extends QSTileImpl<BooleanState> {
     }
 
     private void setEnabled(boolean enabled) {
-        Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, enabled ? 1:0);
+        Settings.System.putIntForUser(mContext.getContentResolver(),
+                Settings.System.NAVIGATION_BAR_SHOW, enabled ? 1:0, UserHandle.USER_CURRENT);
     }
 
    private boolean isNavigationBarEnabled() {
         final boolean showNavBarDefault = CustomUtils.deviceSupportNavigationBar(mContext);
-        return Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0) == 1;
+        return Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0, UserHandle.USER_CURRENT) == 1;
     }
 
     @Override

@@ -1065,8 +1065,8 @@ public final class PowerManagerService extends SystemService
                 UserHandle.USER_CURRENT);
 
         final boolean showNavBarDefault = CustomUtils.deviceSupportNavigationBar(mContext);
-        navBarEnabled = Settings.System.getInt(resolver,
-                        Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0) == 1;
+        navBarEnabled = Settings.System.getIntForUser(resolver,
+                        Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0, UserHandle.USER_CURRENT) == 1;
 
         mDirty |= DIRTY_SETTINGS;
     }

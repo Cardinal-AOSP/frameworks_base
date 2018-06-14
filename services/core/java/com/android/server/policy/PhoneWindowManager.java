@@ -2872,8 +2872,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
 
             boolean showNavBarDefault = CustomUtils.deviceSupportNavigationBar(mContext);
-            boolean navBarEnabled = Settings.System.getInt(resolver,
-                        Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0) == 1;
+            boolean navBarEnabled = Settings.System.getIntForUser(resolver,
+                        Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0, UserHandle.USER_CURRENT) == 1;
 
             if (navBarEnabled != mNavBarEnabled) {
                 mNavBarEnabled = navBarEnabled;
