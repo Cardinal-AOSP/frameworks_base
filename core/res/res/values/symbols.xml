@@ -16,6 +16,10 @@
 */
 -->
 <resources>
+
+  <!-- Fastscroller -->
+  <java-symbol type="color" name="fastscroller_text_color" />
+
   <!-- Private symbols that we need to reference from framework code.  See
        frameworks/base/core/res/MakeJavaSymbols.sed for how to easily generate
        this.
