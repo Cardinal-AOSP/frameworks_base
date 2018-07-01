@@ -542,11 +542,7 @@ class GlobalScreenshot {
 
         mSettingsObserver.register();
         updateCameraSound();
-
-        // Setup the Camera shutter sound
-        mCameraSound = new MediaActionSound();
-        mCameraSound.load(MediaActionSound.SHUTTER_CLICK);
-    }
+        }
 
     private void updateCameraSound() {
         final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
