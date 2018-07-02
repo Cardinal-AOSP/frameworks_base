@@ -26,11 +26,11 @@
     <color name="icon_color_split_screen">@android:color/white</color>
     <color name="icon_color_home">@android:color/white</color>
     <color name="icon_color_overview">@android:color/white</color>
-    <color name="icon_color_back_dark">@*android:color/text_color_secondary</color>
-    <color name="icon_color_ime_switcher_dark">@*android:color/text_color_secondary</color>
-    <color name="icon_color_split_screen_dark">@*android:color/text_color_secondary</color>
-    <color name="icon_color_home_dark">@*android:color/text_color_secondary</color>
-    <color name="icon_color_overview_dark">@*android:color/text_color_secondary</color>
+    <color name="icon_color_back_dark">#8c000000</color>
+    <color name="icon_color_ime_switcher_dark">#8c000000</color>
+    <color name="icon_color_split_screen_dark">#8c000000</color>
+    <color name="icon_color_home_dark">#8c000000</color>
+    <color name="icon_color_overview_dark">#8c000000</color>
 
     <!-- Navigation button ripple color -->
     <color name="navbutton_ripple_color">#FFFFFFFF</color>
