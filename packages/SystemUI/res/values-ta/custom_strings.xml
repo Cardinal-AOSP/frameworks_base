@@ -17,33 +17,96 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Keyboard L/R Cursor -->
+  <string name="kb_left">விசைப்பலகை இடது சுட்டி</string>
+  <string name="kb_right">வலது சுட்டி விசைப்பலகை</string>
+  <string name="skip_prev">விசைப்பலகை இடது - முந்தைய தடம்</string>
+  <string name="skip_next">விசைப்பகை வலது - அடுத்த தடம்</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">காஃபின்</string>
+  <string name="accessibility_quick_settings_caffeine_off">காஃபின் அணை</string>
+  <string name="accessibility_quick_settings_caffeine_on">காஃபின் செயல்படுத்து</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">திரைப்பிடிப்பு</string>
+  <string name="quick_settings_region_screenshot_label">பகுதி திரைப்பிடிப்பு</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">பஇல்ப</string>
+  <string name="quick_settings_pip_tile_app_na">பஇல்ப இந்த செயலியில் செயல்படாது</string>
   <!-- Sound QS Tile -->
-  <!-- Volume QS Tile -->
+  <string name="quick_settings_sound_label">சத்தம்</string>
+  <string name="quick_settings_sound_ring">மணி</string>
+  <string name="quick_settings_sound_vibrate">அதிர்</string>
+  <string name="quick_settings_sound_dnd">தொந்தரவு செய்ய வேண்டாம்</string>
   <!-- SystemUI Tuner -->
+  <string name="statusbar_icons_blacklist">நிலைப் பட்டி சின்னங்கள்</string>
+  <string name="navbar_tuner_activity">வழிநடத்தும் பட்டி</string>
+  <string name="lockscreen_tuner_activity">பூட்டு திரை குறுக்குவழிகள்</string>
+  <string name="powernotif_tuner_activity">சக்தி அறிவிப்புகள்</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">செயலி அறிவிப்பு தலைகள்</string>
+  <string name="accessibility_quick_settings_heads_up_off">செயலி அறிவிப்பு தலைகளை நிறுத்து.</string>
+  <string name="accessibility_quick_settings_heads_up_on">செயலி அறிவிப்பு தலைகளை செயல்படுத்து.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">செயலி அறிவிப்பு தலைகள் நிறுத்தப்பட்டுள்ளன.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">செயலி அறிவிப்பு தலைகள் செயல்படுத்தப்பட்டு உள்ளன.</string>
   <!-- ANBI Tile -->
+  <string name="quick_settings_anbi_label">எதிர்பாரா தொடுதல்</string>
+  <string name="accessibility_quick_settings_anbi_on">எதிர்பாரா தொடுதலை தடுக்க</string>
+  <string name="accessibility_quick_settings_anbi_off">எதிர்பாரா தொடுதலை தடுக்க வேண்டாம்</string>
+  <string name="accessibility_quick_settings_anbi_changed_off">எதிர்பாரா தொடுதல் அணைக்கப்பட்டது</string>
+  <string name="accessibility_quick_settings_anbi_changed_on">எதிர்பாரா தொடுதல் செயல்படுத்தப்பட்டது</string>
   <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
+  <string name="drag_or_tap_to_add_tiles">ஓடுகளை சேர்க்க தட்டவும் அல்லது தொட்டு இழுக்கவும்</string>
   <!-- Lockscreen shortcuts -->
+  <string name="lockscreen_default">இயல்பு</string>
+  <string name="lockscreen_hidden">எதுவுமில்லை</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">துவங்க படவுருவிலிருந்து தேய்க்கவும்</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">திசைகாட்டி</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">\u2026 துவங்கப்படுகிறது</string>
+  <string name="accessibility_quick_settings_compass_off">திசைகாட்டி அணை.</string>
+  <string name="accessibility_quick_settings_compass_on">திசைகாட்டி செயல்பாடு.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">திசைகாட்டி அணைக்கப்பட்டது.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">திசைகாட்டி செயல்பாட்டில்.</string>
+  <string name="quick_settings_compass_N">வ</string>
+  <string name="quick_settings_compass_NE">வகி</string>
+  <string name="quick_settings_compass_E">கி</string>
+  <string name="quick_settings_compass_SE">தெகி</string>
+  <string name="quick_settings_compass_S">தெ</string>
+  <string name="quick_settings_compass_SW">தெமே</string>
+  <string name="quick_settings_compass_W">மே</string>
+  <string name="quick_settings_compass_NW">வமே</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">நீகாவவகு</string>
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">அவேபாதோ+ (HSPA+)</string>
   <!-- Screen pinning dialog description -->
+  <string name="screen_pinning_description_back">நீங்கள் விடுவிக்கும் வரை இது காட்சியில் வைக்கும். விடுவிக்க பின்செல் பொத்தானை தொட்டு பிடித்துக்கொள்.</string>
   <!-- Logo -->
+  <string name="status_bar_logo_title">கார்டினல் சின்னம்</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">மின்னேற்றப்படுகிறது (நிறைவடைய <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> உள்ளன)</string>
+  <string name="keyguard_plugged_in_dash_charging">மின்னேற்றப்படுகிறது</string>
   <!-- Advance location quick setting tile -->
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>நிறமி</item>
+    <item>வலையொளி</item>
+    <item>நெட்ஃப்ளிக்ஸ்</item>
+  </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ஆபிபா (ADB) பிணையம்</string>
   <string name="quick_settings_network_adb_enabled_label">ஆபிபா (Adb) வழி வலை</string>
   <string name="quick_settings_network_adb_disabled_label">ஆபிபா (Adb) வழி வலை</string>
   <!-- Advanced power menu -->
+  <string name="global_action_restart_advanced">மேம்பட்ட</string>
   <string name="global_action_restart_recovery">மீட்பு (ரெகவரி)</string>
+  <string name="global_action_restart_bootloader">துவக்கேற்றி</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">மறுதொடக்கம்</string>
+  <string name="quick_settings_reboot_recovery_label">மீட்பு</string>
   <!-- App kill -->
+  <string name="recents_app_killed">பயன்பாடு நிறுத்தப்பட்டது</string>
   <!-- Vpn -->
   <!-- Roaming icon toggle -->
   <!-- Data saver-->

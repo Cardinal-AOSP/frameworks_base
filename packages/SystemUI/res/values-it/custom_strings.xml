@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Suona</string>
   <string name="quick_settings_sound_vibrate">Vibrazione</string>
   <string name="quick_settings_sound_dnd">Non disturbare</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Volume</string>
-  <string name="quick_settings_volume_panel_label">Volume</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Icone barra di stato</string>
   <string name="navbar_tuner_activity">Barra di navigazione</string>
@@ -152,5 +149,7 @@
   <string name="accessibility_quick_settings_hw_navigation_bar">Pulsanti HW</string>
   <string name="accessibility_quick_settings_sw_navigation_bar_on">Barra di navigazione software attivata</string>
   <string name="accessibility_quick_settings_hw_navigation_bar_on">Barra di navigazione hardware attivata</string>
+  <string name="quick_settings_sound_search">Cerca suono</string>
   <!-- AOD QS tile -->
+  <string name="quick_settings_aod_label">AOD</string>
 </resources>

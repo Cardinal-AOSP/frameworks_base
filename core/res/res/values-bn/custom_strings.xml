@@ -17,12 +17,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Assist manager -->
+  <string name="no_assist_found">অ্যাসিসট ম্যানেজার উপলব্ধ নয়</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">প্যাকেজ সিগনেচার নকল করুন</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">অ্যাপটি অন্য অ্যাপ হবার ভান করতে পারে | ক্ষতিকারক অ্যাপ এর সাহায্যে ব্যাক্তিগত তথ্য জানতে পারে | একমাত্র নিশ্চিত হলেই অনুমতি প্রদান করুন !</string>
   <!-- Notify user that they are in Lock-to-app -->
   <string name="lock_to_app_toast_back">এই স্ক্রিন আনপিন করার জন্য ব্যাক বোতাম চেপে রাখুন</string>
   <!-- ADB over network notification -->
+  <string name="adb_net_active_notification_title">নেটওয়ার্কের মাধ্যমে এডিবি সক্রিয়</string>
   <!-- ADB over USB and network notification -->
   <string name="adb_both_active_notification_title">ইউএসবির মাধ্যমে এডিবি এবং নেটওয়ার্ক সক্রিয়</string>
   <!-- ADB notification message-->

@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Klingelton</string>
   <string name="quick_settings_sound_vibrate">Vibration</string>
   <string name="quick_settings_sound_dnd">Nicht stören</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Lautstärke</string>
-  <string name="quick_settings_volume_panel_label">Lautstärke</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Statusleistensymbole</string>
   <string name="navbar_tuner_activity">Navigationsleiste</string>

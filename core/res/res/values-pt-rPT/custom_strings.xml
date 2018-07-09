@@ -34,4 +34,5 @@
   <string name="reboot_title">Reiniciar</string>
   <string name="reboot_message">Reiniciar sistema</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="custom_system_error_manufacturer">Uma imagem de fornecedor inválida foi detetada. Normalmente isto significa que a sua imagem de fornecedor está desatualizada. Por favor, certifique-se que a sua imagem de fornecedor corresponda com <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
 </resources>

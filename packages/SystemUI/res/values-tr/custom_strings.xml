@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Zil sesi</string>
   <string name="quick_settings_sound_vibrate">Titreşim</string>
   <string name="quick_settings_sound_dnd">Rahatsız etmeyin</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Ses</string>
-  <string name="quick_settings_volume_panel_label">Ses seviyesi</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Durum çubuğu simgeleri</string>
   <string name="navbar_tuner_activity">Gezinme çubuğu</string>

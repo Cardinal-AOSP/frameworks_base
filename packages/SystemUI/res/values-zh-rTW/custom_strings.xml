@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">鈴聲</string>
   <string name="quick_settings_sound_vibrate">震動</string>
   <string name="quick_settings_sound_dnd">勿干擾</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">音量</string>
-  <string name="quick_settings_volume_panel_label">音量</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">狀態列圖示</string>
   <string name="navbar_tuner_activity">導覽列</string>

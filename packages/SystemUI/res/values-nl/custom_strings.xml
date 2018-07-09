@@ -34,9 +34,6 @@
   <string name="quick_settings_sound_ring">Beltoon</string>
   <string name="quick_settings_sound_vibrate">Trillen</string>
   <string name="quick_settings_sound_dnd">Niet storen</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Volume</string>
-  <string name="quick_settings_volume_panel_label">Volume</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Statusbalk iconen</string>
   <string name="navbar_tuner_activity">Navigatiebalk</string>
@@ -66,18 +63,39 @@
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f </xliff:g> \u00b0 <xliff:g id="direction">%2$s </xliff:g></string>
   <string name="quick_settings_compass_init">Initialiseren\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Kompas uit.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompas aan.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompas uitgeschakeld.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompas ingeschakeld.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NO</string>
+  <string name="quick_settings_compass_E">O</string>
+  <string name="quick_settings_compass_SE">ZO</string>
+  <string name="quick_settings_compass_S">Z</string>
+  <string name="quick_settings_compass_SW">ZW</string>
+  <string name="quick_settings_compass_W">W</string>
+  <string name="quick_settings_compass_NW">NW</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screen pinning dialog description -->
+  <string name="screen_pinning_description_back">Het scherm blijft zichtbaar totdat u het u losmaakt. Blijf de Terug-knop aanraken om het scherm los te maken.</string>
   <!-- Logo -->
+  <string name="status_bar_logo_title">Cardinal Logo</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Dash Charging (vol over <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Locatiebepaling: energiebesparing.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Locatiebepaling: alleen apparaat.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Locatiebepaling: hoge nauwkeurigheid.</string>
   <!-- Blacklist apps for ime switcher -->
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ADB netwerk</string>
   <string name="quick_settings_network_adb_enabled_label">ADB via Internet</string>
   <string name="quick_settings_network_adb_disabled_label">ADB via Internet</string>
   <!-- Advanced power menu -->
+  <string name="global_action_restart_recovery">Recovery</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Herstarten</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>

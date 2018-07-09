@@ -17,37 +17,101 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Keyboard L/R Cursor -->
+  <string name="kb_left">কী-বোর্ডের বাঁ কার্সর</string>
+  <string name="kb_right">কী-বোর্ড ডান কার্সর</string>
+  <string name="skip_prev">কিবোঃ বা - পূর্ববর্তী ট্র্যাক</string>
+  <string name="skip_next">কিবোঃ ডান - পরবর্তী ট্র্যাক</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">ক্যাফিন</string>
+  <string name="accessibility_quick_settings_caffeine_off">ক্যাফিন সক্রিয়</string>
+  <string name="accessibility_quick_settings_caffeine_on">ক্যাফিন সক্রিয়</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">স্ক্রীন প্রতিকৃতি</string>
+  <string name="quick_settings_region_screenshot_label">আংশিক স্ক্রীন প্রতিকৃতি</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">পিকচার ইন পিকচার</string>
+  <string name="quick_settings_pip_tile_app_na">অ্যাপ পিকচার ইন পিকচার এর জন্য উপযোগী নয়</string>
   <!-- Sound QS Tile -->
-  <!-- Volume QS Tile -->
+  <string name="quick_settings_sound_label">শব্দ</string>
+  <string name="quick_settings_sound_ring">রিং</string>
+  <string name="quick_settings_sound_vibrate">কম্পন</string>
+  <string name="quick_settings_sound_dnd">বিরক্ত করবেন না</string>
   <!-- SystemUI Tuner -->
+  <string name="statusbar_icons_blacklist">স্ট্যাটাস বার আইকন</string>
+  <string name="navbar_tuner_activity">ন্যাভিগেশন বার</string>
+  <string name="lockscreen_tuner_activity">লকস্ক্রিন শর্টকাট</string>
+  <string name="powernotif_tuner_activity">বিজ্ঞপ্তির পর্যায়</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">হেডস আপ</string>
+  <string name="accessibility_quick_settings_heads_up_off">হেডস আপ বন্ধ.</string>
+  <string name="accessibility_quick_settings_heads_up_on">হেডস আপ সক্রিয়.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">হেডস আপ বন্ধ হয়েছে.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">হেডস আপ সক্রিয় হয়েছে.</string>
   <!-- ANBI Tile -->
+  <string name="quick_settings_anbi_label">আকস্মিক টাচ</string>
+  <string name="accessibility_quick_settings_anbi_on">আকস্মিক টাচ প্রতিরোধ করুন</string>
+  <string name="accessibility_quick_settings_anbi_off">আকস্মিক টাচ প্রতিরোধ হবে না</string>
+  <string name="accessibility_quick_settings_anbi_changed_off">আকস্মিক টাচ বন্ধ</string>
+  <string name="accessibility_quick_settings_anbi_changed_on">আকস্মিক টাচ সক্রিয়</string>
   <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
+  <string name="drag_or_tap_to_add_tiles">টাইল যোগ করার জন্য টানুন বা স্পর্শ করুন</string>
   <!-- Lockscreen shortcuts -->
+  <string name="lockscreen_default">ডিফল্ট</string>
+  <string name="lockscreen_hidden">কোন কিছুই নয়</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">চালু করার জন্য আইকন থেকে সোয়াইপ করুন</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">কম্পাস</string>
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">চালু হচ্ছে\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">কম্পাস বন্ধ.</string>
+  <string name="accessibility_quick_settings_compass_on">কম্পাস সক্রিয়.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">কম্পাস বন্ধ হয়েছে.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">কম্পাস সক্রিয় হয়েছে.</string>
+  <string name="quick_settings_compass_N">উঃ</string>
+  <string name="quick_settings_compass_NE">উঃ পূঃ</string>
+  <string name="quick_settings_compass_E">পূঃ</string>
+  <string name="quick_settings_compass_SE">দঃ পূঃ</string>
+  <string name="quick_settings_compass_S">দঃ</string>
+  <string name="quick_settings_compass_SW">দঃ পঃ</string>
+  <string name="quick_settings_compass_W">পঃ</string>
+  <string name="quick_settings_compass_NW">উঃ পঃ</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">ভিওএলটিই</string>
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">এইচএসপিএ প্লাস</string>
   <!-- Screen pinning dialog description -->
   <string name="screen_pinning_description_back">আনপিন না করা পর্যন্ত এটি স্ক্রিনে থাকবে | আনপিন করার জন্য ব্যাক বোতাম চেপে ধরে রাখুন |</string>
   <!-- Logo -->
+  <string name="status_bar_logo_title">কার্ডিনাল লোগো</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">ড্যাশ চার্জ (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> পর্যন্ত পূর্ণ হবে)</string>
+  <string name="keyguard_plugged_in_dash_charging">ড্যাশ চারজিং</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">অবস্থান প্রতিবেদন: ব্যাটারি সাশ্রয় মোড।.</string>
   <string name="accessibility_quick_settings_location_gps_only">অবস্থান প্রতিবেদন: শুধু সেন্সর মোড।.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">অবস্থান রিপোর্ট: উচ্চ নির্ভুলতা মোড।.</string>
   <!-- Blacklist apps for ime switcher -->
+  <string-array name="navArrowsExcludeList">
+    <item>ক্রোম</item>
+    <item>ইউটিউব</item>
+    <item>নেটফ্লিক্স</item>
+  </string-array>
   <!-- ADB network tile -->
+  <string name="quick_settings_adb_network">এডিবি নেটওয়ার্ক</string>
+  <string name="quick_settings_network_adb_enabled_label">নেটের মাধ্যমে এডিবি</string>
+  <string name="quick_settings_network_adb_disabled_label">নেটের মাধ্যমে এডিবি</string>
   <!-- Advanced power menu -->
+  <string name="global_action_restart_recovery">রিকভারি</string>
+  <string name="global_action_restart_bootloader">বুটলোডার</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">রিবুট</string>
+  <string name="quick_settings_reboot_recovery_label">রিকভারি</string>
   <!-- App kill -->
+  <string name="recents_app_killed">অ্যাপটি বিনষ্ট হয়েছে</string>
   <!-- Vpn -->
   <!-- Roaming icon toggle -->
+  <string name="status_bar_roaming">রোমিং</string>
   <!-- Data saver-->
   <!-- Show lte/4g switch -->
   <!-- Battery saver tile -->

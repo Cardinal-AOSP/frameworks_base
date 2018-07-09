@@ -17,6 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Assist manager -->
+  <string name="no_assist_found">సహాయక నిర్వాహకుడు కనుగొనబడలేదు</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Notify user that they are in Lock-to-app -->

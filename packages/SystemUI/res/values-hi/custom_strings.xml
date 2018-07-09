@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">रिंग</string>
   <string name="quick_settings_sound_vibrate">कंपन</string>
   <string name="quick_settings_sound_dnd">परेशान ना करें</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">वॉल्यूम</string>
-  <string name="quick_settings_volume_panel_label">वॉल्यूम</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">स्टेटस बार चिह्न</string>
   <string name="navbar_tuner_activity">पथ प्रदर्शन पट्टी</string>

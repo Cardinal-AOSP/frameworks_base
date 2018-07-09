@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">响铃</string>
   <string name="quick_settings_sound_vibrate">仅震动</string>
   <string name="quick_settings_sound_dnd">勿扰</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">音量</string>
-  <string name="quick_settings_volume_panel_label">音量</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">状态栏图标</string>
   <string name="navbar_tuner_activity">导航栏</string>
@@ -91,6 +88,10 @@
   <string name="keyguard_indication_dash_charging_time">Dash 闪充 (<xliff:g id="charging_time_left" example="4小时2分钟">%s</xliff:g> 充满)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash 闪充</string>
   <!-- Advance location quick setting tile -->
+  <string name="quick_settings_location_battery_saving">低耗电量</string>
+  <string name="quick_settings_location_gps_only">仅限设备</string>
+  <string name="quick_settings_location_high_accuracy">高精确度</string>
+  <string name="quick_settings_location_off">位置信息：关闭</string>
   <string name="accessibility_quick_settings_location_battery_saving">位置报告：节电模式。</string>
   <string name="accessibility_quick_settings_location_gps_only">位置报告：仅限设备。</string>
   <string name="accessibility_quick_settings_location_high_accuracy">位置报告：高精确度</string>
@@ -115,17 +116,40 @@
   <!-- App kill -->
   <string name="recents_app_killed">应用已终止</string>
   <!-- Vpn -->
+  <string name="status_bar_vpn">VPN</string>
   <!-- Roaming icon toggle -->
   <string name="status_bar_roaming">数据漫游</string>
   <!-- Data saver-->
+  <string name="status_bar_data_saver">流量节省程序</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">4G/LTE 网络图标</string>
+  <string name="show_lte_fourgee_summary">在状态栏/快速设置面板中显示 4G 或 LTE 图标</string>
+  <string name="statusbar_tuner_category_title">隐藏状态栏项目</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">已充满</string>
   <!-- Expanded desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">扩展桌面</string>
+  <string name="quick_settings_expanded_desktop">扩展桌面</string>
+  <string name="quick_settings_expanded_desktop_off">正常</string>
+  <string name="quick_settings_expanded_navigation_off">隐藏导航栏</string>
+  <string name="quick_settings_expanded_statusbar_off">隐藏状态栏</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Sync QS tile -->
+  <string name="quick_settings_sync_label">同步</string>
+  <string name="accessibility_quick_settings_sync_off">关闭同步</string>
+  <string name="accessibility_quick_settings_sync_on">开启同步</string>
+  <string name="accessibility_quick_settings_sync_changed_off">同步已关闭</string>
+  <string name="accessibility_quick_settings_sync_changed_on">同步已开启</string>
   <!-- NavigationBar Tile -->
+  <string name="quick_settings_navigation_bar_label">导航栏</string>
+  <string name="accessibility_quick_settings_sw_navigation_bar">软体按键</string>
+  <string name="accessibility_quick_settings_hw_navigation_bar">实体按键</string>
+  <string name="accessibility_quick_settings_sw_navigation_bar_on">导航栏已开启</string>
+  <string name="accessibility_quick_settings_hw_navigation_bar_on">实体按键已启用</string>
+  <string name="quick_settings_sound_search">语音搜索</string>
   <!-- AOD QS tile -->
+  <string name="quick_settings_aod_label">AOD</string>
 </resources>

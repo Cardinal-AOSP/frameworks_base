@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Dzwonek</string>
   <string name="quick_settings_sound_vibrate">Wibracje</string>
   <string name="quick_settings_sound_dnd">Nie przeszkadzać</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Głośność</string>
-  <string name="quick_settings_volume_panel_label">Głośność</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Ikony paska statusu</string>
   <string name="navbar_tuner_activity">Pasek Nawigacji</string>

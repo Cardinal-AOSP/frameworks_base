@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Ring</string>
   <string name="quick_settings_sound_vibrate">Vibrera</string>
   <string name="quick_settings_sound_dnd">Stör ej</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Volym</string>
-  <string name="quick_settings_volume_panel_label">Volym</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Statusfältsikoner</string>
   <string name="navbar_tuner_activity">Navigationsfält</string>

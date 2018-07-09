@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Zvonenie</string>
   <string name="quick_settings_sound_vibrate">Vibrácie</string>
   <string name="quick_settings_sound_dnd">Nerušiť</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Hlasitosť</string>
-  <string name="quick_settings_volume_panel_label">Hlasitosť</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Ikony stavového riadku</string>
   <string name="navbar_tuner_activity">Navigačný panel</string>

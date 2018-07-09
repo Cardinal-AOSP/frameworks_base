@@ -32,4 +32,5 @@
   <string name="adb_active_generic_notification_message">Toucher pour désactiver le déboguage.</string>
   <!-- Advanced power menu -->
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="custom_system_error_manufacturer">Une incompatibilité du fichier vendor.img a été détectée. En règle générale, cela signifie que celui-ci n\'est pas à jour. Assurez-vous que le fichier vendor.img correspond à <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
 </resources>

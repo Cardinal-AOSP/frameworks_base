@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Sonar</string>
   <string name="quick_settings_sound_vibrate">Vibración</string>
   <string name="quick_settings_sound_dnd">No molestar</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Volumen</string>
-  <string name="quick_settings_volume_panel_label">Volumen</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Iconos de la barra de estado</string>
   <string name="navbar_tuner_activity">Barra de navegación</string>
