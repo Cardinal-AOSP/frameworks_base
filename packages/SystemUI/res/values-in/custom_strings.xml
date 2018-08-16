@@ -36,9 +36,6 @@
   <string name="quick_settings_sound_ring">Cincin</string>
   <string name="quick_settings_sound_vibrate">Bergetar</string>
   <string name="quick_settings_sound_dnd">Jangan ganggu</string>
-  <!-- Volume QS Tile -->
-  <string name="accessibility_quick_settings_volume_panel">Volume</string>
-  <string name="quick_settings_volume_panel_label">Volume</string>
   <!-- SystemUI Tuner -->
   <string name="statusbar_icons_blacklist">Ikon bar status</string>
   <string name="navbar_tuner_activity">Bilah navigasi</string>

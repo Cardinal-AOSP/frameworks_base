@@ -113,6 +113,7 @@
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Reštartovať</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
+  <string name="quick_settings_poweroff_label">Vypnúť</string>
   <!-- App kill -->
   <string name="recents_app_killed">Aplikácia bola ukončená</string>
   <!-- Vpn -->

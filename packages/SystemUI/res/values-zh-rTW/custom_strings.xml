@@ -113,6 +113,7 @@
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">重新啟動</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
+  <string name="quick_settings_poweroff_label">關機</string>
   <!-- App kill -->
   <string name="recents_app_killed">應用程式已終止</string>
   <!-- Vpn -->

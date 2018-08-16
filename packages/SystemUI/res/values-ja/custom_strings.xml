@@ -33,7 +33,6 @@
   <string name="quick_settings_pip_tile_app_na">このアプリはピクチャーインピクチャーに対応していません</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">サウンド</string>
-  <string name="quick_settings_sound_ring">着信</string>
   <string name="quick_settings_sound_vibrate">振動</string>
   <string name="quick_settings_sound_dnd">マナーモード</string>
   <!-- SystemUI Tuner -->
@@ -92,9 +91,9 @@
   <string name="quick_settings_location_gps_only">端末のみ</string>
   <string name="quick_settings_location_high_accuracy">高精度</string>
   <string name="quick_settings_location_off">位置情報 オフ</string>
-  <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート: バッテリー節約モードです</string>
+  <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート：バッテリー節約モード</string>
   <string name="accessibility_quick_settings_location_gps_only">位置情報レポート：端末のみモード</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート : 高精度モード</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート：高精度モード</string>
   <!-- Blacklist apps for ime switcher -->
   <string-array name="navArrowsExcludeList">
     <item>Chrome</item>
@@ -103,8 +102,8 @@
   </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">ADBネットワーク</string>
-  <string name="quick_settings_network_adb_enabled_label">ネットワーク経由のADB</string>
-  <string name="quick_settings_network_adb_disabled_label">ネットワーク経由のADB</string>
+  <string name="quick_settings_network_adb_enabled_label">ネット経由のADB</string>
+  <string name="quick_settings_network_adb_disabled_label">ネット経由のADB</string>
   <!-- Advanced power menu -->
   <string name="global_action_restart_advanced">高度な設定</string>
   <string name="global_action_restart_recovery">リカバリー</string>
@@ -113,6 +112,7 @@
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">再起動</string>
   <string name="quick_settings_reboot_recovery_label">リカバリー</string>
+  <string name="quick_settings_poweroff_label">電源を切る</string>
   <!-- App kill -->
   <string name="recents_app_killed">アプリを終了しました</string>
   <!-- Vpn -->

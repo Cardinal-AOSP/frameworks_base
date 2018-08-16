@@ -63,7 +63,7 @@
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompas</string>
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-  <string name="quick_settings_compass_init">Inicjalizowanie\u2026</string>
+  <string name="quick_settings_compass_init">Inicjowanie\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Kompas wył.</string>
   <string name="accessibility_quick_settings_compass_on">Kompas wł.</string>
   <string name="accessibility_quick_settings_compass_changed_off">Kompas został wył.</string>
@@ -91,7 +91,7 @@
   <string name="quick_settings_location_battery_saving">Oszczędzanie baterii</string>
   <string name="quick_settings_location_gps_only">Tylko urządzenie</string>
   <string name="quick_settings_location_high_accuracy">Wysoka dokładność</string>
-  <string name="quick_settings_location_off">Lokalizacja wył</string>
+  <string name="quick_settings_location_off">Lokalizacja wył.</string>
   <string name="accessibility_quick_settings_location_battery_saving">Raportowanie lokalizacji: tryb oszczędzania baterii.</string>
   <string name="accessibility_quick_settings_location_gps_only">Lokalizacja: tylko tryb czujników.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Lokalizacja: tryb wysokiej dokładności.</string>
@@ -103,7 +103,7 @@
   </string-array>
   <!-- ADB network tile -->
   <string name="quick_settings_adb_network">Sieć ADB</string>
-  <string name="quick_settings_network_adb_enabled_label">ADB przez Net</string>
+  <string name="quick_settings_network_adb_enabled_label">ADB po sieci</string>
   <string name="quick_settings_network_adb_disabled_label">ADB przez Net</string>
   <!-- Advanced power menu -->
   <string name="global_action_restart_advanced">Zaawansowane</string>
@@ -126,7 +126,7 @@
   <string name="show_lte_fourgee_summary">Wyświetlanie ikony 4G zamiast LTE obok ikony zasięgu sieci komórkowej</string>
   <string name="statusbar_tuner_category_title">Ukryj elementy z paska stanu</string>
   <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Bateria w pełni naładowana</string>
+  <string name="battery_saver_qs_tile_fully_charged">W pełni naładowana</string>
   <!-- Expanded desktop QS Tile -->
   <string name="quick_settings_expanded_desktop_label">Rozszerzony pulpit</string>
   <string name="quick_settings_expanded_desktop">Rozszerzony widok</string>
