@@ -16,141 +16,141 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Keyboard L/R Cursor -->
-  <string name="kb_left">Ľavý kurzor klávesnice</string>
-  <string name="kb_right">Pravý kurzor klávesnice</string>
-  <string name="skip_prev">Ľavé tlačidlo - predchádzajúca skladba</string>
-  <string name="skip_next">Pravé tlačidlo – ďalšia skladba</string>
-  <!-- Caffeine QS Tile -->
-  <string name="quick_settings_caffeine_label">Kofeín</string>
-  <string name="accessibility_quick_settings_caffeine_off">Kofeín vyp.</string>
-  <string name="accessibility_quick_settings_caffeine_on">Kofeín zap.</string>
-  <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenshot_label">Snímka obrazovky</string>
-  <string name="quick_settings_region_screenshot_label">Čiastočná snímka obrazovky</string>
-  <!-- PiP Tile -->
-  <string name="quick_settings_pip_label">PiP</string>
-  <string name="quick_settings_pip_tile_app_na">Aplikácia nepodporuje PiP</string>
-  <!-- Sound QS Tile -->
-  <string name="quick_settings_sound_label">Zvuk</string>
-  <string name="quick_settings_sound_ring">Zvonenie</string>
-  <string name="quick_settings_sound_vibrate">Vibrácie</string>
-  <string name="quick_settings_sound_dnd">Nerušiť</string>
-  <!-- SystemUI Tuner -->
-  <string name="statusbar_icons_blacklist">Ikony stavového riadku</string>
-  <string name="navbar_tuner_activity">Navigačný panel</string>
-  <string name="lockscreen_tuner_activity">Odkazy na obrazovke uzamknutia</string>
-  <string name="powernotif_tuner_activity">Rozšírené upozornenia</string>
-  <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">Plávajúce upozornenia</string>
-  <string name="accessibility_quick_settings_heads_up_off">Plávajúce oznámenia vypnuté.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Plávajúce upozornenia zapnuté.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Plávajúce oznámenia boli vypnuté.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Plávajúce upozornenia boli zapnuté.</string>
-  <!-- ANBI Tile -->
-  <string name="quick_settings_anbi_label">Náhodný dotyk</string>
-  <string name="accessibility_quick_settings_anbi_on">Zabrániť náhodnému dotyku</string>
-  <string name="accessibility_quick_settings_anbi_off">Nezabrániť náhodnému dotyku</string>
-  <string name="accessibility_quick_settings_anbi_changed_off">Zabránenie náhodnému dotyku vypnuté</string>
-  <string name="accessibility_quick_settings_anbi_changed_on">Zabránenie náhodnému dotyku zapnuté</string>
-  <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
-  <string name="drag_or_tap_to_add_tiles">Ťahaním alebo kliknutím pridať dlaždice</string>
-  <!-- Lockscreen shortcuts -->
-  <string name="lockscreen_default">Predvolené</string>
-  <string name="lockscreen_hidden">Žiadne</string>
-  <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Spustiť potiahnutím prstom od ikony</string>
-  <!-- Compass QS Tile -->
-  <string name="quick_settings_compass_label">Kompas</string>
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-  <string name="quick_settings_compass_init">Inicializácia\u2026</string>
-  <string name="accessibility_quick_settings_compass_off">Kompas vyp.</string>
-  <string name="accessibility_quick_settings_compass_on">Kompas zap.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">Kompas je vypnutý.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">Kompas je zapnutý.</string>
-  <string name="quick_settings_compass_N">S</string>
-  <string name="quick_settings_compass_NE">SV</string>
-  <string name="quick_settings_compass_E">V</string>
-  <string name="quick_settings_compass_SE">JV</string>
-  <string name="quick_settings_compass_S">J</string>
-  <string name="quick_settings_compass_SW">JZ</string>
-  <string name="quick_settings_compass_W">Z</string>
-  <string name="quick_settings_compass_NW">SZ</string>
-  <!-- volte icon switch -->
-  <string name="status_bar_volte">VoLTE</string>
-  <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_data_connection_hspap">HSPA+</string>
-  <!-- Screen pinning dialog description -->
-  <string name="screen_pinning_description_back">Obsah bude zobrazený, až kým ho neuvoľníte. Uvoľníte ho stlačením a podržaním tlačidla Späť.</string>
-  <!-- Logo -->
-  <string name="status_bar_logo_title">Logo Cardinal</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Rýchle nabíjanie (úplne nabité za <xliff:g id="4 hours and 2 minutes">%s</xliff:g>)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash nabíjanie</string>
-  <!-- Advance location quick setting tile -->
-  <string name="quick_settings_location_battery_saving">Šetrenie batérie</string>
-  <string name="quick_settings_location_gps_only">Iba zariadenie</string>
-  <string name="quick_settings_location_high_accuracy">Vysoká presnosť</string>
-  <string name="quick_settings_location_off">Poloha vyputá</string>
-  <string name="accessibility_quick_settings_location_battery_saving">Hlásenie polohy: režim šetrenia batérie.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Hlásenie polohy: iba GPS.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Hlásenie polohy: vysoká presnosť.</string>
-  <!-- Blacklist apps for ime switcher -->
-  <string-array name="navArrowsExcludeList">
-    <item>Chrome</item>
-    <item>YouTube</item>
-    <item>Netflix</item>
-  </string-array>
-  <!-- ADB network tile -->
-  <string name="quick_settings_adb_network">ADB sieť</string>
-  <string name="quick_settings_network_adb_enabled_label">ADB po sieti</string>
-  <string name="quick_settings_network_adb_disabled_label">ADB po sieti</string>
-  <!-- Advanced power menu -->
-  <string name="global_action_restart_advanced">Rozšírené</string>
-  <string name="global_action_restart_recovery">Recovery</string>
-  <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">SystemUI</string>
-  <!-- Reboot/Recovery QS Tile -->
-  <string name="quick_settings_reboot_label">Reštartovať</string>
-  <string name="quick_settings_reboot_recovery_label">Recovery</string>
-  <string name="quick_settings_poweroff_label">Vypnúť</string>
-  <!-- App kill -->
-  <string name="recents_app_killed">Aplikácia bola ukončená</string>
-  <!-- Vpn -->
-  <string name="status_bar_vpn">VPN</string>
-  <!-- Roaming icon toggle -->
-  <string name="status_bar_roaming">Roaming</string>
-  <!-- Data saver-->
-  <string name="status_bar_data_saver">Šetrič dát</string>
-  <!-- Show lte/4g switch -->
-  <string name="show_lte_fourgee_title">Ikona siete 4G/LTE</string>
-  <string name="show_lte_fourgee_summary">Zobraziť ikonu 4G alebo LTE v stavovom riadku/paneli rýchl. nastavení</string>
-  <string name="statusbar_tuner_category_title">Skryť položky v stavovom riadku</string>
-  <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Úplne nabitá</string>
-  <!-- Expanded desktop QS Tile -->
-  <string name="quick_settings_expanded_desktop_label">Rozšírená plocha</string>
-  <string name="quick_settings_expanded_desktop">Rozšírená</string>
-  <string name="quick_settings_expanded_desktop_off">Normálna</string>
-  <string name="quick_settings_expanded_navigation_off">Skryť navigačnú lištu</string>
-  <string name="quick_settings_expanded_statusbar_off">Skryť stavový riadok</string>
-  <!-- Text to use when the number in a notification info is too large
+    <!-- Keyboard L/R Cursor -->
+    <string name="kb_left">Ľavý kurzor klávesnice</string>
+    <string name="kb_right">Pravý kurzor klávesnice</string>
+    <string name="skip_prev">Ľavé tlačidlo - predchádzajúca skladba</string>
+    <string name="skip_next">Pravé tlačidlo – ďalšia skladba</string>
+    <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Kofeín</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofeín vyp.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofeín zap.</string>
+    <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Snímka obrazovky</string>
+    <string name="quick_settings_region_screenshot_label">Čiastočná snímka obrazovky</string>
+    <!-- PiP Tile -->
+    <string name="quick_settings_pip_label">PiP</string>
+    <string name="quick_settings_pip_tile_app_na">Aplikácia nepodporuje PiP</string>
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Zvuk</string>
+    <string name="quick_settings_sound_ring">Zvonenie</string>
+    <string name="quick_settings_sound_vibrate">Vibrácie</string>
+    <string name="quick_settings_sound_dnd">Nerušiť</string>
+    <!-- SystemUI Tuner -->
+    <string name="statusbar_icons_blacklist">Ikony stavového riadku</string>
+    <string name="navbar_tuner_activity">Navigačný panel</string>
+    <string name="lockscreen_tuner_activity">Odkazy na obrazovke uzamknutia</string>
+    <string name="powernotif_tuner_activity">Rozšírené upozornenia</string>
+    <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Plávajúce upozornenia</string>
+    <string name="accessibility_quick_settings_heads_up_off">Plávajúce oznámenia vypnuté.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Plávajúce upozornenia zapnuté.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Plávajúce oznámenia boli vypnuté.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Plávajúce upozornenia boli zapnuté.</string>
+    <!-- ANBI Tile -->
+    <string name="quick_settings_anbi_label">Náhodný dotyk</string>
+    <string name="accessibility_quick_settings_anbi_on">Zabrániť náhodnému dotyku</string>
+    <string name="accessibility_quick_settings_anbi_off">Nezabrániť náhodnému dotyku</string>
+    <string name="accessibility_quick_settings_anbi_changed_off">Zabránenie náhodnému dotyku vypnuté</string>
+    <string name="accessibility_quick_settings_anbi_changed_on">Zabránenie náhodnému dotyku zapnuté</string>
+    <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
+    <string name="drag_or_tap_to_add_tiles">Ťahaním alebo kliknutím pridať dlaždice</string>
+    <!-- Lockscreen shortcuts -->
+    <string name="lockscreen_default">Predvolené</string>
+    <string name="lockscreen_hidden">Žiadne</string>
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Spustiť potiahnutím prstom od ikony</string>
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompas</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Inicializácia\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompas vyp.</string>
+    <string name="accessibility_quick_settings_compass_on">Kompas zap.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompas je vypnutý.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompas je zapnutý.</string>
+    <string name="quick_settings_compass_N">S</string>
+    <string name="quick_settings_compass_NE">SV</string>
+    <string name="quick_settings_compass_E">V</string>
+    <string name="quick_settings_compass_SE">JV</string>
+    <string name="quick_settings_compass_S">J</string>
+    <string name="quick_settings_compass_SW">JZ</string>
+    <string name="quick_settings_compass_W">Z</string>
+    <string name="quick_settings_compass_NW">SZ</string>
+    <!-- volte icon switch -->
+    <string name="status_bar_volte">VoLTE</string>
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
+    <!-- Screen pinning dialog description -->
+    <string name="screen_pinning_description_back">Obsah bude zobrazený, až kým ho neuvoľníte. Uvoľníte ho stlačením a podržaním tlačidla Späť.</string>
+    <!-- Logo -->
+    <string name="status_bar_logo_title">Logo Cardinal</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Rýchle nabíjanie (úplne nabité za <xliff:g id="4 hours and 2 minutes">%s</xliff:g>)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash nabíjanie</string>
+    <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_battery_saving">Šetrenie batérie</string>
+    <string name="quick_settings_location_gps_only">Iba zariadenie</string>
+    <string name="quick_settings_location_high_accuracy">Vysoká presnosť</string>
+    <string name="quick_settings_location_off">Poloha vyputá</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Hlásenie polohy: režim šetrenia batérie.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Hlásenie polohy: iba GPS.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Hlásenie polohy: vysoká presnosť.</string>
+    <!-- Blacklist apps for ime switcher -->
+    <string-array name="navArrowsExcludeList">
+        <item>Chrome</item>
+        <item>YouTube</item>
+        <item>Netflix</item>
+    </string-array>
+    <!-- ADB network tile -->
+    <string name="quick_settings_adb_network">ADB sieť</string>
+    <string name="quick_settings_network_adb_enabled_label">ADB po sieti</string>
+    <string name="quick_settings_network_adb_disabled_label">ADB po sieti</string>
+    <!-- Advanced power menu -->
+    <string name="global_action_restart_advanced">Rozšírené</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Reštartovať</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_poweroff_label">Vypnúť</string>
+    <!-- App kill -->
+    <string name="recents_app_killed">Aplikácia bola ukončená</string>
+    <!-- Vpn -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Roaming icon toggle -->
+    <string name="status_bar_roaming">Roaming</string>
+    <!-- Data saver-->
+    <string name="status_bar_data_saver">Šetrič dát</string>
+    <!-- Show lte/4g switch -->
+    <string name="show_lte_fourgee_title">Ikona siete 4G/LTE</string>
+    <string name="show_lte_fourgee_summary">Zobraziť ikonu 4G alebo LTE v stavovom riadku/paneli rýchl. nastavení</string>
+    <string name="statusbar_tuner_category_title">Skryť položky v stavovom riadku</string>
+    <!-- Battery saver tile -->
+    <string name="battery_saver_qs_tile_fully_charged">Úplne nabitá</string>
+    <!-- Expanded desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Rozšírená plocha</string>
+    <string name="quick_settings_expanded_desktop">Rozšírená</string>
+    <string name="quick_settings_expanded_desktop_off">Normálna</string>
+    <string name="quick_settings_expanded_navigation_off">Skryť navigačnú lištu</string>
+    <string name="quick_settings_expanded_statusbar_off">Skryť stavový riadok</string>
+    <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
-  <!-- Sync QS tile -->
-  <string name="quick_settings_sync_label">Synch.</string>
-  <string name="accessibility_quick_settings_sync_off">Synch. vyp.</string>
-  <string name="accessibility_quick_settings_sync_on">Synch. zap.</string>
-  <string name="accessibility_quick_settings_sync_changed_off">Synchronizácia bola vypnutá.</string>
-  <string name="accessibility_quick_settings_sync_changed_on">Synchronizácia bola zapnutá.</string>
-  <!-- NavigationBar Tile -->
-  <string name="quick_settings_navigation_bar_label">Navigačný panel</string>
-  <string name="accessibility_quick_settings_sw_navigation_bar">Softvérové tlačidlá</string>
-  <string name="accessibility_quick_settings_hw_navigation_bar">Hardvérové tlačidlá</string>
-  <string name="accessibility_quick_settings_sw_navigation_bar_on">Softvérový navigačný panel zapnutý</string>
-  <string name="accessibility_quick_settings_hw_navigation_bar_on">Hardvérový navigačný panel zapnutý</string>
-  <string name="quick_settings_sound_search">Zvukové vyhľadávanie</string>
-  <!-- AOD QS tile -->
-  <string name="quick_settings_aod_label">AOD</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Synch.</string>
+    <string name="accessibility_quick_settings_sync_off">Synch. vyp.</string>
+    <string name="accessibility_quick_settings_sync_on">Synch. zap.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronizácia bola vypnutá.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronizácia bola zapnutá.</string>
+    <!-- NavigationBar Tile -->
+    <string name="quick_settings_navigation_bar_label">Navigačný panel</string>
+    <string name="accessibility_quick_settings_sw_navigation_bar">Softvérové tlačidlá</string>
+    <string name="accessibility_quick_settings_hw_navigation_bar">Hardvérové tlačidlá</string>
+    <string name="accessibility_quick_settings_sw_navigation_bar_on">Softvérový navigačný panel zapnutý</string>
+    <string name="accessibility_quick_settings_hw_navigation_bar_on">Hardvérový navigačný panel zapnutý</string>
+    <string name="quick_settings_sound_search">Zvukové vyhľadávanie</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
 </resources>

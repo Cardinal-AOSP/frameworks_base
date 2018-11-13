@@ -16,21 +16,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Assist manager -->
-  <string name="no_assist_found">Aucun gérant d\'assistance trouvé</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Falsifier la signature du paquet</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Autorise l\'application à se faire passer pour une autre. Des applications malveillantes peuvent être capable de l\'utiliser pour accéder aux données d\'applications privées. Accordez cette autorisation avec prudence!</string>
-  <!-- Notify user that they are in Lock-to-app -->
-  <string name="lock_to_app_toast_back">Pour annuler l\'épinglage de l\'écran, appuyez et maintenez le bouton Retour</string>
-  <!-- ADB over network notification -->
-  <string name="adb_net_active_notification_title">ADB par réseau activé</string>
-  <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">ADB par USB &amp; réseau activé</string>
-  <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Toucher pour désactiver le déboguage.</string>
-  <!-- Advanced power menu -->
-  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
-  <string name="custom_system_error_manufacturer">Une incompatibilité du fichier vendor.img a été détectée. En règle générale, cela signifie que celui-ci n\'est pas à jour. Assurez-vous que le fichier vendor.img correspond à <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
+    <!-- Assist manager -->
+    <string name="no_assist_found">Aucun gérant d\'assistance trouvé</string>
+    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Falsifier la signature du paquet</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Autorise l\'application à se faire passer pour une autre. Des applications malveillantes peuvent être capable de l\'utiliser pour accéder aux données d\'applications privées. Accordez cette autorisation avec prudence!</string>
+    <!-- Notify user that they are in Lock-to-app -->
+    <string name="lock_to_app_toast_back">Pour annuler l\'épinglage de l\'écran, appuyez et maintenez le bouton Retour</string>
+    <!-- ADB over network notification -->
+    <string name="adb_net_active_notification_title">ADB par réseau activé</string>
+    <!-- ADB over USB and network notification -->
+    <string name="adb_both_active_notification_title">ADB par USB &amp; réseau activé</string>
+    <!-- ADB notification message-->
+    <string name="adb_active_generic_notification_message">Toucher pour désactiver le déboguage.</string>
+    <!-- Advanced power menu -->
+    <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+    <string name="custom_system_error_manufacturer">Une incompatibilité du fichier vendor.img a été détectée. En règle générale, cela signifie que celui-ci n\'est pas à jour. Assurez-vous que le fichier vendor.img correspond à <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
 </resources>

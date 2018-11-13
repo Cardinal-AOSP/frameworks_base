@@ -16,138 +16,138 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Keyboard L/R Cursor -->
-  <string name="kb_left">Curseur de gauche du clavier</string>
-  <string name="kb_right">Curseur de droite du clavier</string>
-  <string name="skip_prev">KB gauche - Piste précédente</string>
-  <string name="skip_next">KB droite - Piste suivante</string>
-  <!-- Caffeine QS Tile -->
-  <string name="quick_settings_caffeine_label">Caféine</string>
-  <string name="accessibility_quick_settings_caffeine_off">Caféine désactivée</string>
-  <string name="accessibility_quick_settings_caffeine_on">Caféine activée</string>
-  <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenshot_label">Capture d\'écran</string>
-  <string name="quick_settings_region_screenshot_label">Capture d’écran partielle</string>
-  <!-- PiP Tile -->
-  <string name="quick_settings_pip_label">PiP</string>
-  <string name="quick_settings_pip_tile_app_na">Application non compatible PiP</string>
-  <!-- Sound QS Tile -->
-  <string name="quick_settings_sound_label">Son</string>
-  <string name="quick_settings_sound_ring">Sonnerie</string>
-  <string name="quick_settings_sound_vibrate">Vibreur</string>
-  <string name="quick_settings_sound_dnd">Ne pas déranger</string>
-  <!-- SystemUI Tuner -->
-  <string name="statusbar_icons_blacklist">Icônes de la barre d’état</string>
-  <string name="navbar_tuner_activity">Barre de navigation</string>
-  <string name="lockscreen_tuner_activity">Raccourcis de l\'écran de verrouillage</string>
-  <string name="powernotif_tuner_activity">Notifications d\'alimentation</string>
-  <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">Notifications flottantes</string>
-  <string name="accessibility_quick_settings_heads_up_off">Notifications flottantes désactivées.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Notifications flottantes activées.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Notifications flottantes désactivées.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Notifications flottantes activées.</string>
-  <!-- ANBI Tile -->
-  <string name="quick_settings_anbi_label">Appui accidentel</string>
-  <string name="accessibility_quick_settings_anbi_on">Empêcher l\'appui accidentel</string>
-  <string name="accessibility_quick_settings_anbi_off">Ne pas empêcher l\'appui accidentel</string>
-  <string name="accessibility_quick_settings_anbi_changed_off">Appui accidentel désactivé</string>
-  <string name="accessibility_quick_settings_anbi_changed_on">Appui accidentel activé</string>
-  <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
-  <string name="drag_or_tap_to_add_tiles">Faites glisser ou appuyez pour ajouter des tuiles</string>
-  <!-- Lockscreen shortcuts -->
-  <string name="lockscreen_default">Par défaut</string>
-  <string name="lockscreen_hidden">Aucun</string>
-  <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Balayez l\'icône pour lancer l\'application</string>
-  <!-- Compass QS Tile -->
-  <string name="quick_settings_compass_label">Boussole</string>
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-  <string name="quick_settings_compass_init">Initialisation\u2026</string>
-  <string name="accessibility_quick_settings_compass_off">Boussole désactivée.</string>
-  <string name="accessibility_quick_settings_compass_on">Boussole activée.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">Boussole désactivée.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">Boussole activée.</string>
-  <string name="quick_settings_compass_N">N</string>
-  <string name="quick_settings_compass_NE">NE</string>
-  <string name="quick_settings_compass_E">E</string>
-  <string name="quick_settings_compass_SE">SE</string>
-  <string name="quick_settings_compass_S">S</string>
-  <string name="quick_settings_compass_SW">SO</string>
-  <string name="quick_settings_compass_W">O</string>
-  <string name="quick_settings_compass_NW">NO</string>
-  <!-- volte icon switch -->
-  <string name="status_bar_volte">VOLTE</string>
-  <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_data_connection_hspap">HSPA+</string>
-  <!-- Screen pinning dialog description -->
-  <string name="screen_pinning_description_back">Garder épinglé jusqu\'à ce que vous le détachiez. Appuyer et maintenir le bouton retour pour détacher.</string>
-  <!-- Logo -->
-  <string name="status_bar_logo_title">Cardinal logo</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Charge Dash (complète dans <xliff:g id="charging_time_left" example="4 heures et 2 minutes">%s</xliff:g>)</string>
-  <string name="keyguard_plugged_in_dash_charging">Charge Dash</string>
-  <!-- Advance location quick setting tile -->
-  <string name="quick_settings_location_battery_saving">Économie de batterie</string>
-  <string name="quick_settings_location_gps_only">Appareil uniquement</string>
-  <string name="quick_settings_location_high_accuracy">Haute précision</string>
-  <string name="quick_settings_location_off">Localisation désactivée</string>
-  <string name="accessibility_quick_settings_location_battery_saving">Localisation : mode économie de batterie.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Localisation : mode appareil uniquement.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Localisation : mode haute précision.</string>
-  <!-- Blacklist apps for ime switcher -->
-  <string-array name="navArrowsExcludeList">
-    <item>chrome</item>
-    <item>youtube</item>
-    <item>netflix</item>
-  </string-array>
-  <!-- ADB network tile -->
-  <string name="quick_settings_adb_network">ADB réseau</string>
-  <string name="quick_settings_network_adb_enabled_label">Adb par le réseau</string>
-  <string name="quick_settings_network_adb_disabled_label">Adb par le réseau</string>
-  <!-- Advanced power menu -->
-  <string name="global_action_restart_advanced">Avancée</string>
-  <string name="global_action_restart_recovery">Récupération</string>
-  <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">SystemUI</string>
-  <!-- Reboot/Recovery QS Tile -->
-  <string name="quick_settings_reboot_label">Redémarrer</string>
-  <string name="quick_settings_reboot_recovery_label">Récupération</string>
-  <!-- App kill -->
-  <string name="recents_app_killed">Application arrêtée</string>
-  <!-- Vpn -->
-  <string name="status_bar_vpn">VPN</string>
-  <!-- Roaming icon toggle -->
-  <string name="status_bar_roaming">Itinérance</string>
-  <!-- Data saver-->
-  <string name="status_bar_data_saver">Économiseur de données</string>
-  <!-- Show lte/4g switch -->
-  <string name="show_lte_fourgee_title">Icône \"4G\"</string>
-  <string name="show_lte_fourgee_summary">Afficher l\'icône \"4G\" plutôt que \"LTE\" sur la barre d\'état et dans le panneau de configuration rapide</string>
-  <string name="statusbar_tuner_category_title">Masquer les éléments de la barre d\'état</string>
-  <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Charge Complète</string>
-  <!-- Expanded desktop QS Tile -->
-  <string name="quick_settings_expanded_desktop_label">Bureau étendu</string>
-  <string name="quick_settings_expanded_desktop">Étendu</string>
-  <string name="quick_settings_expanded_desktop_off">Normal</string>
-  <string name="quick_settings_expanded_navigation_off">Masquer la barre de navigation</string>
-  <string name="quick_settings_expanded_statusbar_off">Cacher la barre de statut</string>
-  <!-- Text to use when the number in a notification info is too large
+    <!-- Keyboard L/R Cursor -->
+    <string name="kb_left">Curseur de gauche du clavier</string>
+    <string name="kb_right">Curseur de droite du clavier</string>
+    <string name="skip_prev">KB gauche - Piste précédente</string>
+    <string name="skip_next">KB droite - Piste suivante</string>
+    <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Caféine</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caféine désactivée</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caféine activée</string>
+    <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Capture d\'écran</string>
+    <string name="quick_settings_region_screenshot_label">Capture d’écran partielle</string>
+    <!-- PiP Tile -->
+    <string name="quick_settings_pip_label">PiP</string>
+    <string name="quick_settings_pip_tile_app_na">Application non compatible PiP</string>
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Son</string>
+    <string name="quick_settings_sound_ring">Sonnerie</string>
+    <string name="quick_settings_sound_vibrate">Vibreur</string>
+    <string name="quick_settings_sound_dnd">Ne pas déranger</string>
+    <!-- SystemUI Tuner -->
+    <string name="statusbar_icons_blacklist">Icônes de la barre d’état</string>
+    <string name="navbar_tuner_activity">Barre de navigation</string>
+    <string name="lockscreen_tuner_activity">Raccourcis de l\'écran de verrouillage</string>
+    <string name="powernotif_tuner_activity">Notifications d\'alimentation</string>
+    <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Notifications flottantes</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notifications flottantes désactivées.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notifications flottantes activées.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Notifications flottantes désactivées.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Notifications flottantes activées.</string>
+    <!-- ANBI Tile -->
+    <string name="quick_settings_anbi_label">Appui accidentel</string>
+    <string name="accessibility_quick_settings_anbi_on">Empêcher l\'appui accidentel</string>
+    <string name="accessibility_quick_settings_anbi_off">Ne pas empêcher l\'appui accidentel</string>
+    <string name="accessibility_quick_settings_anbi_changed_off">Appui accidentel désactivé</string>
+    <string name="accessibility_quick_settings_anbi_changed_on">Appui accidentel activé</string>
+    <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
+    <string name="drag_or_tap_to_add_tiles">Faites glisser ou appuyez pour ajouter des tuiles</string>
+    <!-- Lockscreen shortcuts -->
+    <string name="lockscreen_default">Par défaut</string>
+    <string name="lockscreen_hidden">Aucun</string>
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Balayez l\'icône pour lancer l\'application</string>
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Boussole</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Initialisation\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Boussole désactivée.</string>
+    <string name="accessibility_quick_settings_compass_on">Boussole activée.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Boussole désactivée.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Boussole activée.</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NE</string>
+    <string name="quick_settings_compass_E">E</string>
+    <string name="quick_settings_compass_SE">SE</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SO</string>
+    <string name="quick_settings_compass_W">O</string>
+    <string name="quick_settings_compass_NW">NO</string>
+    <!-- volte icon switch -->
+    <string name="status_bar_volte">VOLTE</string>
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
+    <!-- Screen pinning dialog description -->
+    <string name="screen_pinning_description_back">Garder épinglé jusqu\'à ce que vous le détachiez. Appuyer et maintenir le bouton retour pour détacher.</string>
+    <!-- Logo -->
+    <string name="status_bar_logo_title">Cardinal logo</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Charge Dash (complète dans <xliff:g id="charging_time_left" example="4 heures et 2 minutes">%s</xliff:g>)</string>
+    <string name="keyguard_plugged_in_dash_charging">Charge Dash</string>
+    <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_battery_saving">Économie de batterie</string>
+    <string name="quick_settings_location_gps_only">Appareil uniquement</string>
+    <string name="quick_settings_location_high_accuracy">Haute précision</string>
+    <string name="quick_settings_location_off">Localisation désactivée</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Localisation : mode économie de batterie.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Localisation : mode appareil uniquement.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Localisation : mode haute précision.</string>
+    <!-- Blacklist apps for ime switcher -->
+    <string-array name="navArrowsExcludeList">
+        <item>chrome</item>
+        <item>youtube</item>
+        <item>netflix</item>
+    </string-array>
+    <!-- ADB network tile -->
+    <string name="quick_settings_adb_network">ADB réseau</string>
+    <string name="quick_settings_network_adb_enabled_label">Adb par le réseau</string>
+    <string name="quick_settings_network_adb_disabled_label">Adb par le réseau</string>
+    <!-- Advanced power menu -->
+    <string name="global_action_restart_advanced">Avancée</string>
+    <string name="global_action_restart_recovery">Récupération</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Redémarrer</string>
+    <string name="quick_settings_reboot_recovery_label">Récupération</string>
+    <!-- App kill -->
+    <string name="recents_app_killed">Application arrêtée</string>
+    <!-- Vpn -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Roaming icon toggle -->
+    <string name="status_bar_roaming">Itinérance</string>
+    <!-- Data saver-->
+    <string name="status_bar_data_saver">Économiseur de données</string>
+    <!-- Show lte/4g switch -->
+    <string name="show_lte_fourgee_title">Icône \"4G\"</string>
+    <string name="show_lte_fourgee_summary">Afficher l\'icône \"4G\" plutôt que \"LTE\" sur la barre d\'état et dans le panneau de configuration rapide</string>
+    <string name="statusbar_tuner_category_title">Masquer les éléments de la barre d\'état</string>
+    <!-- Battery saver tile -->
+    <string name="battery_saver_qs_tile_fully_charged">Charge Complète</string>
+    <!-- Expanded desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Bureau étendu</string>
+    <string name="quick_settings_expanded_desktop">Étendu</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+    <string name="quick_settings_expanded_navigation_off">Masquer la barre de navigation</string>
+    <string name="quick_settings_expanded_statusbar_off">Cacher la barre de statut</string>
+    <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
-  <!-- Sync QS tile -->
-  <string name="quick_settings_sync_label">Synchronisation</string>
-  <string name="accessibility_quick_settings_sync_off">Synchronisation désactivée.</string>
-  <string name="accessibility_quick_settings_sync_on">Synchroniser activée.</string>
-  <string name="accessibility_quick_settings_sync_changed_off">Synchronisation désactivée.</string>
-  <string name="accessibility_quick_settings_sync_changed_on">Synchronisation activée.</string>
-  <!-- NavigationBar Tile -->
-  <string name="quick_settings_navigation_bar_label">Barre de navigation</string>
-  <string name="accessibility_quick_settings_sw_navigation_bar">Touches logiciels</string>
-  <string name="accessibility_quick_settings_hw_navigation_bar">Touches matériels</string>
-  <string name="quick_settings_sound_search">Recherche audio</string>
-  <!-- AOD QS tile -->
-  <string name="quick_settings_aod_label">AOD</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Synchronisation</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronisation désactivée.</string>
+    <string name="accessibility_quick_settings_sync_on">Synchroniser activée.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronisation désactivée.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronisation activée.</string>
+    <!-- NavigationBar Tile -->
+    <string name="quick_settings_navigation_bar_label">Barre de navigation</string>
+    <string name="accessibility_quick_settings_sw_navigation_bar">Touches logiciels</string>
+    <string name="accessibility_quick_settings_hw_navigation_bar">Touches matériels</string>
+    <string name="quick_settings_sound_search">Recherche audio</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
 </resources>

@@ -16,140 +16,140 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Keyboard L/R Cursor -->
-  <string name="kb_left">Billentyűzet bal kurzor</string>
-  <string name="kb_right">Billentyűzet jobb kurzor</string>
-  <string name="skip_prev">Billentyű balra - Előző szám</string>
-  <string name="skip_next">Billentyű jobbra - Következő szám</string>
-  <!-- Caffeine QS Tile -->
-  <string name="quick_settings_caffeine_label">Caffeine</string>
-  <string name="accessibility_quick_settings_caffeine_off">Caffeine ki</string>
-  <string name="accessibility_quick_settings_caffeine_on">Caffeine be</string>
-  <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenshot_label">Képernyőmentés</string>
-  <string name="quick_settings_region_screenshot_label">Részleges képernyőmentés</string>
-  <!-- PiP Tile -->
-  <string name="quick_settings_pip_label">Kép-a-képben</string>
-  <string name="quick_settings_pip_tile_app_na">Az alkalmazás nem támogatja a kép-a-képben módot</string>
-  <!-- Sound QS Tile -->
-  <string name="quick_settings_sound_label">Hangok</string>
-  <string name="quick_settings_sound_ring">Csengés</string>
-  <string name="quick_settings_sound_vibrate">Rezgés</string>
-  <string name="quick_settings_sound_dnd">Ne zavarjanak (DND)</string>
-  <!-- SystemUI Tuner -->
-  <string name="statusbar_icons_blacklist">Állapotsor ikonjai</string>
-  <string name="navbar_tuner_activity">Navigációs sáv</string>
-  <string name="lockscreen_tuner_activity">Záróképernyő parancsikonok</string>
-  <string name="powernotif_tuner_activity">Kikapcsolási értesítések</string>
-  <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">Lebegő értesítések</string>
-  <string name="accessibility_quick_settings_heads_up_off">Lebegő értesítések ki.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Lebegő értesítés be.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Lebegő értesítések kikapcsolva.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Lebegő értesítések bekapcsolva.</string>
-  <!-- ANBI Tile -->
-  <string name="quick_settings_anbi_label">Véletlen érintés</string>
-  <string name="accessibility_quick_settings_anbi_on">Véletlen érintés megakadályozása</string>
-  <string name="accessibility_quick_settings_anbi_off">Ne akadályozza a véletlen érintést</string>
-  <string name="accessibility_quick_settings_anbi_changed_off">Véletlen érintés kikapcsolva</string>
-  <string name="accessibility_quick_settings_anbi_changed_on">Véletlen érintés bekapcsolva</string>
-  <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
-  <string name="drag_or_tap_to_add_tiles">Húzza, vagy érintse meg csempehozzáadáshoz</string>
-  <!-- Lockscreen shortcuts -->
-  <string name="lockscreen_default">Alapértelmezett</string>
-  <string name="lockscreen_hidden">Nincs</string>
-  <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Megnyitáshoz csúsztasson az ikonról</string>
-  <!-- Compass QS Tile -->
-  <string name="quick_settings_compass_label">Iránytű</string>
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-  <string name="quick_settings_compass_init">Indítás\u2026</string>
-  <string name="accessibility_quick_settings_compass_off">Iránytű ki.</string>
-  <string name="accessibility_quick_settings_compass_on">Iránytű be.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">Iránytű kikapcsolva.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">Iránytű bekapcsolva.</string>
-  <string name="quick_settings_compass_N">É</string>
-  <string name="quick_settings_compass_NE">ÉK</string>
-  <string name="quick_settings_compass_E">K</string>
-  <string name="quick_settings_compass_SE">DK</string>
-  <string name="quick_settings_compass_S">D</string>
-  <string name="quick_settings_compass_SW">DNY</string>
-  <string name="quick_settings_compass_W">NY</string>
-  <string name="quick_settings_compass_NW">ÉNY</string>
-  <!-- volte icon switch -->
-  <string name="status_bar_volte">VoLTE</string>
-  <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_data_connection_hspap">HSPA+</string>
-  <!-- Screen pinning dialog description -->
-  <string name="screen_pinning_description_back">Ez a nézetben tartja amíg a rögzítést fel nem oldja. Érintse meg és tartsa nyomva a Vissza gombot a rögzítés feloldásához.</string>
-  <!-- Logo -->
-  <string name="status_bar_logo_title">Cardinal logó</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes töltöttségig)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash töltés</string>
-  <!-- Advance location quick setting tile -->
-  <string name="quick_settings_location_battery_saving">Akkumulátorkímélő</string>
-  <string name="quick_settings_location_gps_only">Csak a készüléken</string>
-  <string name="quick_settings_location_high_accuracy">Nagy pontosságú</string>
-  <string name="quick_settings_location_off">Helymeghatározás kikapcsolása</string>
-  <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: energiatakarékosan.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak az érzékelőkkel.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontossággal.</string>
-  <!-- Blacklist apps for ime switcher -->
-  <string-array name="navArrowsExcludeList">
-    <item>Chrome</item>
-    <item>YouTube</item>
-    <item>Netflix</item>
-  </string-array>
-  <!-- ADB network tile -->
-  <string name="quick_settings_adb_network">ADB hálózat</string>
-  <string name="quick_settings_network_adb_enabled_label">ADB hálózaton keresztül</string>
-  <string name="quick_settings_network_adb_disabled_label">ADB hálózaton keresztül</string>
-  <!-- Advanced power menu -->
-  <string name="global_action_restart_advanced">Speciális</string>
-  <string name="global_action_restart_recovery">Recovery</string>
-  <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">Felhasználói felület</string>
-  <!-- Reboot/Recovery QS Tile -->
-  <string name="quick_settings_reboot_label">Újraindítás</string>
-  <string name="quick_settings_reboot_recovery_label">Recovery</string>
-  <!-- App kill -->
-  <string name="recents_app_killed">Alkalmazás kilőve</string>
-  <!-- Vpn -->
-  <string name="status_bar_vpn">VPN</string>
-  <!-- Roaming icon toggle -->
-  <string name="status_bar_roaming">Barangolás</string>
-  <!-- Data saver-->
-  <string name="status_bar_data_saver">Adatforgalom-csökkentő</string>
-  <!-- Show lte/4g switch -->
-  <string name="show_lte_fourgee_title">4G/LTE ikon</string>
-  <string name="show_lte_fourgee_summary">A 4G vagy az LTE ikon jelenjen meg az állapotsorban és a gyorsbeállítások panelen</string>
-  <string name="statusbar_tuner_category_title">Elemek elrejtése az állapotsoron</string>
-  <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Teljesen feltöltve</string>
-  <!-- Expanded desktop QS Tile -->
-  <string name="quick_settings_expanded_desktop_label">Kiterjesztet képernyő</string>
-  <string name="quick_settings_expanded_desktop">Kiterjesztett</string>
-  <string name="quick_settings_expanded_desktop_off">Normális</string>
-  <string name="quick_settings_expanded_navigation_off">Navigációs sáv elrejtése</string>
-  <string name="quick_settings_expanded_statusbar_off">Állapotsor elrejtése</string>
-  <!-- Text to use when the number in a notification info is too large
+    <!-- Keyboard L/R Cursor -->
+    <string name="kb_left">Billentyűzet bal kurzor</string>
+    <string name="kb_right">Billentyűzet jobb kurzor</string>
+    <string name="skip_prev">Billentyű balra - Előző szám</string>
+    <string name="skip_next">Billentyű jobbra - Következő szám</string>
+    <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Caffeine</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeine ki</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caffeine be</string>
+    <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Képernyőmentés</string>
+    <string name="quick_settings_region_screenshot_label">Részleges képernyőmentés</string>
+    <!-- PiP Tile -->
+    <string name="quick_settings_pip_label">Kép-a-képben</string>
+    <string name="quick_settings_pip_tile_app_na">Az alkalmazás nem támogatja a kép-a-képben módot</string>
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Hangok</string>
+    <string name="quick_settings_sound_ring">Csengés</string>
+    <string name="quick_settings_sound_vibrate">Rezgés</string>
+    <string name="quick_settings_sound_dnd">Ne zavarjanak (DND)</string>
+    <!-- SystemUI Tuner -->
+    <string name="statusbar_icons_blacklist">Állapotsor ikonjai</string>
+    <string name="navbar_tuner_activity">Navigációs sáv</string>
+    <string name="lockscreen_tuner_activity">Záróképernyő parancsikonok</string>
+    <string name="powernotif_tuner_activity">Kikapcsolási értesítések</string>
+    <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Lebegő értesítések</string>
+    <string name="accessibility_quick_settings_heads_up_off">Lebegő értesítések ki.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Lebegő értesítés be.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Lebegő értesítések kikapcsolva.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Lebegő értesítések bekapcsolva.</string>
+    <!-- ANBI Tile -->
+    <string name="quick_settings_anbi_label">Véletlen érintés</string>
+    <string name="accessibility_quick_settings_anbi_on">Véletlen érintés megakadályozása</string>
+    <string name="accessibility_quick_settings_anbi_off">Ne akadályozza a véletlen érintést</string>
+    <string name="accessibility_quick_settings_anbi_changed_off">Véletlen érintés kikapcsolva</string>
+    <string name="accessibility_quick_settings_anbi_changed_on">Véletlen érintés bekapcsolva</string>
+    <!-- Label for area where tiles can be added by drag or tap [CHAR LIMIT=60] -->
+    <string name="drag_or_tap_to_add_tiles">Húzza, vagy érintse meg csempehozzáadáshoz</string>
+    <!-- Lockscreen shortcuts -->
+    <string name="lockscreen_default">Alapértelmezett</string>
+    <string name="lockscreen_hidden">Nincs</string>
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Megnyitáshoz csúsztasson az ikonról</string>
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Iránytű</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Indítás\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Iránytű ki.</string>
+    <string name="accessibility_quick_settings_compass_on">Iránytű be.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Iránytű kikapcsolva.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Iránytű bekapcsolva.</string>
+    <string name="quick_settings_compass_N">É</string>
+    <string name="quick_settings_compass_NE">ÉK</string>
+    <string name="quick_settings_compass_E">K</string>
+    <string name="quick_settings_compass_SE">DK</string>
+    <string name="quick_settings_compass_S">D</string>
+    <string name="quick_settings_compass_SW">DNY</string>
+    <string name="quick_settings_compass_W">NY</string>
+    <string name="quick_settings_compass_NW">ÉNY</string>
+    <!-- volte icon switch -->
+    <string name="status_bar_volte">VoLTE</string>
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
+    <!-- Screen pinning dialog description -->
+    <string name="screen_pinning_description_back">Ez a nézetben tartja amíg a rögzítést fel nem oldja. Érintse meg és tartsa nyomva a Vissza gombot a rögzítés feloldásához.</string>
+    <!-- Logo -->
+    <string name="status_bar_logo_title">Cardinal logó</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Dash töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes töltöttségig)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash töltés</string>
+    <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_battery_saving">Akkumulátorkímélő</string>
+    <string name="quick_settings_location_gps_only">Csak a készüléken</string>
+    <string name="quick_settings_location_high_accuracy">Nagy pontosságú</string>
+    <string name="quick_settings_location_off">Helymeghatározás kikapcsolása</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: energiatakarékosan.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak az érzékelőkkel.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontossággal.</string>
+    <!-- Blacklist apps for ime switcher -->
+    <string-array name="navArrowsExcludeList">
+        <item>Chrome</item>
+        <item>YouTube</item>
+        <item>Netflix</item>
+    </string-array>
+    <!-- ADB network tile -->
+    <string name="quick_settings_adb_network">ADB hálózat</string>
+    <string name="quick_settings_network_adb_enabled_label">ADB hálózaton keresztül</string>
+    <string name="quick_settings_network_adb_disabled_label">ADB hálózaton keresztül</string>
+    <!-- Advanced power menu -->
+    <string name="global_action_restart_advanced">Speciális</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Felhasználói felület</string>
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Újraindítás</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <!-- App kill -->
+    <string name="recents_app_killed">Alkalmazás kilőve</string>
+    <!-- Vpn -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Roaming icon toggle -->
+    <string name="status_bar_roaming">Barangolás</string>
+    <!-- Data saver-->
+    <string name="status_bar_data_saver">Adatforgalom-csökkentő</string>
+    <!-- Show lte/4g switch -->
+    <string name="show_lte_fourgee_title">4G/LTE ikon</string>
+    <string name="show_lte_fourgee_summary">A 4G vagy az LTE ikon jelenjen meg az állapotsorban és a gyorsbeállítások panelen</string>
+    <string name="statusbar_tuner_category_title">Elemek elrejtése az állapotsoron</string>
+    <!-- Battery saver tile -->
+    <string name="battery_saver_qs_tile_fully_charged">Teljesen feltöltve</string>
+    <!-- Expanded desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Kiterjesztet képernyő</string>
+    <string name="quick_settings_expanded_desktop">Kiterjesztett</string>
+    <string name="quick_settings_expanded_desktop_off">Normális</string>
+    <string name="quick_settings_expanded_navigation_off">Navigációs sáv elrejtése</string>
+    <string name="quick_settings_expanded_statusbar_off">Állapotsor elrejtése</string>
+    <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
-  <!-- Sync QS tile -->
-  <string name="quick_settings_sync_label">Szinkronizálás</string>
-  <string name="accessibility_quick_settings_sync_off">Szinkronizálás ki.</string>
-  <string name="accessibility_quick_settings_sync_on">Szinkronizálás be.</string>
-  <string name="accessibility_quick_settings_sync_changed_off">Szinkronizálás kikapcsolva.</string>
-  <string name="accessibility_quick_settings_sync_changed_on">Szinkronizálás bekapcsolva.</string>
-  <!-- NavigationBar Tile -->
-  <string name="quick_settings_navigation_bar_label">Navigációs sáv</string>
-  <string name="accessibility_quick_settings_sw_navigation_bar">Szoftveres gombok</string>
-  <string name="accessibility_quick_settings_hw_navigation_bar">Hardveres gombok</string>
-  <string name="accessibility_quick_settings_sw_navigation_bar_on">Szoftveres navigációs sáv bekapcsolva</string>
-  <string name="accessibility_quick_settings_hw_navigation_bar_on">Hardveres navigációs sáv bekapcsolva</string>
-  <string name="quick_settings_sound_search">Hangalapú keresés</string>
-  <!-- AOD QS tile -->
-  <string name="quick_settings_aod_label">AOD</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Szinkronizálás</string>
+    <string name="accessibility_quick_settings_sync_off">Szinkronizálás ki.</string>
+    <string name="accessibility_quick_settings_sync_on">Szinkronizálás be.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Szinkronizálás kikapcsolva.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Szinkronizálás bekapcsolva.</string>
+    <!-- NavigationBar Tile -->
+    <string name="quick_settings_navigation_bar_label">Navigációs sáv</string>
+    <string name="accessibility_quick_settings_sw_navigation_bar">Szoftveres gombok</string>
+    <string name="accessibility_quick_settings_hw_navigation_bar">Hardveres gombok</string>
+    <string name="accessibility_quick_settings_sw_navigation_bar_on">Szoftveres navigációs sáv bekapcsolva</string>
+    <string name="accessibility_quick_settings_hw_navigation_bar_on">Hardveres navigációs sáv bekapcsolva</string>
+    <string name="quick_settings_sound_search">Hangalapú keresés</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
 </resources>

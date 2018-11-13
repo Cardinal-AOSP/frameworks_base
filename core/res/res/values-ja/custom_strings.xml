@@ -16,21 +16,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Assist manager -->
-  <string name="no_assist_found">アシストマネージャーは見つかりませんでした</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">パッケージ署名を偽装</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">アプリが別のアプリになりすますことを許可します。 悪意のあるアプリがこれを利用してアプリの個人情報にアクセスする可能性があります。 慎重にこの許可を与えてください！</string>
-  <!-- Notify user that they are in Lock-to-app -->
-  <string name="lock_to_app_toast_back">画面の固定を解除するには戻るボタンを長押しします</string>
-  <!-- ADB over network notification -->
-  <string name="adb_net_active_notification_title">ネットワーク経由のADBが有効です</string>
-  <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">USBとネットワーク経由のADBが有効です</string>
-  <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">タップしてUSBデバッグを無効化</string>
-  <!-- Advanced power menu -->
-  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
-  <string name="custom_system_error_manufacturer">ベンダーイメージの不一致を検出しました。ベンダーイメージが最新でない可能性があります。ベンダーイメージが<xliff:g id="fingerprint">%1$s</xliff:g>と一致しているか確認してください。</string>
+    <!-- Assist manager -->
+    <string name="no_assist_found">アシストマネージャーは見つかりませんでした</string>
+    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">パッケージ署名を偽装</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">アプリが別のアプリになりすますことを許可します。 悪意のあるアプリがこれを利用してアプリの個人情報にアクセスする可能性があります。 慎重にこの許可を与えてください！</string>
+    <!-- Notify user that they are in Lock-to-app -->
+    <string name="lock_to_app_toast_back">画面の固定を解除するには戻るボタンを長押しします</string>
+    <!-- ADB over network notification -->
+    <string name="adb_net_active_notification_title">ネットワーク経由のADBが有効です</string>
+    <!-- ADB over USB and network notification -->
+    <string name="adb_both_active_notification_title">USBとネットワーク経由のADBが有効です</string>
+    <!-- ADB notification message-->
+    <string name="adb_active_generic_notification_message">タップしてUSBデバッグを無効化</string>
+    <!-- Advanced power menu -->
+    <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+    <string name="custom_system_error_manufacturer">ベンダーイメージの不一致を検出しました。ベンダーイメージが最新でない可能性があります。ベンダーイメージが<xliff:g id="fingerprint">%1$s</xliff:g>と一致しているか確認してください。</string>
 </resources>

@@ -16,21 +16,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Assist manager -->
-  <string name="no_assist_found">No se ha encontrado asistente</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Paquete de falsificación de firma</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Permite que la aplicación pretenda ser una aplicación diferente. Las aplicaciones maliciosas pueden usar esto para acceder a datos personales. Conceda este permiso con cuidado!</string>
-  <!-- Notify user that they are in Lock-to-app -->
-  <string name="lock_to_app_toast_back">Mantén pulsado el botón Atrás para dejar de fijar esta pantalla</string>
-  <!-- ADB over network notification -->
-  <string name="adb_net_active_notification_title">ADB sobre red activado</string>
-  <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">ADB sobrw USB y red activado</string>
-  <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Toca para desactivar la depuración.</string>
-  <!-- Advanced power menu -->
-  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
-  <string name="custom_system_error_manufacturer">Se ha detectado una falta de coincidencia con la imagen del proveedor. Por lo general esto significa que dicha imagen está desactualizada. Asegúrese de que coincida con <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
+    <!-- Assist manager -->
+    <string name="no_assist_found">No se ha encontrado asistente</string>
+    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Paquete de falsificación de firma</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Permite que la aplicación pretenda ser una aplicación diferente. Las aplicaciones maliciosas pueden usar esto para acceder a datos personales. Conceda este permiso con cuidado!</string>
+    <!-- Notify user that they are in Lock-to-app -->
+    <string name="lock_to_app_toast_back">Mantén pulsado el botón Atrás para dejar de fijar esta pantalla</string>
+    <!-- ADB over network notification -->
+    <string name="adb_net_active_notification_title">ADB sobre red activado</string>
+    <!-- ADB over USB and network notification -->
+    <string name="adb_both_active_notification_title">ADB sobrw USB y red activado</string>
+    <!-- ADB notification message-->
+    <string name="adb_active_generic_notification_message">Toca para desactivar la depuración.</string>
+    <!-- Advanced power menu -->
+    <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+    <string name="custom_system_error_manufacturer">Se ha detectado una falta de coincidencia con la imagen del proveedor. Por lo general esto significa que dicha imagen está desactualizada. Asegúrese de que coincida con <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
 </resources>
